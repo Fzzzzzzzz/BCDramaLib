@@ -29,6 +29,21 @@ end
 pod install --repo-update
 ```
 
+**重要：** SDK 在 `BUILD_LIBRARY_FOR_DISTRIBUTION=YES` 下编译，接入方 Podfile 必须增加：
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end
+```
+
+否则可能出现 `SnapKit` / `CryptoSwift` 的 `dispatch thunk` 或 `Padding.pkcs7` 等 Undefined symbol。
+依赖版本须与 podspec 锁定版本一致。
+
 ## 使用
 
 ```swift

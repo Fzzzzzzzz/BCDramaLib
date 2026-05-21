@@ -34,4 +34,7 @@ Pod::Spec.new do |s|
   s.user_target_xcconfig = {
     'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'
   }
+
+  # 接入方 Podfile 须增加 post_install，为所有 Pods 开启 BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+  # （与 bc_drama_sdk_ios 打包时一致），详见 README.md
 end
