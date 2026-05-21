@@ -19,12 +19,13 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'BCDramaLib.xcframework'
   s.resources           = 'BCDramaLib.bundle'
 
-  s.dependency 'SnapKit'
-  s.dependency 'CryptoSwift'
-  s.dependency 'SwiftyJSON'
-  s.dependency 'MJRefresh'
-  s.dependency 'TXLiteAVSDK_Professional'
-  s.dependency 'SDWebImage'
+  # 版本须与打包 bc_drama_sdk_ios 时 Podfile.lock 一致，否则静态库会出现 Undefined symbol
+  s.dependency 'SnapKit', '5.6.0'
+  s.dependency 'CryptoSwift', '1.8.4'
+  s.dependency 'SwiftyJSON', '5.0.1'
+  s.dependency 'MJRefresh', '3.7.6'
+  s.dependency 'TXLiteAVSDK_Professional', '13.2.20652'
+  s.dependency 'SDWebImage', '5.21.7'
 
   s.pod_target_xcconfig = {
     'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES',
