@@ -4,7 +4,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SDK_DIR="${SDK_DIR:-/Users/a1234/Desktop/BC_Drama/iOSSDK/BCDramaLib}"
-REMOTE="https://github.com/Fzzzzzzzz/BCDramaLib.git"
+REMOTE="git@github.com:Fzzzzzzzz/BCDramaLib.git"
+POD_GIT_URL="https://github.com/Fzzzzzzzz/BCDramaLib.git"
 VERSION="${1:-1.2.0}"
 TAG="v${VERSION}"
 
@@ -19,6 +20,8 @@ if [ ! -d .git ]; then
   GIT_TEMPLATE_DIR="" git init
   git branch -M main
   git remote add origin "${REMOTE}" 2>/dev/null || git remote set-url origin "${REMOTE}"
+else
+  git remote set-url origin "${REMOTE}"
 fi
 
 git add .
@@ -34,4 +37,4 @@ git push -u origin main
 git push -f origin "${TAG}"
 
 echo ">>> 完成。接入方式："
-echo "pod 'BCDramaLib', :git => '${REMOTE}', :tag => '${TAG}'"
+echo "pod 'BCDramaLib', :git => '${POD_GIT_URL}', :tag => '${TAG}'"
