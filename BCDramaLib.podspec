@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BCDramaLib'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'BC Drama iOS SDK (binary XCFramework)'
   s.description      = <<-DESC
     BCDramaLib 为剧星短剧 iOS SDK，以 XCFramework 二进制形式分发。
