@@ -1,0 +1,10 @@
+framework module BCDramaLib {
+  umbrella header "BCDramaLib.h"
+  export *
+
+  module * { export * }
+}
+
+module BCDramaLib.Swift {
+  header "BCDramaLib-Swift.h"
+}
