@@ -117,7 +117,9 @@ extension BCVideoManager {
                                      packageName: String,
                                      secret: String,
                                      userId: String,
+                                     adAdapters: [BCAdAdapter],
                                      isInitSuccess: @escaping (Bool)->Void) {
+        BCAdAdapterRegistry.shared.register(adAdapters)
         BCLoginManager.shared.logout()
         BCLocalizableManager.setDefaultLanguage()
         BCLoginManager.shared.appId = appId
@@ -146,7 +148,7 @@ extension BCVideoManager {
     ///   - pageType: page 类型
     @objc public static func showSDK(from vc: UIViewController, pageType: BCTabPageType = .collection) {
         BCPictureInPictureManager.shared.removePictureInPicture()
-        
+
         let watchingVC = BCDramaFavoriteListViewController()
         watchingVC.topOffset = BCDeviceUtils.getStatusBarHeight() + 44
         let playlistVC = BCDramaMenuListViewController()
@@ -273,14 +275,13 @@ extension BCVideoManager {
         if (topTabBarOffsetY != CGFLOAT_MIN) {
             playlistVC.topTabBarOffsetY = topTabBarOffsetY
         }
-        
+
         return playlistVC;
     }
     
     /// 跳转到剧单页控制器, 并设置播放页顶部工具栏Y轴偏移量
     /// - Parameters:
     ///   - topOffset: 剧单页偏移量
-    ///   - hOffset: 横向偏移量(左右边距)
     ///   - topTabBarOffsetY: 设置播放页顶部工具栏的偏移量（优先级高于BCLoginManager.shared.playerTopBarOffsetY）
     ///   - vc: 来源控制器
     @objc public static func toAlbumListViewController(from vc: UIViewController,
@@ -346,7 +347,8 @@ extension BCVideoManager {
     /// 设置国际化多语言
     /// - Parameter type: 语言地区类型
     @objc public static func setLanguage(type: BCLanguageType) {
-        _ = BCLocalizableManager.setLanguage(type)
+        let _ = BCLocalizableManager.setLanguage(type)
+
     }
     
     /// 设置视频播放回调

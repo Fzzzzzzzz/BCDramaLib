@@ -101,7 +101,7 @@ import _SwiftConcurrencyShims
   @objc deinit
 }
 extension BCDramaLib.BCVideoManager {
-  @objc public static func initSDK(appId: Swift.String, packageName: Swift.String, secret: Swift.String, userId: Swift.String, isInitSuccess: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public static func initSDK(appId: Swift.String, packageName: Swift.String, secret: Swift.String, userId: Swift.String, adAdapters: [any BCDramaLib.BCAdAdapter], isInitSuccess: @escaping (Swift.Bool) -> Swift.Void)
   @objc public static func logout()
   @objc public static func showSDK(from vc: UIKit.UIViewController, pageType: BCDramaLib.BCTabPageType = .collection)
   @objc public static func showCollectionPage(from vc: UIKit.UIViewController)
@@ -197,6 +197,249 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func setCustomUserNickname(_ nickname: Swift.String?)
 }
 public func RGBColor(_ r: CoreFoundation.CGFloat, g: CoreFoundation.CGFloat, b: CoreFoundation.CGFloat, a: CoreFoundation.CGFloat) -> UIKit.UIColor
+@_inheritsConvenienceInitializers @objc public class BCUtilsManager : ObjectiveC.NSObject {
+  public static func isAlreadShowedPreference(userId: Swift.String) -> Swift.Bool
+  public static func saveRecommendShowedPreference(userId: Swift.String)
+  public static func getPreferenceIndex() -> Swift.Int
+  public static func formatCount(_ count: Swift.Int) -> Swift.String
+  public static func calculateTextWidth(text: Swift.String, font: UIKit.UIFont, maxHeight: CoreFoundation.CGFloat = .greatestFiniteMagnitude) -> CoreFoundation.CGFloat
+  public static func createLabel(_ text: Swift.String, _ textColor: UIKit.UIColor, _ font: UIKit.UIFont) -> UIKit.UILabel
+  public static func getKeyWindowMethodOne() -> UIKit.UIWindow?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum BCPagingListContainerType {
+  case scrollView
+  case collectionView
+  public static func == (a: BCDramaLib.BCPagingListContainerType, b: BCDramaLib.BCPagingListContainerType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol BCPagingViewListViewDelegate : ObjectiveC.NSObjectProtocol {
+  func listView() -> UIKit.UIView
+  func listScrollView() -> UIKit.UIScrollView
+  func listViewDidScrollCallback(callback: @escaping (UIKit.UIScrollView) -> ())
+  func listScrollViewWillResetContentOffset()
+  func listWillAppear()
+  func listDidAppear()
+  func listWillDisappear()
+  func listDidDisappear()
+}
+extension BCDramaLib.BCPagingViewListViewDelegate {
+  public func listScrollViewWillResetContentOffset()
+  public func listWillAppear()
+  public func listDidAppear()
+  public func listWillDisappear()
+  public func listDidDisappear()
+}
+public protocol BCPagingListContainerViewDataSource : ObjectiveC.NSObjectProtocol {
+  func numberOfLists(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.Int
+  func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, initListAt index: Swift.Int) -> any BCDramaLib.BCPagingViewListViewDelegate
+  func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, canInitListAt index: Swift.Int) -> Swift.Bool
+  func scrollViewClass(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.AnyClass?
+}
+extension BCDramaLib.BCPagingListContainerViewDataSource {
+  public func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, canInitListAt index: Swift.Int) -> Swift.Bool
+  public func scrollViewClass(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.AnyClass?
+}
+@objc @_Concurrency.MainActor @preconcurrency open class BCPagingListContainerView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var type: BCDramaLib.BCPagingListContainerType {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency weak public var dataSource: (any BCDramaLib.BCPagingListContainerViewDataSource)? {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var scrollView: UIKit.UIScrollView! {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var isCategoryNestPagingEnabled: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency open var validListDict: [Swift.Int : any BCDramaLib.BCPagingViewListViewDelegate]
+  @_Concurrency.MainActor @preconcurrency open var initListPercent: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var listCellBackgroundColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency public var defaultSelectedIndex: Swift.Int {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var currentIndex: Swift.Int {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public init(dataSource: any BCDramaLib.BCPagingListContainerViewDataSource, type: BCDramaLib.BCPagingListContainerType = .collectionView)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency open func commonInit()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func willMove(toSuperview newSuperview: UIKit.UIView?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency public func contentScrollView() -> UIKit.UIScrollView
+  @_Concurrency.MainActor @preconcurrency public func scrolling(from leftIndex: Swift.Int, to rightIndex: Swift.Int, percent: CoreFoundation.CGFloat, selectedIndex: Swift.Int)
+  @_Concurrency.MainActor @preconcurrency public func didClickSelectedItem(at index: Swift.Int)
+  @_Concurrency.MainActor @preconcurrency public func reloadData()
+  @objc deinit
+}
+extension BCDramaLib.BCPagingListContainerView : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCPagingListRefreshView : BCDramaLib.BCPagingView {
+  @_Concurrency.MainActor @preconcurrency override public init(delegate: any BCDramaLib.BCPagingViewDelegate, listContainerType: BCDramaLib.BCPagingListContainerType = .collectionView)
+  @_Concurrency.MainActor @preconcurrency override open func preferredProcessMainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency override open func preferredProcessListViewDidScroll(scrollView: UIKit.UIScrollView)
+  @objc deinit
+}
+@objc public protocol BCPagingMainTableViewGestureDelegate {
+  @objc func mainTableViewGestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCPagingMainTableView : UIKit.UITableView, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency weak public var gestureDelegate: (any BCDramaLib.BCPagingMainTableViewGestureDelegate)?
+  @_Concurrency.MainActor @preconcurrency @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, style: UIKit.UITableViewStyle)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public protocol BCPagingSmoothViewListViewDelegate {
+  @objc func listView() -> UIKit.UIView
+  @objc func listScrollView() -> UIKit.UIScrollView
+  @objc optional func listDidAppear()
+  @objc optional func listDidDisappear()
+}
+@objc public protocol BCPagingSmoothViewDataSource {
+  @objc func heightForPagingHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> CoreFoundation.CGFloat
+  @objc func viewForPagingHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> UIKit.UIView
+  @objc func heightForPinHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> CoreFoundation.CGFloat
+  @objc func viewForPinHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> UIKit.UIView
+  @objc func numberOfLists(in pagingView: BCDramaLib.BCPagingSmoothView) -> Swift.Int
+  @objc func pagingView(_ pagingView: BCDramaLib.BCPagingSmoothView, initListAtIndex index: Swift.Int) -> any BCDramaLib.BCPagingSmoothViewListViewDelegate
+}
+@objc public protocol BCPagingSmoothViewDelegate {
+  @objc optional func pagingSmoothViewDidScroll(_ scrollView: UIKit.UIScrollView)
+}
+@objc @_Concurrency.MainActor @preconcurrency open class BCPagingSmoothView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var listDict: [Swift.Int : any BCDramaLib.BCPagingSmoothViewListViewDelegate] {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency final public let listCollectionView: BCDramaLib.BCPagingSmoothCollectionView
+  @_Concurrency.MainActor @preconcurrency public var defaultSelectedIndex: Swift.Int
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any BCDramaLib.BCPagingSmoothViewDelegate)?
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency public init(dataSource: any BCDramaLib.BCPagingSmoothViewDataSource)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency public func reloadData()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+}
+extension BCDramaLib.BCPagingSmoothView : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didEndDisplaying cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class BCPagingSmoothCollectionView : UIKit.UICollectionView, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, collectionViewLayout layout: UIKit.UICollectionViewLayout)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public protocol BCPagingViewDelegate : ObjectiveC.NSObjectProtocol {
+  func tableHeaderViewHeight(in pagingView: BCDramaLib.BCPagingView) -> Swift.Int
+  func tableHeaderView(in pagingView: BCDramaLib.BCPagingView) -> UIKit.UIView
+  func heightForPinSectionHeader(in pagingView: BCDramaLib.BCPagingView) -> Swift.Int
+  func viewForPinSectionHeader(in pagingView: BCDramaLib.BCPagingView) -> UIKit.UIView
+  func numberOfLists(in pagingView: BCDramaLib.BCPagingView) -> Swift.Int
+  func pagingView(_ pagingView: BCDramaLib.BCPagingView, initListAtIndex index: Swift.Int) -> any BCDramaLib.BCPagingViewListViewDelegate
+  func pagingView(_ pagingView: BCDramaLib.BCPagingView, listIdentifierAtIndex index: Swift.Int) -> Swift.String?
+  @available(*, message: "Use pagingView(_ pagingView: BCPagingView, mainTableViewDidScroll scrollView: UIScrollView) method")
+  func mainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidScroll scrollView: UIKit.UIScrollView)
+  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewWillBeginDragging scrollView: UIKit.UIScrollView)
+  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDragging scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDecelerating scrollView: UIKit.UIScrollView)
+  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndScrollingAnimation scrollView: UIKit.UIScrollView)
+  func scrollViewClassInListContainerView(in pagingView: BCDramaLib.BCPagingView) -> Swift.AnyClass?
+}
+extension BCDramaLib.BCPagingViewDelegate {
+  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, listIdentifierAtIndex index: Swift.Int) -> Swift.String?
+  public func mainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidScroll scrollView: UIKit.UIScrollView)
+  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewWillBeginDragging scrollView: UIKit.UIScrollView)
+  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDragging scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDecelerating scrollView: UIKit.UIScrollView)
+  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndScrollingAnimation scrollView: UIKit.UIScrollView)
+  public func scrollViewClassInListContainerView(in pagingView: BCDramaLib.BCPagingView) -> Swift.AnyClass?
+}
+@objc @_Concurrency.MainActor @preconcurrency open class BCPagingView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var defaultSelectedIndex: Swift.Int {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var mainTableView: BCDramaLib.BCPagingMainTableView {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var listContainerView: BCDramaLib.BCPagingListContainerView {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var validListDict: [Swift.Int : any BCDramaLib.BCPagingViewListViewDelegate] {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var pinSectionHeaderVerticalOffset: Swift.Int
+  @_Concurrency.MainActor @preconcurrency public var isListHorizontalScrollEnabled: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var automaticallyDisplayListVerticalScrollIndicator: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var allowsCacheList: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var currentScrollingListView: UIKit.UIScrollView? {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public init(delegate: any BCDramaLib.BCPagingViewDelegate, listContainerType: BCDramaLib.BCPagingListContainerType = .collectionView)
+  @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency open func reloadData()
+  @_Concurrency.MainActor @preconcurrency open func resizeTableHeaderViewHeight(animatable: Swift.Bool = false, duration: Foundation.TimeInterval = 0.25, curve: UIKit.UIView.AnimationCurve = .linear)
+  @_Concurrency.MainActor @preconcurrency open func preferredProcessListViewDidScroll(scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency open func preferredProcessMainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @objc deinit
+}
+extension BCDramaLib.BCPagingView : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForFooterInSection section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
+}
+extension BCDramaLib.BCPagingView : BCDramaLib.BCPagingListContainerViewDataSource {
+  @_Concurrency.MainActor @preconcurrency public func numberOfLists(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency public func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, initListAt index: Swift.Int) -> any BCDramaLib.BCPagingViewListViewDelegate
+  @_Concurrency.MainActor @preconcurrency public func scrollViewClass(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.AnyClass?
+}
+extension BCDramaLib.BCPagingView {
+  @_Concurrency.MainActor @preconcurrency public func listContainerViewWillBeginDragging(_ listContainerView: BCDramaLib.BCPagingListContainerView)
+  @_Concurrency.MainActor @preconcurrency public func listContainerViewDidEndScrolling(_ listContainerView: BCDramaLib.BCPagingListContainerView)
+  @_Concurrency.MainActor @preconcurrency public func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, listDidAppearAt index: Swift.Int)
+}
 public protocol BCEncryptable {
   func encrypt(_ dict: Swift.Dictionary<Swift.String, Any>) throws -> Swift.String
   func decrypt(_ base64: Swift.String) throws -> Foundation.Data
@@ -223,6 +466,14 @@ public protocol BCEncryptable {
 extension UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency public func bc_showIndicator()
   @_Concurrency.MainActor @preconcurrency public func bc_hideIndicator()
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public var isPushed: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var isPresented: Swift.Bool {
+    get
+  }
 }
 extension UIKit.UINavigationController {
   @_Concurrency.MainActor @preconcurrency public func ensureInternalTabBarIsolation()
@@ -345,6 +596,9 @@ public struct BCDramaFavoriteModel : Swift.Codable {
   @objc deinit
 }
 public struct BCDeviceUtils {
+  public static func screenWidth() -> CoreFoundation.CGFloat
+  public static func screenHeight() -> CoreFoundation.CGFloat
+  public static func getTabBarHeight() -> CoreFoundation.CGFloat
 }
 @_inheritsConvenienceInitializers @objc(BCSdkOrientationSession) final public class BCSdkOrientationSession : ObjectiveC.NSObject {
   @objc public static var isActive: Swift.Bool {
@@ -365,11 +619,11 @@ extension UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency public func bc_clearNavigationBarRightActions()
   @_Concurrency.MainActor @preconcurrency public func bc_setNavigationBarBackgroundColor(_ color: UIKit.UIColor?)
   @_Concurrency.MainActor @preconcurrency public func bc_setNavigationTitleColor(_ color: UIKit.UIColor?)
-  @_Concurrency.MainActor @preconcurrency public func setNavigationBarSeparatorColor(_ color: UIKit.UIColor?)
+  @_Concurrency.MainActor @preconcurrency public func bc_setNavigationBarSeparatorColor(_ color: UIKit.UIColor?)
   @_Concurrency.MainActor @preconcurrency public func bc_setNavigationBarBackButtonImage(_ image: UIKit.UIImage?, for state: UIKit.UIControl.State = .normal)
   @_Concurrency.MainActor @preconcurrency public func bc_setNavigationBarBackButtonTitle(_ title: Swift.String?, for state: UIKit.UIControl.State = .normal)
   @_Concurrency.MainActor @preconcurrency public func bc_setNavigationBarBackButtonHidden(_ shows: Swift.Bool)
-  @_Concurrency.MainActor @preconcurrency public func bc_setNavigationBarSeparatorHidden(_ hidden: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func bc_setNavigationBarSeparatorHidden(_ shows: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency public func bc_setupSimpleNavigationBar(title: Swift.String?, backAction: (() -> Swift.Void)? = nil)
   @_Concurrency.MainActor @preconcurrency public func bc_setupModalNavigationBar(title: Swift.String, dismissAction: (() -> Swift.Void)? = nil)
   @_Concurrency.MainActor @preconcurrency public func bc_setupSearchNavigationBar(title: Swift.String, searchAction: @escaping () -> Swift.Void, backAction: (() -> Swift.Void)? = nil)
@@ -439,7 +693,6 @@ extension BCDramaLib.BCVodPlayerManager {
   final public func setVolume(_ volume: Swift.Int)
   final public func setMute(_ mute: Swift.Bool)
   final public func setRate(_ rate: Swift.Float)
-  final public func setRenderMode(_ mode: TXLiteAVSDK_Professional.TX_Enum_Type_RenderMode)
   final public func getCurrentState() -> BCDramaLib.BCVodPlayerState
   final public func resetVideoWidget(in containerView: UIKit.UIView)
   final public func reStartDate()
@@ -458,6 +711,219 @@ extension BCDramaLib.BCVodPlayerManager {
   @objc deinit
 }
 extension BCDramaLib.BCPagingListContainerView : BCDramaLib.BCSegmentedViewListContainer {
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class BCNativeExpressAdCollectionViewCell : UIKit.UICollectionViewCell {
+  @objc @_Concurrency.MainActor @preconcurrency public var vendorAdImageView: UIKit.UIImageView!
+  @objc @_Concurrency.MainActor @preconcurrency weak public var vendorMsaasCellRef: BCDramaLib.BCNativeExpressAdCollectionViewCell?
+  @objc @_Concurrency.MainActor @preconcurrency public var vendorMsaasAdData: Any?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+public protocol BCBannerDataSource : AnyObject {
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType) -> BCDramaLib.BCBannerCellRegister
+  func bcBanner(numberOfItems banner: any BCDramaLib.BCBannerType) -> Swift.Int
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, cellForItemAt index: Swift.Int, cell: UIKit.UICollectionViewCell) -> UIKit.UICollectionViewCell
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, params: BCDramaLib.BCBannerParams) -> BCDramaLib.BCBannerParams
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, layoutParams: BCDramaLib.BCBannerLayoutParams) -> BCDramaLib.BCBannerLayoutParams
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, centerIndex: Swift.Int, centerCell: UIKit.UICollectionViewCell)
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, lastCenterIndex: Swift.Int?, lastCenterCell: UIKit.UICollectionViewCell?)
+}
+extension BCDramaLib.BCBannerDataSource {
+  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, params: BCDramaLib.BCBannerParams) -> BCDramaLib.BCBannerParams
+  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, layoutParams: BCDramaLib.BCBannerLayoutParams) -> BCDramaLib.BCBannerLayoutParams
+  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, centerIndex: Swift.Int, centerCell: UIKit.UICollectionViewCell)
+  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, lastCenterIndex: Swift.Int?, lastCenterCell: UIKit.UICollectionViewCell?)
+}
+public protocol BCBannerDelegate : AnyObject {
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, didSelectItemAt index: Swift.Int)
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, center index: Swift.Int)
+  func bcBanner(_ banner: any BCDramaLib.BCBannerType, coverView: UIKit.UIView)
+}
+extension BCDramaLib.BCBannerDelegate {
+  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, didSelectItemAt index: Swift.Int)
+  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, center index: Swift.Int)
+  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, coverView: UIKit.UIView)
+}
+@_hasMissingDesignatedInitializers public class BCBannerLayoutParams {
+  public var itemSize: CoreFoundation.CGSize?
+  public var itemSpacing: CoreFoundation.CGFloat
+  public var layoutType: (any BCDramaLib.BCBannerTransformable)?
+  public var scrollDirection: UIKit.UICollectionView.ScrollDirection
+  public var minimumScale: CoreFoundation.CGFloat
+  public var minimumAlpha: CoreFoundation.CGFloat
+  public var maximumAngle: CoreFoundation.CGFloat
+  public var rateOfChange: CoreFoundation.CGFloat
+  public var rateHorisonMargin: CoreFoundation.CGFloat
+  @objc deinit
+}
+extension BCDramaLib.BCBannerLayoutParams {
+  public func itemSize(_ itemSize: CoreFoundation.CGSize) -> BCDramaLib.BCBannerLayoutParams
+  public func itemSpacing(_ itemSpacing: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
+  public func layoutType(_ layoutType: (any BCDramaLib.BCBannerTransformable)?) -> BCDramaLib.BCBannerLayoutParams
+  public func scrollDirection(_ scrollDirection: UIKit.UICollectionView.ScrollDirection) -> BCDramaLib.BCBannerLayoutParams
+  public func minimumScale(_ minimumScale: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
+  public func minimumAlpha(_ minimumAlpha: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
+  public func maximumAngle(_ maximumAngle: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
+  public func rateOfChange(_ rateOfChange: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
+  public func rateHorisonMargin(_ rateHorisonMargin: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
+}
+@_hasMissingDesignatedInitializers public class BCBannerParams {
+  public var isAutoPlay: Swift.Bool
+  public var isBounces: Swift.Bool
+  public var isShowPageControl: Swift.Bool
+  public var isPagingEnabled: Swift.Bool
+  public var contentInset: UIKit.UIEdgeInsets
+  public var timeInterval: Swift.Double
+  public var cycleWay: BCDramaLib.BCBannerParams.CycleWay
+  public var edgeTransitionType: BCDramaLib.BCBannerParams.BCBannerTransitionType?
+  public var edgeTransitionSubtype: QuartzCore.CATransitionSubtype
+  @objc deinit
+}
+extension BCDramaLib.BCBannerParams {
+  public enum BCBannerTransitionType : Swift.String {
+    case fade
+    case push
+    case reveal
+    case moveIn
+    case cube
+    case suckEffect
+    case oglFlip
+    case rippleEffect
+    case pageCurl
+    case pageUnCurl
+    case cameraIrisHollowOpen
+    case cameraIrisHollowClose
+    case curlDown
+    case curlUp
+    case flipFromLeft
+    case flipFromRight
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum CycleWay {
+    case forward
+    case skipEnd
+    case rollingBack
+    public static func == (a: BCDramaLib.BCBannerParams.CycleWay, b: BCDramaLib.BCBannerParams.CycleWay) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum RollingDirection {
+    case right
+    case left
+    public static func == (a: BCDramaLib.BCBannerParams.RollingDirection, b: BCDramaLib.BCBannerParams.RollingDirection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension BCDramaLib.BCBannerParams {
+  public func isAutoPlay(_ isAutoPlay: Swift.Bool) -> BCDramaLib.BCBannerParams
+  public func isBounces(_ isBounces: Swift.Bool) -> BCDramaLib.BCBannerParams
+  public func isPagingEnabled(_ isPagingEnabled: Swift.Bool) -> BCDramaLib.BCBannerParams
+  public func contentInset(_ contentInset: UIKit.UIEdgeInsets) -> BCDramaLib.BCBannerParams
+  public func isShowPageControl(_ isShowPageControl: Swift.Bool) -> BCDramaLib.BCBannerParams
+  public func timeInterval(_ timeInterval: Foundation.TimeInterval) -> BCDramaLib.BCBannerParams
+  public func cycleWay(_ cycleWay: BCDramaLib.BCBannerParams.CycleWay) -> BCDramaLib.BCBannerParams
+  public func edgeTransitionType(_ edgeTransitionType: BCDramaLib.BCBannerParams.BCBannerTransitionType?) -> BCDramaLib.BCBannerParams
+  public func edgeTransitionSubtype(_ edgeTransitionSubtype: QuartzCore.CATransitionSubtype) -> BCDramaLib.BCBannerParams
+}
+public protocol BCBannerTransformable {
+  func transformToAttributes(collectionView: UIKit.UICollectionView, params: BCDramaLib.BCBannerLayoutParams, attributes: UIKit.UICollectionViewLayoutAttributes)
+}
+public protocol BCBannerType : UIKit.UIView {
+  var dataSource: (any BCDramaLib.BCBannerDataSource)? { get set }
+  var delegate: (any BCDramaLib.BCBannerDelegate)? { get set }
+  var indentify: Swift.String? { get set }
+  func reloadView()
+}
+public struct BCBannerCellRegister {
+  public init(type: UIKit.UICollectionViewCell.Type?, reuseIdentifier: Swift.String, nib: UIKit.UINib? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class BCBanner : BCDramaLib.BCBaseBanner, BCDramaLib.BCBannerType {
+  @_Concurrency.MainActor @preconcurrency public var indentify: Swift.String?
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency weak public var dataSource: (any BCDramaLib.BCBannerDataSource)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any BCDramaLib.BCBannerDelegate)?
+  @_Concurrency.MainActor @preconcurrency public func scrollToIndex(_ index: Swift.Int, animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func reloadView()
+  @objc deinit
+}
+extension BCDramaLib.BCBanner {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillEndDragging(_ scrollView: UIKit.UIScrollView, withVelocity velocity: CoreFoundation.CGPoint, targetContentOffset: Swift.UnsafeMutablePointer<CoreFoundation.CGPoint>)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+}
+extension BCDramaLib.BCBanner : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class BCBaseBanner : UIKit.UIView {
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func removeFromSuperview()
+  @_Concurrency.MainActor @preconcurrency public var placeholderImgView: UIKit.UIImageView {
+    get
+    set
+  }
+}
+extension BCDramaLib.BCBaseBanner {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func willMove(toSuperview newSuperview: UIKit.UIView?)
+}
+extension BCDramaLib.BCBaseBanner {
+  @_Concurrency.MainActor @preconcurrency public func pauseAutoScrolling()
+  @_Concurrency.MainActor @preconcurrency public func resumeAutoScrolling()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCBannerBaseCell : UIKit.UICollectionViewCell {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency open func bc_addSubviews()
+  @_Concurrency.MainActor @preconcurrency public var imageView: UIKit.UIImageView {
+    get
+    set
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCBannerCell : BCDramaLib.BCBannerBaseCell {
+  @_Concurrency.MainActor @preconcurrency override open func bc_addSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct BCBannerTransform {
+  public enum BCTransformLocation {
+    case left
+    case center
+    case right
+    public static func == (a: BCDramaLib.BCBannerTransform.BCTransformLocation, b: BCDramaLib.BCBannerTransform.BCTransformLocation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func itemLocation(viewCentetX: CoreFoundation.CGFloat, itemCenterX: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerTransform.BCTransformLocation
+}
+public struct BCBannerTransformCoverflow : BCDramaLib.BCBannerTransformable {
+  public init()
+  public func transformToAttributes(collectionView: UIKit.UICollectionView, params: BCDramaLib.BCBannerLayoutParams, attributes: UIKit.UICollectionViewLayoutAttributes)
+}
+public struct BCBannerTransformLinear : BCDramaLib.BCBannerTransformable {
+  public init()
+  public func transformToAttributes(collectionView: UIKit.UICollectionView, params: BCDramaLib.BCBannerLayoutParams, attributes: UIKit.UICollectionViewLayoutAttributes)
 }
 public protocol BCPlayerModel {
   var videoId: Swift.Int { get set }
@@ -527,7 +993,6 @@ public enum BCVodPlayerStatus : Swift.Int {
   final public func setAudioPlayoutVolume(_ volume: Swift.Int32)
   final public func setRate(_ rate: Swift.Float)
   final public func setMute(_ mute: Swift.Bool)
-  final public func setRenderMode(_ mode: TXLiteAVSDK_Professional.TX_Enum_Type_RenderMode)
   final public func setStartTime(_ time: CoreFoundation.CGFloat)
   final public func width() -> Swift.Int32
   final public func height() -> Swift.Int32
@@ -626,6 +1091,38 @@ public typealias BCPlayerStatusCallBack = (BCDramaLib.BCPlayerStatus) -> Swift.V
 public typealias BCPlayerLoadStatusCallBack = (Swift.Int, Swift.Int, Swift.Int) -> Swift.Void
 public typealias BCShareVideoCallBack = (UIKit.UIViewController, [Swift.String : Any]) -> Swift.Void
 public typealias BCCustomGoodListViewCallBack = (UIKit.UIViewController, [BCDramaLib.BCGoodListModel], Swift.Int, Swift.Int) -> Swift.Void
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BCVideoPlayCallBack : ObjectiveC.NSObject {
+  @objc public static let shared: BCDramaLib.BCVideoPlayCallBack
+  @objc public var onStart: BCDramaLib.BCVideoPlayOnStart?
+  @objc public var onProgress: BCDramaLib.BCVideoPlayOnProgress?
+  @objc public var onEnd: BCDramaLib.BCVideoPlayOnEnd?
+  @objc public var onUnlock: BCDramaLib.BCVideoPlayOnUnlock?
+  @objc public var onReward: BCDramaLib.BCVideoPlayOnReward?
+  @objc public var onPayment: BCDramaLib.BCSetPaymentCallBack?
+  @objc public var onPaySuccess: BCDramaLib.BCPaySuccess?
+  @objc public var onPayCancle: BCDramaLib.BCPayCancle?
+  @objc public var onAdLoaded: BCDramaLib.BCAdLoaded?
+  @objc public var onAdClicked: BCDramaLib.BCAdClicked?
+  @objc public var onAdEffective: BCDramaLib.BCAdDidRewardEffective?
+  @objc public var onAdClosed: BCDramaLib.BCAdClosed?
+  @objc public var onAdFailed: BCDramaLib.BCAdFailed?
+  @objc public var onStartAdReward: BCDramaLib.BCStartAdReward?
+  @objc public var onAdUnLock: BCDramaLib.BCAdUnLock?
+  @objc public var onAdFinish: BCDramaLib.BCAdFinish?
+  @objc public var initAdCallback: BCDramaLib.BCCustomAdvInit?
+  @objc public var rewardAdCallback: BCDramaLib.BCCustomAdvReward?
+  @objc public var nativeExpressAdCallback: BCDramaLib.BCCustomAdvNativeExpress?
+  @objc public var bannerAdCallback: BCDramaLib.BCCustomAdvBanner?
+  @objc public var payResultVerify: BCDramaLib.BCPayResultVerify?
+  @objc public var onAdRenderStatus: BCDramaLib.BCRenderStatus?
+  @objc public var onCustomPayment: BCDramaLib.BCGoogListItemCallBack?
+  @objc public var onCustomBannerAds: BCDramaLib.BCCustomBannerAdsCallBack?
+  @objc public var onCustomRewardAds: BCDramaLib.BCCustomRewardAdsCallBack?
+  @objc public var onCustomFullScreenAds: BCDramaLib.BCCustomFullScreenAdsCallBack?
+  @objc public var onCustomNativeAds: BCDramaLib.BCCustomNativeViewAdsCallBack?
+  @objc public var onLoadCustonNativeCallBack: BCDramaLib.BCLoadCustomNativeCallBack?
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc(BCUserInfosModel) public class BCUserInfosModel : ObjectiveC.NSObject {
   @objc public var user_id: Swift.String
   @objc public var expire_time: Swift.Int
@@ -638,6 +1135,73 @@ public typealias BCCustomGoodListViewCallBack = (UIKit.UIViewController, [BCDram
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCBaseViewController : UIKit.UIViewController {
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum BCTimeoutType {
+  case api
+  case video
+  case ad
+  case crash
+  public static func == (a: BCDramaLib.BCTimeoutType, b: BCDramaLib.BCTimeoutType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum BCTimeoutEventType : Swift.String {
+  case api
+  case video
+  case ad
+  case crash
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BCTimeoutErrorType : Swift.String {
+  case GDT_AD_BANNER_FAILED_TYPE
+  case CSJ_AD_BANNER_FAILED_TYPE
+  case MANGO_AD_BANNER_FAILED_TYPE
+  case KS_AD_BANNER_FAILED_TYPE
+  case GDT_AD_REWARD_FAILED_TYPE
+  case CSJ_AD_REWARD_FAILED_TYPE
+  case MANGO_AD_REWARD_FAILED_TYPE
+  case KS_AD_REWARD_FAILED_TYPE
+  case GDT_AD_FULLSCREEN_FAILED_TYPE
+  case CSJ_AD_FULLSCREEN_FAILED_TYPE
+  case MANGO_AD_FULLSCREEN_FAILED_TYPE
+  case KS_AD_FULLSCREEN_FAILED_TYPE
+  case GDT_AD_DRAW_FAILED_TYPE
+  case CSJ_AD_DRAW_FAILED_TYPE
+  case MANGO_AD_DRAW_FAILED_TYPE
+  case KS_AD_DRAW_FAILED_TYPE
+  case API_TIMEOUT_TYPE
+  case VIDEO_TIMEOUT_TYPE
+  case VIDEO_FAILED_TYPE
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BCCrashManager : ObjectiveC.NSObject {
   @objc public static let shared: BCDramaLib.BCCrashManager
   @objc public func startMonitoring()
@@ -647,9 +1211,74 @@ public typealias BCCustomGoodListViewCallBack = (UIKit.UIViewController, [BCDram
   @objc public func getLatestCrashLog() -> Swift.String?
   @objc deinit
 }
+extension BCDramaLib.BCCrashManager {
+  public func repoetTimeout(type: BCDramaLib.BCTimeoutType, eventType: BCDramaLib.BCTimeoutEventType, errorType: BCDramaLib.BCTimeoutErrorType, message: Swift.String, error: (any Swift.Error)?, urlString: Swift.String = "", method: Swift.String = "POST", statusCode: Swift.Int = 0, start: Foundation.Date, videoId: Swift.Int = 0, videoInfos: Swift.String = "", placementId: Swift.String = "")
+}
 @_hasMissingDesignatedInitializers public class BCAESEncryptor : BCDramaLib.BCEncryptable {
   public func encrypt(_ dict: [Swift.String : Any]) throws -> Swift.String
   public func decrypt(_ base64: Swift.String) throws -> Foundation.Data
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc final public class BCAdNotifications : ObjectiveC.NSObject {
+  @objc public static let fromRewardVCName: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol BCMSaasPlaybackAdapter : ObjectiveC.NSObjectProtocol {
+  @objc func pauseMSaasPlayback()
+}
+@objc public protocol BCAdAdapter : ObjectiveC.NSObjectProtocol {
+  @objc var platformType: BCDramaLib.BCAdPlatformType { get }
+  @objc func registerSDK(appId: Swift.String)
+  @objc optional func fetchECPM(placementId: Swift.String, adType: BCDramaLib.BCAdType, completion: @escaping (Swift.Int) -> Swift.Void)
+}
+@objc public protocol BCBannerAdAdapter : ObjectiveC.NSObjectProtocol {
+  @objc func loadBanner(viewController: UIKit.UIViewController, container: UIKit.UIView, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onClose: @escaping () -> Swift.Void, onShow: @escaping (Swift.Int) -> Swift.Void)
+  @objc func removeBanner(from container: UIKit.UIView)
+}
+@objc public protocol BCNativeExpressAdAdapter : ObjectiveC.NSObjectProtocol {
+  @objc func prepareNativeExpress(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, adSize: CoreFoundation.CGSize)
+  @objc func loadNativeExpress(viewController: UIKit.UIViewController, container: BCDramaLib.BCNativeExpressAdCollectionViewCell, pageType: BCDramaLib.BCCustomAdPageType, placementId: Swift.String, completion: @escaping (UIKit.UIView, Swift.String, (any Swift.Error)?) -> Swift.Void)
+  @objc optional func setNativeAdMute(_ isMute: Swift.Bool)
+}
+@objc public protocol BCFullScreenAdAdapter : ObjectiveC.NSObjectProtocol {
+  @objc func showFullScreen(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onShow: @escaping () -> Swift.Void, onClose: @escaping () -> Swift.Void, onFailed: @escaping () -> Swift.Void)
+}
+@_inheritsConvenienceInitializers @objc public class BCRewardAdCloseResult : ObjectiveC.NSObject {
+  @objc public var isEffective: Swift.Bool
+  @objc public var ecpm: Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class BCRewardAdContext : ObjectiveC.NSObject {
+  @objc public var placementId: Swift.String
+  @objc public var taskId: Swift.String
+  @objc public var extraInfo: [Swift.String : Any]
+  @objc weak public var rewardPresenter: UIKit.UIViewController?
+  @objc public var onEffective: (() -> Swift.Void)?
+  @objc public var onClosed: ((BCDramaLib.BCRewardAdCloseResult) -> Swift.Void)?
+  @objc public var onFailed: (((any Swift.Error)?) -> Swift.Void)?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol BCRewardAdAdapter : ObjectiveC.NSObjectProtocol {
+  @objc func presentReward(from viewController: UIKit.UIViewController, context: BCDramaLib.BCRewardAdContext)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class BCAdAdapterRegistry : ObjectiveC.NSObject {
+  @objc public static let shared: BCDramaLib.BCAdAdapterRegistry
+  @objc final public func register(_ adapters: [any BCDramaLib.BCAdAdapter])
+  @objc final public func adapter(for platform: BCDramaLib.BCAdPlatformType) -> (any BCDramaLib.BCAdAdapter)?
+  @objc final public func adapter(forAdPlatform adPlatform: Swift.Int) -> (any BCDramaLib.BCAdAdapter)?
+  final public func bannerAdapter(for platform: BCDramaLib.BCAdPlatformType) -> (any BCDramaLib.BCBannerAdAdapter)?
+  final public func bannerAdapter(forAdPlatform adPlatform: Swift.Int) -> (any BCDramaLib.BCBannerAdAdapter)?
+  final public func nativeExpressAdapter(for platform: BCDramaLib.BCAdPlatformType) -> (any BCDramaLib.BCNativeExpressAdAdapter)?
+  final public func nativeExpressAdapter(forAdPlatform adPlatform: Swift.Int) -> (any BCDramaLib.BCNativeExpressAdAdapter)?
+  final public func fullScreenAdapter(for platform: BCDramaLib.BCAdPlatformType) -> (any BCDramaLib.BCFullScreenAdAdapter)?
+  final public func fullScreenAdapter(forAdPlatform adPlatform: Swift.Int) -> (any BCDramaLib.BCFullScreenAdAdapter)?
+  final public func rewardAdapter(for platform: BCDramaLib.BCAdPlatformType) -> (any BCDramaLib.BCRewardAdAdapter)?
+  final public func rewardAdapter(forAdPlatform adPlatform: Swift.Int) -> (any BCDramaLib.BCRewardAdAdapter)?
+  @objc final public func pauseMSaasPlaybackIfRegistered()
+  @objc final public func registerSDKIfNeeded(appId: Swift.String, adPlatform: Swift.Int)
   @objc deinit
 }
 extension UIKit.UIImage {
@@ -668,6 +1297,11 @@ extension UIKit.UIImage {
   public var rawValue: Swift.Int {
     get
   }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BCLocalizableManager : ObjectiveC.NSObject {
+  @objc public static let shared: BCDramaLib.BCLocalizableManager
+  public static func local(_ localized: Swift.String, _ params: any Swift.CVarArg...) -> Swift.String
+  @objc deinit
 }
 @objc public enum BCLaunchType : Swift.Int, Swift.Decodable {
   case iap = 1
@@ -699,20 +1333,16 @@ extension UIKit.UIImage {
     get
   }
 }
-public protocol BCBannerDataSource : AnyObject {
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType) -> BCDramaLib.BCBannerCellRegister
-  func bcBanner(numberOfItems banner: any BCDramaLib.BCBannerType) -> Swift.Int
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, cellForItemAt index: Swift.Int, cell: UIKit.UICollectionViewCell) -> UIKit.UICollectionViewCell
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, params: BCDramaLib.BCBannerParams) -> BCDramaLib.BCBannerParams
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, layoutParams: BCDramaLib.BCBannerLayoutParams) -> BCDramaLib.BCBannerLayoutParams
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, centerIndex: Swift.Int, centerCell: UIKit.UICollectionViewCell)
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, lastCenterIndex: Swift.Int?, lastCenterCell: UIKit.UICollectionViewCell?)
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BCLoginManager : ObjectiveC.NSObject {
+  @objc public static let shared: BCDramaLib.BCLoginManager
+  @objc public var userId: Swift.String
+  @objc public var isMute: Swift.Bool
+  @objc public var isOpenCustomAd: Swift.Bool
+  @objc deinit
 }
-extension BCDramaLib.BCBannerDataSource {
-  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, params: BCDramaLib.BCBannerParams) -> BCDramaLib.BCBannerParams
-  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, layoutParams: BCDramaLib.BCBannerLayoutParams) -> BCDramaLib.BCBannerLayoutParams
-  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, centerIndex: Swift.Int, centerCell: UIKit.UICollectionViewCell)
-  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, lastCenterIndex: Swift.Int?, lastCenterCell: UIKit.UICollectionViewCell?)
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class ToastView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency public static func show(message: Swift.String, duration: Foundation.TimeInterval = 2.0, in view: UIKit.UIView? = nil)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCSegmentedTitleAttributeCell : BCDramaLib.BCSegmentedBaseCell {
   @_Concurrency.MainActor @preconcurrency open var titleLabel: UIKit.UILabel
@@ -1493,429 +2123,6 @@ public typealias LoadImageClosure = (UIKit.UIImageView, Swift.String) -> Swift.V
   override public init()
   @objc deinit
 }
-public protocol BCBannerTransformable {
-  func transformToAttributes(collectionView: UIKit.UICollectionView, params: BCDramaLib.BCBannerLayoutParams, attributes: UIKit.UICollectionViewLayoutAttributes)
-}
-public struct BCBannerTransformLinear : BCDramaLib.BCBannerTransformable {
-  public init()
-  public func transformToAttributes(collectionView: UIKit.UICollectionView, params: BCDramaLib.BCBannerLayoutParams, attributes: UIKit.UICollectionViewLayoutAttributes)
-}
-@_hasMissingDesignatedInitializers public class BCBannerLayoutParams {
-  public var itemSize: CoreFoundation.CGSize?
-  public var itemSpacing: CoreFoundation.CGFloat
-  public var layoutType: (any BCDramaLib.BCBannerTransformable)?
-  public var scrollDirection: UIKit.UICollectionView.ScrollDirection
-  public var minimumScale: CoreFoundation.CGFloat
-  public var minimumAlpha: CoreFoundation.CGFloat
-  public var maximumAngle: CoreFoundation.CGFloat
-  public var rateOfChange: CoreFoundation.CGFloat
-  public var rateHorisonMargin: CoreFoundation.CGFloat
-  @objc deinit
-}
-extension BCDramaLib.BCBannerLayoutParams {
-  public func itemSize(_ itemSize: CoreFoundation.CGSize) -> BCDramaLib.BCBannerLayoutParams
-  public func itemSpacing(_ itemSpacing: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
-  public func layoutType(_ layoutType: (any BCDramaLib.BCBannerTransformable)?) -> BCDramaLib.BCBannerLayoutParams
-  public func scrollDirection(_ scrollDirection: UIKit.UICollectionView.ScrollDirection) -> BCDramaLib.BCBannerLayoutParams
-  public func minimumScale(_ minimumScale: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
-  public func minimumAlpha(_ minimumAlpha: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
-  public func maximumAngle(_ maximumAngle: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
-  public func rateOfChange(_ rateOfChange: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
-  public func rateHorisonMargin(_ rateHorisonMargin: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerLayoutParams
-}
-@_hasMissingDesignatedInitializers public class BCBannerParams {
-  public var isAutoPlay: Swift.Bool
-  public var isBounces: Swift.Bool
-  public var isShowPageControl: Swift.Bool
-  public var isPagingEnabled: Swift.Bool
-  public var contentInset: UIKit.UIEdgeInsets
-  public var timeInterval: Swift.Double
-  public var cycleWay: BCDramaLib.BCBannerParams.CycleWay
-  public var edgeTransitionType: BCDramaLib.BCBannerParams.BCBannerTransitionType?
-  public var edgeTransitionSubtype: QuartzCore.CATransitionSubtype
-  @objc deinit
-}
-extension BCDramaLib.BCBannerParams {
-  public enum BCBannerTransitionType : Swift.String {
-    case fade
-    case push
-    case reveal
-    case moveIn
-    case cube
-    case suckEffect
-    case oglFlip
-    case rippleEffect
-    case pageCurl
-    case pageUnCurl
-    case cameraIrisHollowOpen
-    case cameraIrisHollowClose
-    case curlDown
-    case curlUp
-    case flipFromLeft
-    case flipFromRight
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum CycleWay {
-    case forward
-    case skipEnd
-    case rollingBack
-    public static func == (a: BCDramaLib.BCBannerParams.CycleWay, b: BCDramaLib.BCBannerParams.CycleWay) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public enum RollingDirection {
-    case right
-    case left
-    public static func == (a: BCDramaLib.BCBannerParams.RollingDirection, b: BCDramaLib.BCBannerParams.RollingDirection) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-extension BCDramaLib.BCBannerParams {
-  public func isAutoPlay(_ isAutoPlay: Swift.Bool) -> BCDramaLib.BCBannerParams
-  public func isBounces(_ isBounces: Swift.Bool) -> BCDramaLib.BCBannerParams
-  public func isPagingEnabled(_ isPagingEnabled: Swift.Bool) -> BCDramaLib.BCBannerParams
-  public func contentInset(_ contentInset: UIKit.UIEdgeInsets) -> BCDramaLib.BCBannerParams
-  public func isShowPageControl(_ isShowPageControl: Swift.Bool) -> BCDramaLib.BCBannerParams
-  public func timeInterval(_ timeInterval: Foundation.TimeInterval) -> BCDramaLib.BCBannerParams
-  public func cycleWay(_ cycleWay: BCDramaLib.BCBannerParams.CycleWay) -> BCDramaLib.BCBannerParams
-  public func edgeTransitionType(_ edgeTransitionType: BCDramaLib.BCBannerParams.BCBannerTransitionType?) -> BCDramaLib.BCBannerParams
-  public func edgeTransitionSubtype(_ edgeTransitionSubtype: QuartzCore.CATransitionSubtype) -> BCDramaLib.BCBannerParams
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class BCBanner : BCDramaLib.BCBaseBanner, BCDramaLib.BCBannerType {
-  @_Concurrency.MainActor @preconcurrency public var indentify: Swift.String?
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor @preconcurrency weak public var dataSource: (any BCDramaLib.BCBannerDataSource)? {
-    get
-    set
-  }
-  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any BCDramaLib.BCBannerDelegate)?
-  @_Concurrency.MainActor @preconcurrency public func scrollToIndex(_ index: Swift.Int, animated: Swift.Bool)
-  @_Concurrency.MainActor @preconcurrency public func reloadView()
-  @objc deinit
-}
-extension BCDramaLib.BCBanner {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillEndDragging(_ scrollView: UIKit.UIScrollView, withVelocity velocity: CoreFoundation.CGPoint, targetContentOffset: Swift.UnsafeMutablePointer<CoreFoundation.CGPoint>)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
-}
-extension BCDramaLib.BCBanner : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class BCBaseBanner : UIKit.UIView {
-  @objc deinit
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func removeFromSuperview()
-  @_Concurrency.MainActor @preconcurrency public var placeholderImgView: UIKit.UIImageView {
-    get
-    set
-  }
-}
-extension BCDramaLib.BCBaseBanner {
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func willMove(toSuperview newSuperview: UIKit.UIView?)
-}
-extension BCDramaLib.BCBaseBanner {
-  @_Concurrency.MainActor @preconcurrency public func pauseAutoScrolling()
-  @_Concurrency.MainActor @preconcurrency public func resumeAutoScrolling()
-}
-public struct BCBannerTransformCoverflow : BCDramaLib.BCBannerTransformable {
-  public init()
-  public func transformToAttributes(collectionView: UIKit.UICollectionView, params: BCDramaLib.BCBannerLayoutParams, attributes: UIKit.UICollectionViewLayoutAttributes)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCBannerBaseCell : UIKit.UICollectionViewCell {
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor @preconcurrency open func bc_addSubviews()
-  @_Concurrency.MainActor @preconcurrency public var imageView: UIKit.UIImageView {
-    get
-    set
-  }
-  @objc deinit
-}
-public struct BCBannerTransform {
-  public enum BCTransformLocation {
-    case left
-    case center
-    case right
-    public static func == (a: BCDramaLib.BCBannerTransform.BCTransformLocation, b: BCDramaLib.BCBannerTransform.BCTransformLocation) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public static func itemLocation(viewCentetX: CoreFoundation.CGFloat, itemCenterX: CoreFoundation.CGFloat) -> BCDramaLib.BCBannerTransform.BCTransformLocation
-}
-public protocol BCBannerType : UIKit.UIView {
-  var dataSource: (any BCDramaLib.BCBannerDataSource)? { get set }
-  var delegate: (any BCDramaLib.BCBannerDelegate)? { get set }
-  var indentify: Swift.String? { get set }
-  func reloadView()
-}
-public struct BCBannerCellRegister {
-  public init(type: UIKit.UICollectionViewCell.Type?, reuseIdentifier: Swift.String, nib: UIKit.UINib? = nil)
-}
-public protocol BCBannerDelegate : AnyObject {
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, didSelectItemAt index: Swift.Int)
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, center index: Swift.Int)
-  func bcBanner(_ banner: any BCDramaLib.BCBannerType, coverView: UIKit.UIView)
-}
-extension BCDramaLib.BCBannerDelegate {
-  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, didSelectItemAt index: Swift.Int)
-  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, center index: Swift.Int)
-  public func bcBanner(_ banner: any BCDramaLib.BCBannerType, coverView: UIKit.UIView)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCBannerCell : BCDramaLib.BCBannerBaseCell {
-  @_Concurrency.MainActor @preconcurrency override open func bc_addSubviews()
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc deinit
-}
-public enum BCPagingListContainerType {
-  case scrollView
-  case collectionView
-  public static func == (a: BCDramaLib.BCPagingListContainerType, b: BCDramaLib.BCPagingListContainerType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public protocol BCPagingViewListViewDelegate : ObjectiveC.NSObjectProtocol {
-  func listView() -> UIKit.UIView
-  func listScrollView() -> UIKit.UIScrollView
-  func listViewDidScrollCallback(callback: @escaping (UIKit.UIScrollView) -> ())
-  func listScrollViewWillResetContentOffset()
-  func listWillAppear()
-  func listDidAppear()
-  func listWillDisappear()
-  func listDidDisappear()
-}
-extension BCDramaLib.BCPagingViewListViewDelegate {
-  public func listScrollViewWillResetContentOffset()
-  public func listWillAppear()
-  public func listDidAppear()
-  public func listWillDisappear()
-  public func listDidDisappear()
-}
-public protocol BCPagingListContainerViewDataSource : ObjectiveC.NSObjectProtocol {
-  func numberOfLists(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.Int
-  func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, initListAt index: Swift.Int) -> any BCDramaLib.BCPagingViewListViewDelegate
-  func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, canInitListAt index: Swift.Int) -> Swift.Bool
-  func scrollViewClass(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.AnyClass?
-}
-extension BCDramaLib.BCPagingListContainerViewDataSource {
-  public func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, canInitListAt index: Swift.Int) -> Swift.Bool
-  public func scrollViewClass(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.AnyClass?
-}
-@objc @_Concurrency.MainActor @preconcurrency open class BCPagingListContainerView : UIKit.UIView {
-  @_Concurrency.MainActor @preconcurrency public var type: BCDramaLib.BCPagingListContainerType {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency weak public var dataSource: (any BCDramaLib.BCPagingListContainerViewDataSource)? {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var scrollView: UIKit.UIScrollView! {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var isCategoryNestPagingEnabled: Swift.Bool {
-    get
-    set
-  }
-  @_Concurrency.MainActor @preconcurrency open var validListDict: [Swift.Int : any BCDramaLib.BCPagingViewListViewDelegate]
-  @_Concurrency.MainActor @preconcurrency open var initListPercent: CoreFoundation.CGFloat {
-    get
-    set
-  }
-  @_Concurrency.MainActor @preconcurrency public var listCellBackgroundColor: UIKit.UIColor
-  @_Concurrency.MainActor @preconcurrency public var defaultSelectedIndex: Swift.Int {
-    get
-    set
-  }
-  @_Concurrency.MainActor @preconcurrency public var currentIndex: Swift.Int {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public init(dataSource: any BCDramaLib.BCPagingListContainerViewDataSource, type: BCDramaLib.BCPagingListContainerType = .collectionView)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor @preconcurrency open func commonInit()
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func willMove(toSuperview newSuperview: UIKit.UIView?)
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
-  @_Concurrency.MainActor @preconcurrency public func contentScrollView() -> UIKit.UIScrollView
-  @_Concurrency.MainActor @preconcurrency public func scrolling(from leftIndex: Swift.Int, to rightIndex: Swift.Int, percent: CoreFoundation.CGFloat, selectedIndex: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func didClickSelectedItem(at index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func reloadData()
-  @objc deinit
-}
-extension BCDramaLib.BCPagingListContainerView : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCPagingListRefreshView : BCDramaLib.BCPagingView {
-  @_Concurrency.MainActor @preconcurrency override public init(delegate: any BCDramaLib.BCPagingViewDelegate, listContainerType: BCDramaLib.BCPagingListContainerType = .collectionView)
-  @_Concurrency.MainActor @preconcurrency override open func preferredProcessMainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency override open func preferredProcessListViewDidScroll(scrollView: UIKit.UIScrollView)
-  @objc deinit
-}
-@objc public protocol BCPagingMainTableViewGestureDelegate {
-  @objc func mainTableViewGestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BCPagingMainTableView : UIKit.UITableView, UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor @preconcurrency weak public var gestureDelegate: (any BCDramaLib.BCPagingMainTableViewGestureDelegate)?
-  @_Concurrency.MainActor @preconcurrency @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, style: UIKit.UITableViewStyle)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-@objc public protocol BCPagingSmoothViewListViewDelegate {
-  @objc func listView() -> UIKit.UIView
-  @objc func listScrollView() -> UIKit.UIScrollView
-  @objc optional func listDidAppear()
-  @objc optional func listDidDisappear()
-}
-@objc public protocol BCPagingSmoothViewDataSource {
-  @objc func heightForPagingHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> CoreFoundation.CGFloat
-  @objc func viewForPagingHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> UIKit.UIView
-  @objc func heightForPinHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> CoreFoundation.CGFloat
-  @objc func viewForPinHeader(in pagingView: BCDramaLib.BCPagingSmoothView) -> UIKit.UIView
-  @objc func numberOfLists(in pagingView: BCDramaLib.BCPagingSmoothView) -> Swift.Int
-  @objc func pagingView(_ pagingView: BCDramaLib.BCPagingSmoothView, initListAtIndex index: Swift.Int) -> any BCDramaLib.BCPagingSmoothViewListViewDelegate
-}
-@objc public protocol BCPagingSmoothViewDelegate {
-  @objc optional func pagingSmoothViewDidScroll(_ scrollView: UIKit.UIScrollView)
-}
-@objc @_Concurrency.MainActor @preconcurrency open class BCPagingSmoothView : UIKit.UIView {
-  @_Concurrency.MainActor @preconcurrency public var listDict: [Swift.Int : any BCDramaLib.BCPagingSmoothViewListViewDelegate] {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency final public let listCollectionView: BCDramaLib.BCPagingSmoothCollectionView
-  @_Concurrency.MainActor @preconcurrency public var defaultSelectedIndex: Swift.Int
-  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any BCDramaLib.BCPagingSmoothViewDelegate)?
-  @objc deinit
-  @_Concurrency.MainActor @preconcurrency public init(dataSource: any BCDramaLib.BCPagingSmoothViewDataSource)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor @preconcurrency public func reloadData()
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
-}
-extension BCDramaLib.BCPagingSmoothView : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didEndDisplaying cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class BCPagingSmoothCollectionView : UIKit.UICollectionView, UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, collectionViewLayout layout: UIKit.UICollectionViewLayout)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-public protocol BCPagingViewDelegate : ObjectiveC.NSObjectProtocol {
-  func tableHeaderViewHeight(in pagingView: BCDramaLib.BCPagingView) -> Swift.Int
-  func tableHeaderView(in pagingView: BCDramaLib.BCPagingView) -> UIKit.UIView
-  func heightForPinSectionHeader(in pagingView: BCDramaLib.BCPagingView) -> Swift.Int
-  func viewForPinSectionHeader(in pagingView: BCDramaLib.BCPagingView) -> UIKit.UIView
-  func numberOfLists(in pagingView: BCDramaLib.BCPagingView) -> Swift.Int
-  func pagingView(_ pagingView: BCDramaLib.BCPagingView, initListAtIndex index: Swift.Int) -> any BCDramaLib.BCPagingViewListViewDelegate
-  func pagingView(_ pagingView: BCDramaLib.BCPagingView, listIdentifierAtIndex index: Swift.Int) -> Swift.String?
-  @available(*, message: "Use pagingView(_ pagingView: BCPagingView, mainTableViewDidScroll scrollView: UIScrollView) method")
-  func mainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidScroll scrollView: UIKit.UIScrollView)
-  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewWillBeginDragging scrollView: UIKit.UIScrollView)
-  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDragging scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
-  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDecelerating scrollView: UIKit.UIScrollView)
-  func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndScrollingAnimation scrollView: UIKit.UIScrollView)
-  func scrollViewClassInListContainerView(in pagingView: BCDramaLib.BCPagingView) -> Swift.AnyClass?
-}
-extension BCDramaLib.BCPagingViewDelegate {
-  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, listIdentifierAtIndex index: Swift.Int) -> Swift.String?
-  public func mainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidScroll scrollView: UIKit.UIScrollView)
-  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewWillBeginDragging scrollView: UIKit.UIScrollView)
-  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDragging scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
-  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndDecelerating scrollView: UIKit.UIScrollView)
-  public func pagingView(_ pagingView: BCDramaLib.BCPagingView, mainTableViewDidEndScrollingAnimation scrollView: UIKit.UIScrollView)
-  public func scrollViewClassInListContainerView(in pagingView: BCDramaLib.BCPagingView) -> Swift.AnyClass?
-}
-@objc @_Concurrency.MainActor @preconcurrency open class BCPagingView : UIKit.UIView {
-  @_Concurrency.MainActor @preconcurrency public var defaultSelectedIndex: Swift.Int {
-    get
-    set
-  }
-  @_Concurrency.MainActor @preconcurrency public var mainTableView: BCDramaLib.BCPagingMainTableView {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var listContainerView: BCDramaLib.BCPagingListContainerView {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var validListDict: [Swift.Int : any BCDramaLib.BCPagingViewListViewDelegate] {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var pinSectionHeaderVerticalOffset: Swift.Int
-  @_Concurrency.MainActor @preconcurrency public var isListHorizontalScrollEnabled: Swift.Bool {
-    get
-    set
-  }
-  @_Concurrency.MainActor @preconcurrency public var automaticallyDisplayListVerticalScrollIndicator: Swift.Bool
-  @_Concurrency.MainActor @preconcurrency public var allowsCacheList: Swift.Bool
-  @_Concurrency.MainActor @preconcurrency public var currentScrollingListView: UIKit.UIScrollView? {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public init(delegate: any BCDramaLib.BCPagingViewDelegate, listContainerType: BCDramaLib.BCPagingListContainerType = .collectionView)
-  @available(*, unavailable)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
-  @_Concurrency.MainActor @preconcurrency open func reloadData()
-  @_Concurrency.MainActor @preconcurrency open func resizeTableHeaderViewHeight(animatable: Swift.Bool = false, duration: Foundation.TimeInterval = 0.25, curve: UIKit.UIView.AnimationCurve = .linear)
-  @_Concurrency.MainActor @preconcurrency open func preferredProcessListViewDidScroll(scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency open func preferredProcessMainTableViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  @objc deinit
-}
-extension BCDramaLib.BCPagingView : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreFoundation.CGFloat
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, heightForFooterInSection section: Swift.Int) -> CoreFoundation.CGFloat
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
-  @_Concurrency.MainActor @preconcurrency @objc dynamic open func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
-}
-extension BCDramaLib.BCPagingView : BCDramaLib.BCPagingListContainerViewDataSource {
-  @_Concurrency.MainActor @preconcurrency public func numberOfLists(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency public func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, initListAt index: Swift.Int) -> any BCDramaLib.BCPagingViewListViewDelegate
-  @_Concurrency.MainActor @preconcurrency public func scrollViewClass(in listContainerView: BCDramaLib.BCPagingListContainerView) -> Swift.AnyClass?
-}
-extension BCDramaLib.BCPagingView {
-  @_Concurrency.MainActor @preconcurrency public func listContainerViewWillBeginDragging(_ listContainerView: BCDramaLib.BCPagingListContainerView)
-  @_Concurrency.MainActor @preconcurrency public func listContainerViewDidEndScrolling(_ listContainerView: BCDramaLib.BCPagingListContainerView)
-  @_Concurrency.MainActor @preconcurrency public func listContainerView(_ listContainerView: BCDramaLib.BCPagingListContainerView, listDidAppearAt index: Swift.Int)
-}
 extension BCDramaLib.BCTabPageType : Swift.Equatable {}
 extension BCDramaLib.BCTabPageType : Swift.Hashable {}
 extension BCDramaLib.BCTabPageType : Swift.RawRepresentable {}
@@ -1940,9 +2147,20 @@ extension BCDramaLib.BCDramaListType : Swift.RawRepresentable {}
 extension BCDramaLib.BCPlayerRenderMode : Swift.Equatable {}
 extension BCDramaLib.BCPlayerRenderMode : Swift.Hashable {}
 extension BCDramaLib.BCPlayerRenderMode : Swift.RawRepresentable {}
+extension BCDramaLib.BCPagingListContainerType : Swift.Equatable {}
+extension BCDramaLib.BCPagingListContainerType : Swift.Hashable {}
 extension BCDramaLib.BCVodPlayerState : Swift.Equatable {}
 extension BCDramaLib.BCVodPlayerState : Swift.Hashable {}
 extension BCDramaLib.BCVodPlayerState : Swift.RawRepresentable {}
+extension BCDramaLib.BCBannerParams.BCBannerTransitionType : Swift.Equatable {}
+extension BCDramaLib.BCBannerParams.BCBannerTransitionType : Swift.Hashable {}
+extension BCDramaLib.BCBannerParams.BCBannerTransitionType : Swift.RawRepresentable {}
+extension BCDramaLib.BCBannerParams.CycleWay : Swift.Equatable {}
+extension BCDramaLib.BCBannerParams.CycleWay : Swift.Hashable {}
+extension BCDramaLib.BCBannerParams.RollingDirection : Swift.Equatable {}
+extension BCDramaLib.BCBannerParams.RollingDirection : Swift.Hashable {}
+extension BCDramaLib.BCBannerTransform.BCTransformLocation : Swift.Equatable {}
+extension BCDramaLib.BCBannerTransform.BCTransformLocation : Swift.Hashable {}
 extension BCDramaLib.BCVodPlayerStatus : Swift.Equatable {}
 extension BCDramaLib.BCVodPlayerStatus : Swift.Hashable {}
 extension BCDramaLib.BCVodPlayerStatus : Swift.RawRepresentable {}
@@ -1955,15 +2173,23 @@ extension BCDramaLib.BCAdStatues : Swift.RawRepresentable {}
 extension BCDramaLib.BCPlayerStatus : Swift.Equatable {}
 extension BCDramaLib.BCPlayerStatus : Swift.Hashable {}
 extension BCDramaLib.BCPlayerStatus : Swift.RawRepresentable {}
+extension BCDramaLib.BCTimeoutType : Swift.Equatable {}
+extension BCDramaLib.BCTimeoutType : Swift.Hashable {}
+extension BCDramaLib.BCTimeoutEventType : Swift.Equatable {}
+extension BCDramaLib.BCTimeoutEventType : Swift.Hashable {}
+extension BCDramaLib.BCTimeoutEventType : Swift.RawRepresentable {}
+extension BCDramaLib.BCTimeoutErrorType : Swift.Equatable {}
+extension BCDramaLib.BCTimeoutErrorType : Swift.Hashable {}
+extension BCDramaLib.BCTimeoutErrorType : Swift.RawRepresentable {}
+extension BCDramaLib.BCAdPlatformType : Swift.Equatable {}
+extension BCDramaLib.BCAdPlatformType : Swift.Hashable {}
+extension BCDramaLib.BCAdPlatformType : Swift.RawRepresentable {}
 extension BCDramaLib.BCLanguageType : Swift.Equatable {}
 extension BCDramaLib.BCLanguageType : Swift.Hashable {}
 extension BCDramaLib.BCLanguageType : Swift.RawRepresentable {}
 extension BCDramaLib.BCLaunchType : Swift.Equatable {}
 extension BCDramaLib.BCLaunchType : Swift.Hashable {}
 extension BCDramaLib.BCLaunchType : Swift.RawRepresentable {}
-extension BCDramaLib.BCAdPlatformType : Swift.Equatable {}
-extension BCDramaLib.BCAdPlatformType : Swift.Hashable {}
-extension BCDramaLib.BCAdPlatformType : Swift.RawRepresentable {}
 extension BCDramaLib.BCUnLockType : Swift.Equatable {}
 extension BCDramaLib.BCUnLockType : Swift.Hashable {}
 extension BCDramaLib.BCUnLockType : Swift.RawRepresentable {}
@@ -1977,14 +2203,3 @@ extension BCDramaLib.BCSegmentedIndicatorLineStyle : Swift.Equatable {}
 extension BCDramaLib.BCSegmentedIndicatorLineStyle : Swift.Hashable {}
 extension BCDramaLib.BCSegmentedTitleImageType : Swift.Equatable {}
 extension BCDramaLib.BCSegmentedTitleImageType : Swift.Hashable {}
-extension BCDramaLib.BCBannerParams.BCBannerTransitionType : Swift.Equatable {}
-extension BCDramaLib.BCBannerParams.BCBannerTransitionType : Swift.Hashable {}
-extension BCDramaLib.BCBannerParams.BCBannerTransitionType : Swift.RawRepresentable {}
-extension BCDramaLib.BCBannerParams.CycleWay : Swift.Equatable {}
-extension BCDramaLib.BCBannerParams.CycleWay : Swift.Hashable {}
-extension BCDramaLib.BCBannerParams.RollingDirection : Swift.Equatable {}
-extension BCDramaLib.BCBannerParams.RollingDirection : Swift.Hashable {}
-extension BCDramaLib.BCBannerTransform.BCTransformLocation : Swift.Equatable {}
-extension BCDramaLib.BCBannerTransform.BCTransformLocation : Swift.Hashable {}
-extension BCDramaLib.BCPagingListContainerType : Swift.Equatable {}
-extension BCDramaLib.BCPagingListContainerType : Swift.Hashable {}

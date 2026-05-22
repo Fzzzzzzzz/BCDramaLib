@@ -373,6 +373,38 @@ extern "C" {
 
 #if defined(__OBJC__)
 
+SWIFT_ENUM_FWD_DECL(NSInteger, BCAdPlatformType)
+@class NSString;
+SWIFT_ENUM_FWD_DECL(NSInteger, BCAdType)
+SWIFT_PROTOCOL("_TtP10BCDramaLib11BCAdAdapter_")
+@protocol BCAdAdapter <NSObject>
+@property (nonatomic, readonly) enum BCAdPlatformType platformType;
+- (void)registerSDKWithAppId:(NSString * _Nonnull)appId;
+@optional
+- (void)fetchECPMWithPlacementId:(NSString * _Nonnull)placementId adType:(enum BCAdType)adType completion:(void (^ _Nonnull)(NSInteger))completion;
+@end
+
+SWIFT_CLASS("_TtC10BCDramaLib19BCAdAdapterRegistry")
+@interface BCAdAdapterRegistry : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCAdAdapterRegistry * _Nonnull shared;)
++ (BCAdAdapterRegistry * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+- (void)register:(NSArray<id <BCAdAdapter>> * _Nonnull)adapters;
+- (id <BCAdAdapter> _Nullable)adapterFor:(enum BCAdPlatformType)platform SWIFT_WARN_UNUSED_RESULT;
+- (id <BCAdAdapter> _Nullable)adapterForAdPlatform:(NSInteger)adPlatform SWIFT_WARN_UNUSED_RESULT;
+- (void)pauseMSaasPlaybackIfRegistered;
+- (void)registerSDKIfNeededWithAppId:(NSString * _Nonnull)appId adPlatform:(NSInteger)adPlatform;
+@end
+
+/// 激励视频页关闭后通知（Core 与 Adapter 共用）
+SWIFT_CLASS("_TtC10BCDramaLib17BCAdNotifications")
+@interface BCAdNotifications : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull fromRewardVCName;)
++ (NSString * _Nonnull)fromRewardVCName SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 typedef SWIFT_ENUM(NSInteger, BCAdPlatformType, open) {
   BCAdPlatformTypeGdt = 1,
   BCAdPlatformTypeCsj = 3,
@@ -434,6 +466,14 @@ SWIFT_CLASS("_TtC10BCDramaLib8BCBanner")
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 @end
 
+@class UIViewController;
+SWIFT_ENUM_FWD_DECL(NSInteger, BCCustomAdPageType)
+SWIFT_PROTOCOL("_TtP10BCDramaLib17BCBannerAdAdapter_")
+@protocol BCBannerAdAdapter <NSObject>
+- (void)loadBannerWithViewController:(UIViewController * _Nonnull)viewController container:(UIView * _Nonnull)container placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onClose:(void (^ _Nonnull)(void))onClose onShow:(void (^ _Nonnull)(NSInteger))onShow;
+- (void)removeBannerFrom:(UIView * _Nonnull)container;
+@end
+
 SWIFT_CLASS("_TtC10BCDramaLib16BCBannerBaseCell")
 @interface BCBannerBaseCell : UICollectionViewCell
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -450,7 +490,19 @@ SWIFT_CLASS("_TtC10BCDramaLib12BCBannerCell")
 - (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
 @end
 
-@class NSString;
+@class NSBundle;
+SWIFT_CLASS("_TtC10BCDramaLib20BCBaseViewController")
+@interface BCBaseViewController : UIViewController
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 SWIFT_CLASS("_TtC10BCDramaLib14BCCrashManager")
 @interface BCCrashManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCCrashManager * _Nonnull shared;)
@@ -500,6 +552,11 @@ typedef SWIFT_ENUM(NSInteger, BCEnvType, open) {
 /// 生产环境
   BCEnvTypeRelease = 1,
 };
+
+SWIFT_PROTOCOL("_TtP10BCDramaLib21BCFullScreenAdAdapter_")
+@protocol BCFullScreenAdAdapter <NSObject>
+- (void)showFullScreenWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onShow:(void (^ _Nonnull)(void))onShow onClose:(void (^ _Nonnull)(void))onClose onFailed:(void (^ _Nonnull)(void))onFailed;
+@end
 
 SWIFT_CLASS_NAMED("BCGoodItemsModel")
 @interface BCGoodItemsModel : NSObject
@@ -573,6 +630,51 @@ typedef SWIFT_ENUM(NSInteger, BCLaunchType, open) {
   BCLaunchTypeIap = 1,
   BCLaunchTypeIaa = 2,
 };
+
+SWIFT_CLASS("_TtC10BCDramaLib20BCLocalizableManager")
+@interface BCLocalizableManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCLocalizableManager * _Nonnull shared;)
++ (BCLocalizableManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+SWIFT_CLASS("_TtC10BCDramaLib14BCLoginManager")
+@interface BCLoginManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCLoginManager * _Nonnull shared;)
++ (BCLoginManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) NSString * _Nonnull userId;
+@property (nonatomic) BOOL isMute;
+@property (nonatomic) BOOL isOpenCustomAd;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+/// 芒果 MSaas 播放暂停（由 BCDramaAdMSaas 实现）
+SWIFT_PROTOCOL("_TtP10BCDramaLib22BCMSaasPlaybackAdapter_")
+@protocol BCMSaasPlaybackAdapter <NSObject>
+- (void)pauseMSaasPlayback;
+@end
+
+@class BCNativeExpressAdCollectionViewCell;
+SWIFT_PROTOCOL("_TtP10BCDramaLib24BCNativeExpressAdAdapter_")
+@protocol BCNativeExpressAdAdapter <NSObject>
+- (void)prepareNativeExpressWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType adSize:(CGSize)adSize;
+- (void)loadNativeExpressWithViewController:(UIViewController * _Nonnull)viewController container:(BCNativeExpressAdCollectionViewCell * _Nonnull)container pageType:(enum BCCustomAdPageType)pageType placementId:(NSString * _Nonnull)placementId completion:(void (^ _Nonnull)(UIView * _Nonnull, NSString * _Nonnull, NSError * _Nullable))completion;
+@optional
+- (void)setNativeAdMute:(BOOL)isMute;
+@end
+
+@class UIImageView;
+SWIFT_CLASS("_TtC10BCDramaLib35BCNativeExpressAdCollectionViewCell")
+@interface BCNativeExpressAdCollectionViewCell : UICollectionViewCell
+@property (nonatomic, strong) UIImageView * _Null_unspecified vendorAdImageView;
+@property (nonatomic, weak) BCNativeExpressAdCollectionViewCell * _Nullable vendorMsaasCellRef;
+@property (nonatomic) id _Nullable vendorMsaasAdData;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
 
 SWIFT_CLASS_NAMED("BCOrderListModel")
 @interface BCOrderListModel : NSObject
@@ -733,6 +835,31 @@ typedef SWIFT_ENUM(NSInteger, BCPlayerStatus, open) {
   BCPlayerStatusPlay = 0,
   BCPlayerStatusPause = 1,
 };
+
+@class BCRewardAdContext;
+SWIFT_PROTOCOL("_TtP10BCDramaLib17BCRewardAdAdapter_")
+@protocol BCRewardAdAdapter <NSObject>
+- (void)presentRewardFrom:(UIViewController * _Nonnull)viewController context:(BCRewardAdContext * _Nonnull)context;
+@end
+
+SWIFT_CLASS("_TtC10BCDramaLib21BCRewardAdCloseResult")
+@interface BCRewardAdCloseResult : NSObject
+@property (nonatomic) BOOL isEffective;
+@property (nonatomic) double ecpm;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+SWIFT_CLASS("_TtC10BCDramaLib17BCRewardAdContext")
+@interface BCRewardAdContext : NSObject
+@property (nonatomic, copy) NSString * _Nonnull placementId;
+@property (nonatomic, copy) NSString * _Nonnull taskId;
+@property (nonatomic, copy) NSDictionary<NSString *, id> * _Nonnull extraInfo;
+@property (nonatomic, weak) UIViewController * _Nullable rewardPresenter;
+@property (nonatomic, copy) void (^ _Nullable onEffective)(void);
+@property (nonatomic, copy) void (^ _Nullable onClosed)(BCRewardAdCloseResult * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onFailed)(NSError * _Nullable);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 /// 标记 SDK 根界面是否在前台展示，供宿主在 <code>application(_:supportedInterfaceOrientationsFor:)</code> 中在展示 SDK 时返回 <code>.portrait</code>，
 /// 与 Info.plist 取交集后可避免「先横屏再被拉回竖屏」的闪烁。
@@ -982,7 +1109,6 @@ typedef SWIFT_ENUM(NSInteger, BCStrategyType, open) {
 };
 
 @class UITab;
-@class NSBundle;
 SWIFT_CLASS("_TtC10BCDramaLib18BCTabBarController")
 @interface BCTabBarController : UITabBarController
 - (void)viewDidLoad;
@@ -1043,13 +1169,18 @@ SWIFT_CLASS_NAMED("BCUserInfosModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+/// 常用工具专用类，后续公共方法都放在这个类，或者它的扩展类
+SWIFT_CLASS("_TtC10BCDramaLib14BCUtilsManager")
+@interface BCUtilsManager : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 @interface BCVideoManager : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
-@class UIViewController;
 @interface BCVideoManager (SWIFT_EXTENSION(BCDramaLib))
 /// 初始化SDK
 /// \param appId BCVideoSDK的AppId
@@ -1060,7 +1191,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// \param userId app端用户唯一标识
 ///
-+ (void)initSDKWithAppId:(NSString * _Nonnull)appId packageName:(NSString * _Nonnull)packageName secret:(NSString * _Nonnull)secret userId:(NSString * _Nonnull)userId isInitSuccess:(void (^ _Nonnull)(BOOL))isInitSuccess SWIFT_METHOD_FAMILY(none);
++ (void)initSDKWithAppId:(NSString * _Nonnull)appId packageName:(NSString * _Nonnull)packageName secret:(NSString * _Nonnull)secret userId:(NSString * _Nonnull)userId adAdapters:(NSArray<id <BCAdAdapter>> * _Nonnull)adAdapters isInitSuccess:(void (^ _Nonnull)(BOOL))isInitSuccess SWIFT_METHOD_FAMILY(none);
 /// 退出登录
 + (void)logout;
 /// 进入首页
@@ -1112,8 +1243,6 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 + (UIViewController * _Nonnull)getAlbumListPageWithTopOffset:(CGFloat)topOffset hOffset:(CGFloat)hOffset topTabBarOffsetY:(CGFloat)topTabBarOffsetY SWIFT_WARN_UNUSED_RESULT;
 /// 跳转到剧单页控制器, 并设置播放页顶部工具栏Y轴偏移量
 /// \param topOffset 剧单页偏移量
-///
-/// \param hOffset 横向偏移量(左右边距)
 ///
 /// \param topTabBarOffsetY 设置播放页顶部工具栏的偏移量（优先级高于BCLoginManager.shared.playerTopBarOffsetY）
 ///
@@ -1554,6 +1683,43 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 + (void)setCustomUserNickname:(NSString * _Nullable)nickname;
 @end
 
+SWIFT_CLASS("_TtC10BCDramaLib19BCVideoPlayCallBack")
+@interface BCVideoPlayCallBack : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCVideoPlayCallBack * _Nonnull shared;)
++ (BCVideoPlayCallBack * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) void (^ _Nullable onStart)(NSDictionary<NSString *, id> * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onProgress)(NSString * _Nonnull, NSInteger, NSInteger, NSInteger, NSInteger);
+@property (nonatomic, copy) void (^ _Nullable onEnd)(NSDictionary<NSString *, id> * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onUnlock)(NSDictionary<NSString *, id> * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onReward)(NSDictionary<NSString *, id> * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onPayment)(NSDictionary<NSString *, id> * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onPaySuccess)(NSDictionary<NSString *, id> * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onPayCancle)(void);
+@property (nonatomic, copy) void (^ _Nullable onAdLoaded)(enum BCAdType, NSString * _Nonnull, NSString * _Nonnull, NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onAdClicked)(enum BCAdType);
+@property (nonatomic, copy) void (^ _Nullable onAdEffective)(enum BCAdType, NSInteger);
+@property (nonatomic, copy) void (^ _Nullable onAdClosed)(enum BCAdType);
+@property (nonatomic, copy) void (^ _Nullable onAdFailed)(enum BCAdType, NSError * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onStartAdReward)(enum BCAdPlatformType, enum BCAdType);
+@property (nonatomic, copy) void (^ _Nullable onAdUnLock)(enum BCUnLockType, NSInteger);
+@property (nonatomic, copy) void (^ _Nullable onAdFinish)(NSInteger);
+@property (nonatomic, copy) void (^ _Nullable initAdCallback)(NSString * _Nonnull);
+- (void (^ _Nullable)(NSString * _Nonnull))initAdCallback SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) void (^ _Nullable rewardAdCallback)(NSString * _Nonnull, NSString * _Nonnull, NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable nativeExpressAdCallback)(NSString * _Nonnull, double, double);
+@property (nonatomic, copy) void (^ _Nullable bannerAdCallback)(NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable payResultVerify)(NSInteger);
+@property (nonatomic, copy) void (^ _Nullable onAdRenderStatus)(enum BCAdType, BOOL);
+@property (nonatomic, copy) void (^ _Nullable onCustomPayment)(NSString * _Nonnull, BCGoodItemsModel * _Nonnull, UIViewController * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onCustomBannerAds)(UIViewController * _Nonnull, UIView * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
+@property (nonatomic, copy) void (^ _Nullable onCustomRewardAds)(UIViewController * _Nonnull, NSString * _Nonnull, NSString * _Nonnull, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
+@property (nonatomic, copy) void (^ _Nullable onCustomFullScreenAds)(UIViewController * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
+@property (nonatomic, copy) void (^ _Nullable onCustomNativeAds)(UIViewController * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
+@property (nonatomic, copy) void (^ _Nullable onLoadCustonNativeCallBack)(UIView * _Nonnull);
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
 SWIFT_CLASS("_TtC10BCDramaLib11BCVodPlayer")
 @interface BCVodPlayer : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1570,6 +1736,20 @@ SWIFT_CLASS("_TtC10BCDramaLib18BCVodPlayerManager")
 @interface BCVodPlayerManager : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+SWIFT_CLASS("_TtC10BCDramaLib9ToastView")
+@interface ToastView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+/// Toast 提示
+/// \param message 提示内容
+///
+/// \param duration 显示时长， 默认 2.0 s
+///
+/// \param view 在哪个视图上显示，默认在window上显示
+///
++ (void)showWithMessage:(NSString * _Nonnull)message duration:(NSTimeInterval)duration in:(UIView * _Nullable)view;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 #endif // defined(__OBJC__)

@@ -1,0 +1,26 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3 effective-5.10 (swiftlang-6.3.0.123.5 clang-2100.0.123.102)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name BCDramaAdCSJ
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3
+import BCDramaLib
+import BUAdSDK
+import SnapKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc final public class BCCSJAdAdapter : ObjectiveC.NSObject, BCDramaLib.BCAdAdapter, BCDramaLib.BCBannerAdAdapter, BCDramaLib.BCNativeExpressAdAdapter, BCDramaLib.BCFullScreenAdAdapter, BCDramaLib.BCRewardAdAdapter {
+  @objc final public var platformType: BCDramaLib.BCAdPlatformType {
+    @objc get
+  }
+  @objc final public func registerSDK(appId: Swift.String)
+  @objc final public func loadBanner(viewController: UIKit.UIViewController, container: UIKit.UIView, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onClose: @escaping () -> Swift.Void, onShow: @escaping (Swift.Int) -> Swift.Void)
+  @objc final public func removeBanner(from container: UIKit.UIView)
+  @objc final public func prepareNativeExpress(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, adSize: CoreFoundation.CGSize)
+  @objc final public func loadNativeExpress(viewController: UIKit.UIViewController, container: BCDramaLib.BCNativeExpressAdCollectionViewCell, pageType: BCDramaLib.BCCustomAdPageType, placementId: Swift.String, completion: @escaping (UIKit.UIView, Swift.String, (any Swift.Error)?) -> Swift.Void)
+  @objc final public func showFullScreen(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onShow: @escaping () -> Swift.Void, onClose: @escaping () -> Swift.Void, onFailed: @escaping () -> Swift.Void)
+  @objc final public func presentReward(from viewController: UIKit.UIViewController, context: BCDramaLib.BCRewardAdContext)
+  @objc override dynamic public init()
+  @objc deinit
+}

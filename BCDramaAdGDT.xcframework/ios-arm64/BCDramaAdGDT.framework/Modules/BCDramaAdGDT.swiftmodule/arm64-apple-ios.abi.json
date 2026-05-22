@@ -1,0 +1,773 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "BCDramaAdGDT",
+    "printedName": "BCDramaAdGDT",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "GDTMobSDK",
+        "printedName": "GDTMobSDK",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "Import",
+        "name": "BCDramaLib",
+        "printedName": "BCDramaLib",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BCGDTAdAdapter",
+        "printedName": "BCGDTAdAdapter",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "platformType",
+            "printedName": "platformType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BCAdPlatformType",
+                "printedName": "BCDramaLib.BCAdPlatformType",
+                "usr": "c:@M@BCDramaLib@E@BCAdPlatformType"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(py)platformType",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC12platformType0A3Lib012BCAdPlatformG0Ovp",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "platformType",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCAdPlatformType",
+                    "printedName": "BCDramaLib.BCAdPlatformType",
+                    "usr": "c:@M@BCDramaLib@E@BCAdPlatformType"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)platformType",
+                "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC12platformType0A3Lib012BCAdPlatformG0Ovg",
+                "moduleName": "BCDramaAdGDT",
+                "objc_name": "platformType",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "registerSDK",
+            "printedName": "registerSDK(appId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)registerSDKWithAppId:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC11registerSDK5appIdySS_tF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "registerSDKWithAppId:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loadBanner",
+            "printedName": "loadBanner(viewController:container:placementId:pageType:onClose:onShow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIView",
+                "printedName": "UIKit.UIView",
+                "usr": "c:objc(cs)UIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCCustomAdPageType",
+                "printedName": "BCDramaLib.BCCustomAdPageType",
+                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Int) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)loadBannerWithViewController:container:placementId:pageType:onClose:onShow:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC10loadBanner14viewController9container11placementId8pageType7onClose0O4ShowySo06UIViewI0C_So0R0CSS0A3Lib08BCCustomb4PageN0OyycySictF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "loadBannerWithViewController:container:placementId:pageType:onClose:onShow:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeBanner",
+            "printedName": "removeBanner(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIView",
+                "printedName": "UIKit.UIView",
+                "usr": "c:objc(cs)UIView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)removeBannerFrom:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC12removeBanner4fromySo6UIViewC_tF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "removeBannerFrom:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "prepareNativeExpress",
+            "printedName": "prepareNativeExpress(viewController:placementId:pageType:adSize:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCCustomAdPageType",
+                "printedName": "BCDramaLib.BCCustomAdPageType",
+                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)prepareNativeExpressWithViewController:placementId:pageType:adSize:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC20prepareNativeExpress14viewController11placementId8pageType6adSizeySo06UIViewJ0C_SS0A3Lib08BCCustomb4PageN0OSo6CGSizeVtF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "prepareNativeExpressWithViewController:placementId:pageType:adSize:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loadNativeExpress",
+            "printedName": "loadNativeExpress(viewController:container:pageType:placementId:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCNativeExpressAdCollectionViewCell",
+                "printedName": "BCDramaLib.BCNativeExpressAdCollectionViewCell",
+                "usr": "c:@M@BCDramaLib@objc(cs)BCNativeExpressAdCollectionViewCell"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCCustomAdPageType",
+                "printedName": "BCDramaLib.BCCustomAdPageType",
+                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UIKit.UIView, Swift.String, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(UIKit.UIView, Swift.String, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIView",
+                        "printedName": "UIKit.UIView",
+                        "usr": "c:objc(cs)UIView"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)loadNativeExpressWithViewController:container:pageType:placementId:completion:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC17loadNativeExpress14viewController9container8pageType11placementId10completionySo06UIViewJ0C_0A3Lib08BCNativehB18CollectionViewCellCAL08BCCustomb4PageM0OSSySo0Q0C_SSs5Error_pSgtctF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "loadNativeExpressWithViewController:container:pageType:placementId:completion:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setNativeAdMute",
+            "printedName": "setNativeAdMute(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)setNativeAdMute:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC09setNativeB4MuteyySbF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "setNativeAdMute:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "showFullScreen",
+            "printedName": "showFullScreen(viewController:placementId:pageType:onShow:onClose:onFailed:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCCustomAdPageType",
+                "printedName": "BCDramaLib.BCCustomAdPageType",
+                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)showFullScreenWithViewController:placementId:pageType:onShow:onClose:onFailed:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC14showFullScreen14viewController11placementId8pageType6onShow0O5Close0O6FailedySo06UIViewJ0C_SS0A3Lib08BCCustomb4PageN0OyycyycyyctF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "showFullScreenWithViewController:placementId:pageType:onShow:onClose:onFailed:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentReward",
+            "printedName": "presentReward(from:context:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCRewardAdContext",
+                "printedName": "BCDramaLib.BCRewardAdContext",
+                "usr": "c:@M@BCDramaLib@objc(cs)BCRewardAdContext"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)presentRewardFrom:context:",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC13presentReward4from7contextySo16UIViewControllerC_0A3Lib08BCRewardB7ContextCtF",
+            "moduleName": "BCDramaAdGDT",
+            "objc_name": "presentRewardFrom:context:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BCGDTAdAdapter",
+                "printedName": "BCDramaAdGDT.BCGDTAdAdapter",
+                "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)init",
+            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterCACycfc",
+            "moduleName": "BCDramaAdGDT",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter",
+        "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC",
+        "moduleName": "BCDramaAdGDT",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "BCAdAdapter",
+            "printedName": "BCAdAdapter",
+            "usr": "c:@M@BCDramaLib@objc(pl)BCAdAdapter",
+            "mangledName": "$s10BCDramaLib11BCAdAdapterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BCBannerAdAdapter",
+            "printedName": "BCBannerAdAdapter",
+            "usr": "c:@M@BCDramaLib@objc(pl)BCBannerAdAdapter",
+            "mangledName": "$s10BCDramaLib17BCBannerAdAdapterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BCNativeExpressAdAdapter",
+            "printedName": "BCNativeExpressAdAdapter",
+            "usr": "c:@M@BCDramaLib@objc(pl)BCNativeExpressAdAdapter",
+            "mangledName": "$s10BCDramaLib24BCNativeExpressAdAdapterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BCFullScreenAdAdapter",
+            "printedName": "BCFullScreenAdAdapter",
+            "usr": "c:@M@BCDramaLib@objc(pl)BCFullScreenAdAdapter",
+            "mangledName": "$s10BCDramaLib21BCFullScreenAdAdapterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BCRewardAdAdapter",
+            "printedName": "BCRewardAdAdapter",
+            "usr": "c:@M@BCDramaLib@objc(pl)BCRewardAdAdapter",
+            "mangledName": "$s10BCDramaLib17BCRewardAdAdapterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SnapKit",
+        "printedName": "SnapKit",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "Import",
+        "name": "GDTMobSDK",
+        "printedName": "GDTMobSDK",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "Import",
+        "name": "BCDramaLib",
+        "printedName": "BCDramaLib",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "GDTMobSDK",
+        "printedName": "GDTMobSDK",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "Import",
+        "name": "BCDramaLib",
+        "printedName": "BCDramaLib",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "GDTMobSDK",
+        "printedName": "GDTMobSDK",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      },
+      {
+        "kind": "Import",
+        "name": "BCDramaLib",
+        "printedName": "BCDramaLib",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdGDT"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTBannerService.swift",
+      "kind": "StringLiteral",
+      "offset": 325,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTRewardVideoViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 326,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTPlatformManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1602,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTPlatformManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1631,
+      "length": 3,
+      "value": "180"
+    }
+  ]
+}

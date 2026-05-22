@@ -1,10 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = 'BCDramaLib'
-  s.version          = '1.2.1'
-  s.summary          = 'BC Drama iOS SDK (binary XCFramework)'
+  s.version          = '1.3.0'
+  s.summary          = 'BC Drama iOS SDK (Core + 可选广告 Adapter 二进制)'
   s.description      = <<-DESC
-    BCDramaLib 为剧星短剧 iOS SDK，以 XCFramework 二进制形式分发。
-    当前构建仅包含真机 arm64，不支持 iOS 模拟器。
+    BCDramaLib Core 与各广告 Adapter 均以 XCFramework 分发。
+    Core 不含第三方广告 SDK；按需集成 AdGDT / AdCSJ / AdKS / AdMSaas / AdCustom，
+    并在 initSDK 时注入 BCAdAdapter 实现类。
+    当前构建仅支持真机 arm64。
   DESC
   s.homepage         = 'https://github.com/Fzzzzzzzz/BCDramaLib'
   s.license          = { :type => 'Proprietary', :text => 'Copyright © BC Drama. All rights reserved.' }
@@ -15,26 +17,68 @@ Pod::Spec.new do |s|
   s.swift_version    = '5.0'
   s.requires_arc     = true
   s.static_framework = true
+  s.default_subspec  = 'Core'
 
-  s.vendored_frameworks = 'BCDramaLib.xcframework'
-  s.resources           = 'BCDramaLib.bundle'
+  s.subspec 'Core' do |core|
+    core.vendored_frameworks = 'BCDramaLib.xcframework'
+    core.resources           = 'BCDramaLib.bundle'
 
-  # 版本须与打包 bc_drama_sdk_ios 时 Podfile.lock 一致，否则静态库会出现 Undefined symbol
-  s.dependency 'SnapKit', '5.6.0'
-  s.dependency 'CryptoSwift', '1.8.4'
-  s.dependency 'SwiftyJSON', '5.0.1'
-  s.dependency 'MJRefresh', '3.7.6'
-  s.dependency 'TXLiteAVSDK_Professional', '13.2.20652'
-  s.dependency 'SDWebImage', '5.21.7'
+    core.dependency 'SnapKit', '5.6.0'
+    core.dependency 'CryptoSwift', '1.8.4'
+    core.dependency 'SwiftyJSON', '5.0.1'
+    core.dependency 'MJRefresh', '3.7.6'
+    core.dependency 'TXLiteAVSDK_Professional', '13.2.20652'
+    core.dependency 'SDWebImage', '5.21.7'
 
-  s.pod_target_xcconfig = {
-    'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES',
-    'OTHER_LDFLAGS' => '-ObjC'
-  }
-  s.user_target_xcconfig = {
-    'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'
-  }
+    core.pod_target_xcconfig = {
+      'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES',
+      'OTHER_LDFLAGS' => '-ObjC'
+    }
+    core.user_target_xcconfig = {
+      'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'
+    }
+  end
 
-  # 接入方 Podfile 须增加 post_install，为所有 Pods 开启 BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-  # （与 bc_drama_sdk_ios 打包时一致），详见 README.md
+  ad_xcframework = lambda do |spec, xcframework_name, deps|
+    spec.vendored_frameworks = "#{xcframework_name}.xcframework"
+    spec.dependency 'BCDramaLib/Core'
+    deps.each { |d| spec.dependency d }
+    spec.pod_target_xcconfig = {
+      'DEFINES_MODULE' => 'YES',
+      'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'
+    }
+  end
+
+  s.subspec 'AdGDT' do |gdt|
+    ad_xcframework.call(gdt, 'BCDramaAdGDT', ['GDTMobSDK'])
+  end
+
+  s.subspec 'AdCSJ' do |csj|
+    ad_xcframework.call(csj, 'BCDramaAdCSJ', ['Ads-CN'])
+  end
+
+  s.subspec 'AdKS' do |ks|
+    ad_xcframework.call(ks, 'BCDramaAdKS', ['KSAdSDK'])
+  end
+
+  s.subspec 'AdMSaas' do |ms|
+    ad_xcframework.call(ms, 'BCDramaAdMSaas', [
+      'MediatomiOS',
+      'MediatomiOS/SFAdCsjAdapter',
+      'MediatomiOS/SFAdGdtAdapter',
+      'MediatomiOS/SFAdKsAdapter'
+    ])
+  end
+
+  s.subspec 'AdCustom' do |custom|
+    ad_xcframework.call(custom, 'BCDramaAdCustom', [])
+  end
+
+  s.subspec 'AdsAll' do |all|
+    all.dependency 'BCDramaLib/AdGDT'
+    all.dependency 'BCDramaLib/AdCSJ'
+    all.dependency 'BCDramaLib/AdKS'
+    all.dependency 'BCDramaLib/AdMSaas'
+    all.dependency 'BCDramaLib/AdCustom'
+  end
 end
