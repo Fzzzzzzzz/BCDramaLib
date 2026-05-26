@@ -347,7 +347,6 @@ extern "C" {
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import BCDramaLib;
-@import CoreFoundation;
 @import ObjectiveC;
 #endif
 
@@ -384,7 +383,6 @@ SWIFT_CLASS("_TtC12BCDramaAdGDT14BCGDTAdAdapter")
 - (void)registerSDKWithAppId:(NSString * _Nonnull)appId;
 - (void)loadBannerWithViewController:(UIViewController * _Nonnull)viewController container:(UIView * _Nonnull)container placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onClose:(void (^ _Nonnull)(void))onClose onShow:(void (^ _Nonnull)(NSInteger))onShow;
 - (void)removeBannerFrom:(UIView * _Nonnull)container;
-- (void)prepareNativeExpressWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType adSize:(CGSize)adSize;
 - (void)loadNativeExpressWithViewController:(UIViewController * _Nonnull)viewController container:(BCNativeExpressAdCollectionViewCell * _Nonnull)container pageType:(enum BCCustomAdPageType)pageType placementId:(NSString * _Nonnull)placementId completion:(void (^ _Nonnull)(UIView * _Nonnull, NSString * _Nonnull, NSError * _Nullable))completion;
 - (void)setNativeAdMute:(BOOL)isMute;
 - (void)showFullScreenWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onShow:(void (^ _Nonnull)(void))onShow onClose:(void (^ _Nonnull)(void))onClose onFailed:(void (^ _Nonnull)(void))onFailed;

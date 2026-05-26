@@ -23,9 +23,539 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "BCCustomAdDelegate",
+        "printedName": "BCCustomAdDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "bc_customAdRegisterSDK",
+            "printedName": "bc_customAdRegisterSDK(appId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate(im)bc_customAdRegisterSDKWithAppId:",
+            "mangledName": "$s15BCDramaAdCustom08BCCustomB8DelegateP09bc_customB11RegisterSDK5appIdySS_tF",
+            "moduleName": "BCDramaAdCustom",
+            "genericSig": "<τ_0_0 where τ_0_0 : BCDramaAdCustom.BCCustomAdDelegate>",
+            "sugared_genericSig": "<Self where Self : BCDramaAdCustom.BCCustomAdDelegate>",
+            "protocolReq": true,
+            "objc_name": "bc_customAdRegisterSDKWithAppId:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bc_customAdLoadBanner",
+            "printedName": "bc_customAdLoadBanner(viewController:container:placementId:pageType:onClose:onShow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIView",
+                "printedName": "UIKit.UIView",
+                "usr": "c:objc(cs)UIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCCustomAdPageType",
+                "printedName": "BCDramaLib.BCCustomAdPageType",
+                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Int) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate(im)bc_customAdLoadBannerWithViewController:container:placementId:pageType:onClose:onShow:",
+            "mangledName": "$s15BCDramaAdCustom08BCCustomB8DelegateP09bc_customB10LoadBanner14viewController9container11placementId8pageType7onClose0Q4ShowySo06UIViewK0C_So0T0CSS0A3Lib0db4PageP0OyycySictF",
+            "moduleName": "BCDramaAdCustom",
+            "genericSig": "<τ_0_0 where τ_0_0 : BCDramaAdCustom.BCCustomAdDelegate>",
+            "sugared_genericSig": "<Self where Self : BCDramaAdCustom.BCCustomAdDelegate>",
+            "protocolReq": true,
+            "objc_name": "bc_customAdLoadBannerWithViewController:container:placementId:pageType:onClose:onShow:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bc_customAdLoadNativeExpress",
+            "printedName": "bc_customAdLoadNativeExpress(viewController:container:pageType:placementId:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCNativeExpressAdCollectionViewCell",
+                "printedName": "BCDramaLib.BCNativeExpressAdCollectionViewCell",
+                "usr": "c:@M@BCDramaLib@objc(cs)BCNativeExpressAdCollectionViewCell"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCCustomAdPageType",
+                "printedName": "BCDramaLib.BCCustomAdPageType",
+                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UIKit.UIView, Swift.String, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(UIKit.UIView, Swift.String, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIView",
+                        "printedName": "UIKit.UIView",
+                        "usr": "c:objc(cs)UIView"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate(im)bc_customAdLoadNativeExpressWithViewController:container:pageType:placementId:completion:",
+            "mangledName": "$s15BCDramaAdCustom08BCCustomB8DelegateP09bc_customB17LoadNativeExpress14viewController9container8pageType11placementId10completionySo06UIViewL0C_0A3Lib08BCNativejB18CollectionViewCellCAL0db4PageO0OSSySo0S0C_SSs5Error_pSgtctF",
+            "moduleName": "BCDramaAdCustom",
+            "genericSig": "<τ_0_0 where τ_0_0 : BCDramaAdCustom.BCCustomAdDelegate>",
+            "sugared_genericSig": "<Self where Self : BCDramaAdCustom.BCCustomAdDelegate>",
+            "protocolReq": true,
+            "objc_name": "bc_customAdLoadNativeExpressWithViewController:container:pageType:placementId:completion:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bc_customAdLoadFullScreen",
+            "printedName": "bc_customAdLoadFullScreen(viewController:placementId:pageType:onShow:onClose:onFailed:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCCustomAdPageType",
+                "printedName": "BCDramaLib.BCCustomAdPageType",
+                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate(im)bc_customAdLoadFullScreenWithViewController:placementId:pageType:onShow:onClose:onFailed:",
+            "mangledName": "$s15BCDramaAdCustom08BCCustomB8DelegateP09bc_customB14LoadFullScreen14viewController11placementId8pageType6onShow0Q5Close0Q6FailedySo06UIViewL0C_SS0A3Lib0db4PageP0OyycyycyyctF",
+            "moduleName": "BCDramaAdCustom",
+            "genericSig": "<τ_0_0 where τ_0_0 : BCDramaAdCustom.BCCustomAdDelegate>",
+            "sugared_genericSig": "<Self where Self : BCDramaAdCustom.BCCustomAdDelegate>",
+            "protocolReq": true,
+            "objc_name": "bc_customAdLoadFullScreenWithViewController:placementId:pageType:onShow:onClose:onFailed:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bc_customAdLoadReward",
+            "printedName": "bc_customAdLoadReward(from:placementId:taskId:onClose:onShow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Int) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate(im)bc_customAdLoadRewardFrom:placementId:taskId:onClose:onShow:",
+            "mangledName": "$s15BCDramaAdCustom08BCCustomB8DelegateP09bc_customB10LoadReward4from11placementId04taskL07onClose0N4ShowySo16UIViewControllerC_S2SyycySictF",
+            "moduleName": "BCDramaAdCustom",
+            "genericSig": "<τ_0_0 where τ_0_0 : BCDramaAdCustom.BCCustomAdDelegate>",
+            "sugared_genericSig": "<Self where Self : BCDramaAdCustom.BCCustomAdDelegate>",
+            "protocolReq": true,
+            "objc_name": "bc_customAdLoadRewardFrom:placementId:taskId:onClose:onShow:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate",
+        "mangledName": "$s15BCDramaAdCustom08BCCustomB8DelegateP",
+        "moduleName": "BCDramaAdCustom",
+        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
+        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdCustom",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "BCDramaLib",
+        "printedName": "BCDramaLib",
+        "declKind": "Import",
+        "moduleName": "BCDramaAdCustom"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "BCCustomAdAdapter",
         "printedName": "BCCustomAdAdapter",
         "children": [
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "(any BCDramaAdCustom.BCCustomAdDelegate)?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BCDramaAdCustom@objc(cs)BCCustomAdAdapter(py)delegate",
+            "mangledName": "$s15BCDramaAdCustom08BCCustomB7AdapterC8delegateAA0dB8Delegate_pSgvp",
+            "moduleName": "BCDramaAdCustom",
+            "declAttributes": [
+              "Final",
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any BCDramaAdCustom.BCCustomAdDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCCustomAdDelegate",
+                        "printedName": "any BCDramaAdCustom.BCCustomAdDelegate",
+                        "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BCDramaAdCustom@objc(cs)BCCustomAdAdapter(im)delegate",
+                "mangledName": "$s15BCDramaAdCustom08BCCustomB7AdapterC8delegateAA0dB8Delegate_pSgvg",
+                "moduleName": "BCDramaAdCustom",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any BCDramaAdCustom.BCCustomAdDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCCustomAdDelegate",
+                        "printedName": "any BCDramaAdCustom.BCCustomAdDelegate",
+                        "usr": "c:@M@BCDramaAdCustom@objc(pl)BCCustomAdDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BCDramaAdCustom@objc(cs)BCCustomAdAdapter(im)setDelegate:",
+                "mangledName": "$s15BCDramaAdCustom08BCCustomB7AdapterC8delegateAA0dB8Delegate_pSgvs",
+                "moduleName": "BCDramaAdCustom",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "platformType",
@@ -207,53 +737,6 @@
             "mangledName": "$s15BCDramaAdCustom08BCCustomB7AdapterC12removeBanner4fromySo6UIViewC_tF",
             "moduleName": "BCDramaAdCustom",
             "objc_name": "removeBannerFrom:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "prepareNativeExpress",
-            "printedName": "prepareNativeExpress(viewController:placementId:pageType:adSize:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIViewController",
-                "printedName": "UIKit.UIViewController",
-                "usr": "c:objc(cs)UIViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "BCCustomAdPageType",
-                "printedName": "BCDramaLib.BCCustomAdPageType",
-                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CGSize",
-                "printedName": "CoreFoundation.CGSize",
-                "usr": "c:@S@CGSize"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@BCDramaAdCustom@objc(cs)BCCustomAdAdapter(im)prepareNativeExpressWithViewController:placementId:pageType:adSize:",
-            "mangledName": "$s15BCDramaAdCustom08BCCustomB7AdapterC20prepareNativeExpress14viewController11placementId8pageType6adSizeySo06UIViewJ0C_SS0A3Lib0db4PageN0OSo6CGSizeVtF",
-            "moduleName": "BCDramaAdCustom",
-            "objc_name": "prepareNativeExpressWithViewController:placementId:pageType:adSize:",
             "declAttributes": [
               "Final",
               "ObjC",

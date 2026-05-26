@@ -779,28 +779,24 @@ extension BCVideoManager {
     /// 自定义广告-横幅广告初始化监听
     /// - Parameter onCustomBannerAd: 横幅广告监听的回调
     @objc public static func loadCustomBannerAd(onCustomBannerAd: BCCustomBannerAdsCallBack?) {
-        BCLoginManager.shared.isOpenCustomAd = true
         shared.videoPlayCallBack.onCustomBannerAds = onCustomBannerAd
     }
     
     /// 自定义广告-激励视频广告初始化监听
     /// - Parameter onCustomRewardAd: 激励视频监听回调
     @objc public static func loadCustomRewardAd(onCustomRewardAd: BCCustomRewardAdsCallBack?) {
-        BCLoginManager.shared.isOpenCustomAd = true
         shared.videoPlayCallBack.onCustomRewardAds = onCustomRewardAd
     }
     
     /// 自定义广告-全屏视频广告初始化监听
     /// - Parameter onCustomFullScreen: 全屏广告监听回调
     @objc public static func loadCustomFullScreenAd(onCustomFullScreen: BCCustomFullScreenAdsCallBack?) {
-        BCLoginManager.shared.isOpenCustomAd = true
         shared.videoPlayCallBack.onCustomFullScreenAds = onCustomFullScreen
     }
     
     /// 自定义广告-插屏视频广告初始化监听
     /// - Parameter onCustomFullScreen: 插屏广告监听回调
     @objc public static func initCustomNativeAd(onCustomNative: BCCustomNativeViewAdsCallBack?) {
-        BCLoginManager.shared.isOpenCustomAd = true
         shared.videoPlayCallBack.onCustomNativeAds = onCustomNative
     }
     
@@ -812,10 +808,10 @@ extension BCVideoManager {
     ///   - pageType: 来源页
     ///   - adView: 广告
     ///   - adContainerView: 展示广告的容器
-    ///   - onLoadCustonNativeCallBack: 监听回调
-    @objc public static func loadCustomNativeAd(placementId: String, adType: BCAdType, status: BCAdStatues, pageType: BCCustomAdPageType, adView: UIView = UIView(), adContainerView: UIView = UIView(), onLoadCustonNativeCallBack: BCLoadCustomNativeCallBack?) {
-        shared.videoPlayCallBack.onLoadCustonNativeCallBack = onLoadCustonNativeCallBack
-        BCLoginManager.shared.customAdsStatusChanged(placementId: placementId, adType: adType, status: status, pageType: pageType, adView: adView, adContainerView: adContainerView)
+    ///   - onCustomNative: 监听回调
+    @objc public static func loadCustomNativeAd(/*placementId: String, adType: BCAdType, status: BCAdStatues, pageType: BCCustomAdPageType, adView: UIView = UIView(), adContainerView: UIView = UIView(), */onCustomNative: BCCustomNativeViewAdsCallBack?) {
+        shared.videoPlayCallBack.onCustomNativeAds = onCustomNative
+//        BCLoginManager.shared.customAdsStatusChanged(placementId: placementId, adType: adType, status: status, pageType: pageType, adView: adView, adContainerView: adContainerView)
     }
     
     /// 自定义广告的状态改变监听

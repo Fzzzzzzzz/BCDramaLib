@@ -223,53 +223,6 @@
           },
           {
             "kind": "Function",
-            "name": "prepareNativeExpress",
-            "printedName": "prepareNativeExpress(viewController:placementId:pageType:adSize:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIViewController",
-                "printedName": "UIKit.UIViewController",
-                "usr": "c:objc(cs)UIViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "BCCustomAdPageType",
-                "printedName": "BCDramaLib.BCCustomAdPageType",
-                "usr": "c:@M@BCDramaLib@E@BCCustomAdPageType"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CGSize",
-                "printedName": "CoreFoundation.CGSize",
-                "usr": "c:@S@CGSize"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@BCDramaAdGDT@objc(cs)BCGDTAdAdapter(im)prepareNativeExpressWithViewController:placementId:pageType:adSize:",
-            "mangledName": "$s12BCDramaAdGDT14BCGDTAdAdapterC20prepareNativeExpress14viewController11placementId8pageType6adSizeySo06UIViewJ0C_SS0A3Lib08BCCustomb4PageN0OSo6CGSizeVtF",
-            "moduleName": "BCDramaAdGDT",
-            "objc_name": "prepareNativeExpressWithViewController:placementId:pageType:adSize:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "loadNativeExpress",
             "printedName": "loadNativeExpress(viewController:container:pageType:placementId:completion:)",
             "children": [

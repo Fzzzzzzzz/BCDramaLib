@@ -347,7 +347,6 @@ extern "C" {
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import BCDramaLib;
-@import CoreFoundation;
 @import ObjectiveC;
 #endif
 
@@ -371,6 +370,7 @@ extern "C" {
 
 #if defined(__OBJC__)
 
+@protocol BCCustomAdDelegate;
 SWIFT_ENUM_FWD_DECL(NSInteger, BCAdPlatformType)
 @class NSString;
 @class UIViewController;
@@ -380,15 +380,25 @@ SWIFT_ENUM_FWD_DECL(NSInteger, BCCustomAdPageType)
 @class BCRewardAdContext;
 SWIFT_CLASS("_TtC15BCDramaAdCustom17BCCustomAdAdapter")
 @interface BCCustomAdAdapter : NSObject <BCAdAdapter, BCBannerAdAdapter, BCFullScreenAdAdapter, BCNativeExpressAdAdapter, BCRewardAdAdapter>
+@property (nonatomic, weak) id <BCCustomAdDelegate> _Nullable delegate;
 @property (nonatomic, readonly) enum BCAdPlatformType platformType;
 - (void)registerSDKWithAppId:(NSString * _Nonnull)appId;
 - (void)loadBannerWithViewController:(UIViewController * _Nonnull)viewController container:(UIView * _Nonnull)container placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onClose:(void (^ _Nonnull)(void))onClose onShow:(void (^ _Nonnull)(NSInteger))onShow;
 - (void)removeBannerFrom:(UIView * _Nonnull)container;
-- (void)prepareNativeExpressWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType adSize:(CGSize)adSize;
 - (void)loadNativeExpressWithViewController:(UIViewController * _Nonnull)viewController container:(BCNativeExpressAdCollectionViewCell * _Nonnull)container pageType:(enum BCCustomAdPageType)pageType placementId:(NSString * _Nonnull)placementId completion:(void (^ _Nonnull)(UIView * _Nonnull, NSString * _Nonnull, NSError * _Nullable))completion;
 - (void)showFullScreenWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onShow:(void (^ _Nonnull)(void))onShow onClose:(void (^ _Nonnull)(void))onClose onFailed:(void (^ _Nonnull)(void))onFailed;
 - (void)presentRewardFrom:(UIViewController * _Nonnull)viewController context:(BCRewardAdContext * _Nonnull)context;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+/// 宿主实现自定义广告加载逻辑（由 <code>BCCustomAdAdapter</code> 转发）
+SWIFT_PROTOCOL("_TtP15BCDramaAdCustom18BCCustomAdDelegate_")
+@protocol BCCustomAdDelegate <NSObject>
+- (void)bc_customAdRegisterSDKWithAppId:(NSString * _Nonnull)appId;
+- (void)bc_customAdLoadBannerWithViewController:(UIViewController * _Nonnull)viewController container:(UIView * _Nonnull)container placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onClose:(void (^ _Nonnull)(void))onClose onShow:(void (^ _Nonnull)(NSInteger))onShow;
+- (void)bc_customAdLoadNativeExpressWithViewController:(UIViewController * _Nonnull)viewController container:(BCNativeExpressAdCollectionViewCell * _Nonnull)container pageType:(enum BCCustomAdPageType)pageType placementId:(NSString * _Nonnull)placementId completion:(void (^ _Nonnull)(UIView * _Nonnull, NSString * _Nonnull, NSError * _Nullable))completion;
+- (void)bc_customAdLoadFullScreenWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType onShow:(void (^ _Nonnull)(void))onShow onClose:(void (^ _Nonnull)(void))onClose onFailed:(void (^ _Nonnull)(void))onFailed;
+- (void)bc_customAdLoadRewardFrom:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId taskId:(NSString * _Nonnull)taskId onClose:(void (^ _Nonnull)(void))onClose onShow:(void (^ _Nonnull)(NSInteger))onShow;
 @end
 
 #endif // defined(__OBJC__)

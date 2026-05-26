@@ -645,7 +645,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCLoginManag
 + (BCLoginManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, copy) NSString * _Nonnull userId;
 @property (nonatomic) BOOL isMute;
-@property (nonatomic) BOOL isOpenCustomAd;
+@property (nonatomic, readonly) BOOL isOpenCustomAd;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
@@ -659,7 +659,6 @@ SWIFT_PROTOCOL("_TtP10BCDramaLib22BCMSaasPlaybackAdapter_")
 @class BCNativeExpressAdCollectionViewCell;
 SWIFT_PROTOCOL("_TtP10BCDramaLib24BCNativeExpressAdAdapter_")
 @protocol BCNativeExpressAdAdapter <NSObject>
-- (void)prepareNativeExpressWithViewController:(UIViewController * _Nonnull)viewController placementId:(NSString * _Nonnull)placementId pageType:(enum BCCustomAdPageType)pageType adSize:(CGSize)adSize;
 - (void)loadNativeExpressWithViewController:(UIViewController * _Nonnull)viewController container:(BCNativeExpressAdCollectionViewCell * _Nonnull)container pageType:(enum BCCustomAdPageType)pageType placementId:(NSString * _Nonnull)placementId completion:(void (^ _Nonnull)(UIView * _Nonnull, NSString * _Nonnull, NSError * _Nullable))completion;
 @optional
 - (void)setNativeAdMute:(BOOL)isMute;
@@ -673,6 +672,7 @@ SWIFT_CLASS("_TtC10BCDramaLib35BCNativeExpressAdCollectionViewCell")
 @property (nonatomic) id _Nullable vendorMsaasAdData;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
+- (void)prepareForReuse;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
@@ -1517,7 +1517,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 /// 自定义广告-插屏视频广告初始化监听
 /// \param onCustomFullScreen 插屏广告监听回调
 ///
-+ (void)initCustomNativeAdOnCustomNative:(void (^ _Nullable)(UIViewController * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger)))onCustomNative SWIFT_METHOD_FAMILY(none);
++ (void)initCustomNativeAdOnCustomNative:(void (^ _Nullable)(UIViewController * _Nonnull, UIView * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger)))onCustomNative SWIFT_METHOD_FAMILY(none);
 /// 加载插屏广告
 /// \param placementId 广告位ID
 ///
@@ -1531,9 +1531,9 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// \param adContainerView 展示广告的容器
 ///
-/// \param onLoadCustonNativeCallBack 监听回调
+/// \param onCustomNative 监听回调
 ///
-+ (void)loadCustomNativeAdWithPlacementId:(NSString * _Nonnull)placementId adType:(enum BCAdType)adType status:(enum BCAdStatues)status pageType:(enum BCCustomAdPageType)pageType adView:(UIView * _Nonnull)adView adContainerView:(UIView * _Nonnull)adContainerView onLoadCustonNativeCallBack:(void (^ _Nullable)(UIView * _Nonnull))onLoadCustonNativeCallBack;
++ (void)loadCustomNativeAdOnCustomNative:(void (^ _Nullable)(UIViewController * _Nonnull, UIView * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger)))onCustomNative;
 /// 自定义广告的状态改变监听
 /// \param adType 广告类型
 ///
@@ -1714,8 +1714,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCVideoPlayC
 @property (nonatomic, copy) void (^ _Nullable onCustomBannerAds)(UIViewController * _Nonnull, UIView * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
 @property (nonatomic, copy) void (^ _Nullable onCustomRewardAds)(UIViewController * _Nonnull, NSString * _Nonnull, NSString * _Nonnull, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
 @property (nonatomic, copy) void (^ _Nullable onCustomFullScreenAds)(UIViewController * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
-@property (nonatomic, copy) void (^ _Nullable onCustomNativeAds)(UIViewController * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
-@property (nonatomic, copy) void (^ _Nullable onLoadCustonNativeCallBack)(UIView * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onCustomNativeAds)(UIViewController * _Nonnull, UIView * _Nonnull, NSString * _Nonnull, enum BCCustomAdPageType, void (^ _Nullable)(void), void (^ _Nullable)(NSInteger));
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end

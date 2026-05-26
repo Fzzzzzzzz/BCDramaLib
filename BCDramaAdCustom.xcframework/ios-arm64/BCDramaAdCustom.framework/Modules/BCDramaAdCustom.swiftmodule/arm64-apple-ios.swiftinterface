@@ -8,14 +8,21 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@objc public protocol BCCustomAdDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func bc_customAdRegisterSDK(appId: Swift.String)
+  @objc func bc_customAdLoadBanner(viewController: UIKit.UIViewController, container: UIKit.UIView, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onClose: @escaping () -> Swift.Void, onShow: @escaping (Swift.Int) -> Swift.Void)
+  @objc func bc_customAdLoadNativeExpress(viewController: UIKit.UIViewController, container: BCDramaLib.BCNativeExpressAdCollectionViewCell, pageType: BCDramaLib.BCCustomAdPageType, placementId: Swift.String, completion: @escaping (UIKit.UIView, Swift.String, (any Swift.Error)?) -> Swift.Void)
+  @objc func bc_customAdLoadFullScreen(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onShow: @escaping () -> Swift.Void, onClose: @escaping () -> Swift.Void, onFailed: @escaping () -> Swift.Void)
+  @objc func bc_customAdLoadReward(from viewController: UIKit.UIViewController, placementId: Swift.String, taskId: Swift.String, onClose: @escaping () -> Swift.Void, onShow: @escaping (Swift.Int) -> Swift.Void)
+}
 @_inheritsConvenienceInitializers @objc final public class BCCustomAdAdapter : ObjectiveC.NSObject, BCDramaLib.BCAdAdapter, BCDramaLib.BCBannerAdAdapter, BCDramaLib.BCNativeExpressAdAdapter, BCDramaLib.BCFullScreenAdAdapter, BCDramaLib.BCRewardAdAdapter {
+  @objc dynamic weak final public var delegate: (any BCDramaAdCustom.BCCustomAdDelegate)?
   @objc final public var platformType: BCDramaLib.BCAdPlatformType {
     @objc get
   }
   @objc final public func registerSDK(appId: Swift.String)
   @objc final public func loadBanner(viewController: UIKit.UIViewController, container: UIKit.UIView, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onClose: @escaping () -> Swift.Void, onShow: @escaping (Swift.Int) -> Swift.Void)
   @objc final public func removeBanner(from container: UIKit.UIView)
-  @objc final public func prepareNativeExpress(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, adSize: CoreFoundation.CGSize)
   @objc final public func loadNativeExpress(viewController: UIKit.UIViewController, container: BCDramaLib.BCNativeExpressAdCollectionViewCell, pageType: BCDramaLib.BCCustomAdPageType, placementId: Swift.String, completion: @escaping (UIKit.UIView, Swift.String, (any Swift.Error)?) -> Swift.Void)
   @objc final public func showFullScreen(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onShow: @escaping () -> Swift.Void, onClose: @escaping () -> Swift.Void, onFailed: @escaping () -> Swift.Void)
   @objc final public func presentReward(from viewController: UIKit.UIViewController, context: BCDramaLib.BCRewardAdContext)

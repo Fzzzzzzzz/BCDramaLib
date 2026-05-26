@@ -17,7 +17,6 @@ import _SwiftConcurrencyShims
   @objc final public func registerSDK(appId: Swift.String)
   @objc final public func loadBanner(viewController: UIKit.UIViewController, container: UIKit.UIView, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onClose: @escaping () -> Swift.Void, onShow: @escaping (Swift.Int) -> Swift.Void)
   @objc final public func removeBanner(from container: UIKit.UIView)
-  @objc final public func prepareNativeExpress(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, adSize: CoreFoundation.CGSize)
   @objc final public func loadNativeExpress(viewController: UIKit.UIViewController, container: BCDramaLib.BCNativeExpressAdCollectionViewCell, pageType: BCDramaLib.BCCustomAdPageType, placementId: Swift.String, completion: @escaping (UIKit.UIView, Swift.String, (any Swift.Error)?) -> Swift.Void)
   @objc final public func setNativeAdMute(_ isMute: Swift.Bool)
   @objc final public func showFullScreen(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, onShow: @escaping () -> Swift.Void, onClose: @escaping () -> Swift.Void, onFailed: @escaping () -> Swift.Void)

@@ -158,7 +158,7 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func loadCustomRewardAd(onCustomRewardAd: BCDramaLib.BCCustomRewardAdsCallBack?)
   @objc public static func loadCustomFullScreenAd(onCustomFullScreen: BCDramaLib.BCCustomFullScreenAdsCallBack?)
   @objc public static func initCustomNativeAd(onCustomNative: BCDramaLib.BCCustomNativeViewAdsCallBack?)
-  @objc public static func loadCustomNativeAd(placementId: Swift.String, adType: BCDramaLib.BCAdType, status: BCDramaLib.BCAdStatues, pageType: BCDramaLib.BCCustomAdPageType, adView: UIKit.UIView = UIView(), adContainerView: UIKit.UIView = UIView(), onLoadCustonNativeCallBack: BCDramaLib.BCLoadCustomNativeCallBack?)
+  @objc public static func loadCustomNativeAd(onCustomNative: BCDramaLib.BCCustomNativeViewAdsCallBack?)
   @objc public static func customAdStatusChanged(placementId: Swift.String, adType: BCDramaLib.BCAdType, status: BCDramaLib.BCAdStatues, pageType: BCDramaLib.BCCustomAdPageType, isEffective: Swift.Bool = false, adView: UIKit.UIView = UIView(), adContainerView: UIKit.UIView = UIView())
   @objc public static func getVideoFavoriteStatus(videoFavorite: BCDramaLib.BCVideoFavoriteCallBack?)
   @objc public static func getVideoLikesStatus(videoLikes: BCDramaLib.BCVideoLikesCallBack?)
@@ -717,6 +717,7 @@ extension BCDramaLib.BCPagingListContainerView : BCDramaLib.BCSegmentedViewListC
   @objc @_Concurrency.MainActor @preconcurrency weak public var vendorMsaasCellRef: BCDramaLib.BCNativeExpressAdCollectionViewCell?
   @objc @_Concurrency.MainActor @preconcurrency public var vendorMsaasAdData: Any?
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForReuse()
   @objc deinit
 }
 public protocol BCBannerDataSource : AnyObject {
@@ -1080,11 +1081,10 @@ public typealias BCCustomAdvReward = (Swift.String, Swift.String, Swift.String) 
 public typealias BCCustomAdvNativeExpress = (Swift.String, Swift.Double, Swift.Double) -> Swift.Void
 public typealias BCCustomAdvBanner = (Swift.String) -> Swift.Void
 public typealias BCGoogListItemCallBack = (Swift.String, BCDramaLib.BCGoodItemsModel, UIKit.UIViewController) -> Swift.Void
-public typealias BCCustomBannerAdsCallBack = (UIKit.UIViewController, UIKit.UIView, Swift.String, BCDramaLib.BCCustomAdPageType, (() -> Swift.Void)?, ((Swift.Int) -> Swift.Void)?) -> Swift.Void
-public typealias BCCustomRewardAdsCallBack = (UIKit.UIViewController, Swift.String, Swift.String, _ onClose: (() -> Swift.Void)?, _ onClose: ((Swift.Int) -> Swift.Void)?) -> Swift.Void
-public typealias BCCustomFullScreenAdsCallBack = (UIKit.UIViewController, Swift.String, BCDramaLib.BCCustomAdPageType, (() -> Swift.Void)?, ((Swift.Int) -> Swift.Void)?) -> Swift.Void
-public typealias BCCustomNativeViewAdsCallBack = (UIKit.UIViewController, Swift.String, BCDramaLib.BCCustomAdPageType, (() -> Swift.Void)?, ((Swift.Int) -> Swift.Void)?) -> Swift.Void
-public typealias BCLoadCustomNativeCallBack = (UIKit.UIView) -> Swift.Void
+public typealias BCCustomBannerAdsCallBack = (UIKit.UIViewController, UIKit.UIView, Swift.String, BCDramaLib.BCCustomAdPageType, _ onClose: (() -> Swift.Void)?, _ onShow: ((Swift.Int) -> Swift.Void)?) -> Swift.Void
+public typealias BCCustomRewardAdsCallBack = (UIKit.UIViewController, Swift.String, Swift.String, _ onClose: (() -> Swift.Void)?, _ onShow: ((Swift.Int) -> Swift.Void)?) -> Swift.Void
+public typealias BCCustomFullScreenAdsCallBack = (UIKit.UIViewController, Swift.String, BCDramaLib.BCCustomAdPageType, _ onClose: (() -> Swift.Void)?, _ onShow: ((Swift.Int) -> Swift.Void)?) -> Swift.Void
+public typealias BCCustomNativeViewAdsCallBack = (UIKit.UIViewController, UIKit.UIView, Swift.String, BCDramaLib.BCCustomAdPageType, _ onClose: (() -> Swift.Void)?, _ onShow: ((Swift.Int) -> Swift.Void)?) -> Swift.Void
 public typealias BCVideoFavoriteCallBack = (Swift.Int, Swift.Int) -> Swift.Void
 public typealias BCVideoLikesCallBack = (Swift.Int, Swift.Int) -> Swift.Void
 public typealias BCPlayerStatusCallBack = (BCDramaLib.BCPlayerStatus) -> Swift.Void
@@ -1120,7 +1120,6 @@ public typealias BCCustomGoodListViewCallBack = (UIKit.UIViewController, [BCDram
   @objc public var onCustomRewardAds: BCDramaLib.BCCustomRewardAdsCallBack?
   @objc public var onCustomFullScreenAds: BCDramaLib.BCCustomFullScreenAdsCallBack?
   @objc public var onCustomNativeAds: BCDramaLib.BCCustomNativeViewAdsCallBack?
-  @objc public var onLoadCustonNativeCallBack: BCDramaLib.BCLoadCustomNativeCallBack?
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(BCUserInfosModel) public class BCUserInfosModel : ObjectiveC.NSObject {
@@ -1237,7 +1236,6 @@ extension BCDramaLib.BCCrashManager {
   @objc func removeBanner(from container: UIKit.UIView)
 }
 @objc public protocol BCNativeExpressAdAdapter : ObjectiveC.NSObjectProtocol {
-  @objc func prepareNativeExpress(viewController: UIKit.UIViewController, placementId: Swift.String, pageType: BCDramaLib.BCCustomAdPageType, adSize: CoreFoundation.CGSize)
   @objc func loadNativeExpress(viewController: UIKit.UIViewController, container: BCDramaLib.BCNativeExpressAdCollectionViewCell, pageType: BCDramaLib.BCCustomAdPageType, placementId: Swift.String, completion: @escaping (UIKit.UIView, Swift.String, (any Swift.Error)?) -> Swift.Void)
   @objc optional func setNativeAdMute(_ isMute: Swift.Bool)
 }
@@ -1337,7 +1335,9 @@ extension UIKit.UIImage {
   @objc public static let shared: BCDramaLib.BCLoginManager
   @objc public var userId: Swift.String
   @objc public var isMute: Swift.Bool
-  @objc public var isOpenCustomAd: Swift.Bool
+  @objc public var isOpenCustomAd: Swift.Bool {
+    @objc get
+  }
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class ToastView : UIKit.UIView {
