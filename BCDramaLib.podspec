@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BCDramaLib'
-  s.version          = '1.3.2'
+  s.version          = '1.3.3'
   s.summary          = 'BC Drama iOS SDK (Core + 可选广告 Adapter 二进制)'
   s.description      = <<-DESC
     BCDramaLib Core 与各广告 Adapter 均以 XCFramework 分发。
