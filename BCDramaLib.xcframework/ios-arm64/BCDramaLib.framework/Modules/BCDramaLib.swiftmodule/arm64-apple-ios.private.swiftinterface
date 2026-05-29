@@ -134,7 +134,7 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func setVideoDefaultRate(videoId: Swift.Int, rate: Swift.Double)
   @objc public static func onUnLock(onUnLock: BCDramaLib.BCAdUnLock?)
   @objc public static func onAdDidFinish(onFinish: BCDramaLib.BCAdFinish?)
-  @objc public static func startRewardVideo(form vc: UIKit.UIViewController, videoId: Swift.Int, eposodeNo: Swift.Int, placementId: Swift.String = "", extra: [Swift.String : Any] = [:], onStartReward: BCDramaLib.BCStartAdReward?)
+  @objc public static func startRewardVideo(from vc: UIKit.UIViewController, videoId: Swift.Int, eposodeNo: Swift.Int, placementId: Swift.String = "", extra: [Swift.String : Any] = [:], onStartReward: BCDramaLib.BCStartAdReward?)
   @objc public static func jumpToVideoPlayController(from vc: UIKit.UIViewController, videoId: Swift.Int, lastEpisodeNo: Swift.Int, offsetY: CoreFoundation.CGFloat = 0)
   @objc public static func jumpToVideoMoreDetailList(from vc: UIKit.UIViewController, menuId: Swift.Int, menuName: Swift.String)
   @objc public static func getCollectionRecords(page: Swift.Int, pageSize: Swift.Int, comolete: @escaping ([BCDramaLib.BCDramaFavoriteListModel]?, Swift.String?) -> Swift.Void)
@@ -144,12 +144,12 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func setPlayerTopTabBarOffsetY(offsetY: CoreFoundation.CGFloat)
   @objc public static func setPayActionStatus(payment: BCDramaLib.BCPaymentStatus)
   @objc public static func getSDKVersion() -> Swift.String
-  @objc public static func goToRootViewController(form vc: UIKit.UIViewController, selectedIndex: Swift.Int = 0) -> BCDramaLib.BCTabBarController
-  @objc public static func getRecommendViewController(form vc: UIKit.UIViewController, toolOffsetY: CoreFoundation.CGFloat = 0) -> UIKit.UIViewController
-  @objc public static func getDramasViewController(form vc: UIKit.UIViewController, isHiddenNav: Swift.Bool = true, toolOffsetY: CoreFoundation.CGFloat = 0, isHddenEmptyAction: Swift.Bool = false, contentInsert: UIKit.UIEdgeInsets = .zero) -> UIKit.UIViewController
-  @objc public static func getHomeViewController(form vc: UIKit.UIViewController) -> UIKit.UIViewController
+  @objc public static func goToRootViewController(from vc: UIKit.UIViewController, selectedIndex: Swift.Int = 0) -> BCDramaLib.BCTabBarController
+  @objc public static func getRecommendViewController(from vc: UIKit.UIViewController, toolOffsetY: CoreFoundation.CGFloat = 0) -> UIKit.UIViewController
+  @objc public static func getDramasViewController(from vc: UIKit.UIViewController, isHiddenNav: Swift.Bool = true, toolOffsetY: CoreFoundation.CGFloat = 0, isHddenEmptyAction: Swift.Bool = false, contentInsert: UIKit.UIEdgeInsets = .zero) -> UIKit.UIViewController
+  @objc public static func getHomeViewController(from vc: UIKit.UIViewController) -> UIKit.UIViewController
   @objc public static func setPlayerCustomCoverPlaceholderImage(imageName: Swift.String?)
-  @objc public static func toSearchViewController(form vc: UIKit.UIViewController)
+  @objc public static func toSearchViewController(from vc: UIKit.UIViewController)
   @objc public static func onPaymentListener(isCustomPayment: Swift.Bool, onPay: BCDramaLib.BCGoogListItemCallBack?)
   @objc public static func onPayComplete(orderNo: Swift.String, videoId: Swift.Int, episodeNo: Swift.Int)
   @objc public static func pause()

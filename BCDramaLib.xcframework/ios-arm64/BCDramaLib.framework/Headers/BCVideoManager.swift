@@ -522,7 +522,7 @@ extension BCVideoManager {
     ///   - extra: 扩展信息
     ///   - onStartReward: 开始激励视频的回调
     ///   - onAdFiled: 激励视频加载失败的回调
-    @objc public static func startRewardVideo(form vc: UIViewController,
+    @objc public static func startRewardVideo(from vc: UIViewController,
                                               videoId: Int,
                                               eposodeNo: Int,
                                               placementId: String = "",
@@ -644,7 +644,7 @@ extension BCVideoManager {
     /// 进入新版SDK的根控制器（默认选中首页）
     /// - Parameter vc: 导航栈
     /// - Parameter selectedIndex: 默认显示第几个导航器（默认仅支持0：首页， 1： 为你推荐页， 2： 我的剧单页）
-    @objc public static func goToRootViewController(form vc: UIViewController,
+    @objc public static func goToRootViewController(from vc: UIViewController,
                                                     selectedIndex: Int = 0) -> BCTabBarController {
         let tabBarController = BCTabBarController()
         tabBarController.hidesBottomBarWhenPushed = true
@@ -673,7 +673,7 @@ extension BCVideoManager {
     ///   - vc: 外层控制的导航栈
     ///   - toolOffsetY: 播放页顶部工具条的Y轴偏移量
     /// - Returns: 推荐页(备注：与老版本的推荐页是分开的，目的是防止后续推荐页更改样式，同时SDK保留和兼容老版本推荐页)
-    @objc public static func getRecommendViewController(form vc: UIViewController,
+    @objc public static func getRecommendViewController(from vc: UIViewController,
                                                         toolOffsetY: CGFloat = 0) -> UIViewController {
         let recommendVc = BCRecommendViewController()
         recommendVc.topTabBarOffsetY = toolOffsetY
@@ -689,7 +689,7 @@ extension BCVideoManager {
     ///   - toolOffsetY: 播放页顶部工具条的Y轴偏移量
     ///   - contentInsert: 内边距
     /// - Returns: 我的剧集页 推荐页(备注：与老版本的剧集页是分开的，目的是防止后续剧集页更改样式，同时SDK保留和兼容老版本剧集页)
-    @objc public static func getDramasViewController(form vc: UIViewController,
+    @objc public static func getDramasViewController(from vc: UIViewController,
                                                      isHiddenNav: Bool = true,
                                                      toolOffsetY: CGFloat = 0,
                                                      isHddenEmptyAction: Bool = false,
@@ -708,7 +708,7 @@ extension BCVideoManager {
     /// - Returns: 首页样式改版
     /// - Parameters:
     ///   - vc: 导航栈控制器源
-    @objc public static func getHomeViewController(form vc: UIViewController) -> UIViewController {
+    @objc public static func getHomeViewController(from vc: UIViewController) -> UIViewController {
         let homeVc = BCHomeViewController()
         homeVc.parentVc = vc
         homeVc.onDismiss = { [weak vc] in
@@ -734,7 +734,7 @@ extension BCVideoManager {
     
     /// 进入搜索页
     /// - Parameter vc: 导航栈
-    @objc public static func toSearchViewController(form vc: UIViewController) {
+    @objc public static func toSearchViewController(from vc: UIViewController) {
         let searchVc = BCSearchViewController()
         if let navController = vc.navigationController {
             navController.pushViewController(searchVc, animated: true)

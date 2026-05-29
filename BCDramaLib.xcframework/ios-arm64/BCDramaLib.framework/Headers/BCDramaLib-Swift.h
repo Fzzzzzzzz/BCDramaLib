@@ -1387,7 +1387,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// \param onAdFiled 激励视频加载失败的回调
 ///
-+ (void)startRewardVideoWithForm:(UIViewController * _Nonnull)vc videoId:(NSInteger)videoId eposodeNo:(NSInteger)eposodeNo placementId:(NSString * _Nonnull)placementId extra:(NSDictionary<NSString *, id> * _Nonnull)extra onStartReward:(void (^ _Nullable)(enum BCAdPlatformType, enum BCAdType))onStartReward;
++ (void)startRewardVideoFrom:(UIViewController * _Nonnull)vc videoId:(NSInteger)videoId eposodeNo:(NSInteger)eposodeNo placementId:(NSString * _Nonnull)placementId extra:(NSDictionary<NSString *, id> * _Nonnull)extra onStartReward:(void (^ _Nullable)(enum BCAdPlatformType, enum BCAdType))onStartReward;
 /// 进入播放页
 /// \param vc 来源控制器
 ///
@@ -1446,7 +1446,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// \param selectedIndex 默认显示第几个导航器（默认仅支持0：首页， 1： 为你推荐页， 2： 我的剧单页）
 ///
-+ (BCTabBarController * _Nonnull)goToRootViewControllerWithForm:(UIViewController * _Nonnull)vc selectedIndex:(NSInteger)selectedIndex SWIFT_WARN_UNUSED_RESULT;
++ (BCTabBarController * _Nonnull)goToRootViewControllerFrom:(UIViewController * _Nonnull)vc selectedIndex:(NSInteger)selectedIndex SWIFT_WARN_UNUSED_RESULT;
 /// 获取新版推荐页
 /// \param vc 外层控制的导航栈
 ///
@@ -1455,7 +1455,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// returns:
 /// 推荐页(备注：与老版本的推荐页是分开的，目的是防止后续推荐页更改样式，同时SDK保留和兼容老版本推荐页)
-+ (UIViewController * _Nonnull)getRecommendViewControllerWithForm:(UIViewController * _Nonnull)vc toolOffsetY:(CGFloat)toolOffsetY SWIFT_WARN_UNUSED_RESULT;
++ (UIViewController * _Nonnull)getRecommendViewControllerFrom:(UIViewController * _Nonnull)vc toolOffsetY:(CGFloat)toolOffsetY SWIFT_WARN_UNUSED_RESULT;
 /// 获取新版我的剧集页
 /// \param vc 导航栈控制器源
 ///
@@ -1468,14 +1468,14 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// returns:
 /// 我的剧集页 推荐页(备注：与老版本的剧集页是分开的，目的是防止后续剧集页更改样式，同时SDK保留和兼容老版本剧集页)
-+ (UIViewController * _Nonnull)getDramasViewControllerWithForm:(UIViewController * _Nonnull)vc isHiddenNav:(BOOL)isHiddenNav toolOffsetY:(CGFloat)toolOffsetY isHddenEmptyAction:(BOOL)isHddenEmptyAction contentInsert:(UIEdgeInsets)contentInsert SWIFT_WARN_UNUSED_RESULT;
++ (UIViewController * _Nonnull)getDramasViewControllerFrom:(UIViewController * _Nonnull)vc isHiddenNav:(BOOL)isHiddenNav toolOffsetY:(CGFloat)toolOffsetY isHddenEmptyAction:(BOOL)isHddenEmptyAction contentInsert:(UIEdgeInsets)contentInsert SWIFT_WARN_UNUSED_RESULT;
 /// 获取新版首页
 /// \param vc 导航栈控制器源
 ///
 ///
 /// returns:
 /// 首页样式改版
-+ (UIViewController * _Nonnull)getHomeViewControllerWithForm:(UIViewController * _Nonnull)vc SWIFT_WARN_UNUSED_RESULT;
++ (UIViewController * _Nonnull)getHomeViewControllerFrom:(UIViewController * _Nonnull)vc SWIFT_WARN_UNUSED_RESULT;
 /// 自定义播放页剧集封面图占位图 (默认： 不显示占位图)
 /// \param imageName 播放器封面占位图URL（若imageName为空：则不显示默认占位图,  若imageName不为空，则显示自定义占位图）
 /// 备注：需要将自定义占位图片添加到BCDramaLib的images目录下
@@ -1484,7 +1484,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 /// 进入搜索页
 /// \param vc 导航栈
 ///
-+ (void)toSearchViewControllerWithForm:(UIViewController * _Nonnull)vc;
++ (void)toSearchViewControllerFrom:(UIViewController * _Nonnull)vc;
 /// 点击商品列表的支付回调；备注：若使用自定义的支付方式实现，支付完成后必须调用onPayComplete函数进行订单的查询校验，否则无法解锁剧集
 /// \param isCustomPayment 是否使用自定义支付方式（默认：SDK的支付宝、微信等现金支付）, 备注：自定义支付方式一定要设置为true
 ///
