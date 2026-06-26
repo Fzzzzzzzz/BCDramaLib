@@ -18,22 +18,7 @@
 - Xcode 14+
 - 源码工程：`bc_drama_sdk_ios_2`（打包与 Adapter 维护）
 
-## 发布前（维护方）
-
-1. 在 `bc_drama_sdk_ios_2` 根目录执行 `./at.sh`，产出写入 `iOSSDK/BCDramaLib/`
-2. 在本仓库执行：
-
-```bash
-./publish.sh 1.3.0
-# 或仅提交本目录已有产物: SKIP_SYNC=1 ./publish.sh 1.3.0
-```
-
-环境变量：
-
-- `SDK_DIR`：Core xcframework 目录，默认 `iOSSDK/BCDramaLib`
-- `ADAPTER_SRC_DIR`：Adapter 源码根目录，默认 `bc_drama_sdk_ios_2`
-
-## 宿主安装
+## 安装
 
 ```ruby
 source 'https://cdn.cocoapods.org/'
