@@ -103,7 +103,7 @@ if git diff --cached --quiet; then
   git status -sb
 else
   git diff --cached --stat
-  git commit -m "feat: 发布 BCDramaLib ${VERSION}（Core + Adapter 全量 xcframework）"
+  git commit -m "fix: 修复优量汇广告导致视频没有声音的问题"
 fi
 
 git tag -f "${TAG}"

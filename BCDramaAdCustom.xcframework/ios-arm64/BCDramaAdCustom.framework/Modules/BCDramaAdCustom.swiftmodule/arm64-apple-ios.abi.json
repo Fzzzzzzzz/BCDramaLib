@@ -52,7 +52,8 @@
             "protocolReq": true,
             "objc_name": "bc_customAdRegisterSDKWithAppId:",
             "declAttributes": [
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
@@ -136,7 +137,8 @@
             "protocolReq": true,
             "objc_name": "bc_customAdLoadBannerWithViewController:container:placementId:pageType:onClose:onShow:",
             "declAttributes": [
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
@@ -230,7 +232,8 @@
             "protocolReq": true,
             "objc_name": "bc_customAdLoadNativeExpressWithViewController:container:pageType:placementId:completion:",
             "declAttributes": [
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
@@ -324,7 +327,8 @@
             "protocolReq": true,
             "objc_name": "bc_customAdLoadFullScreenWithViewController:placementId:pageType:onShow:onClose:onFailed:",
             "declAttributes": [
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
@@ -402,7 +406,8 @@
             "protocolReq": true,
             "objc_name": "bc_customAdLoadRewardFrom:placementId:taskId:onClose:onShow:",
             "declAttributes": [
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"

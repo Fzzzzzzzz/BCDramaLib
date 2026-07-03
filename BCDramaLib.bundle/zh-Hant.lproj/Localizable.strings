@@ -81,7 +81,7 @@
 "cannotResetWhenClear" = "搜尋紀錄清空後無法恢復";
 "deletedSuccess" = "刪除成功";
 "loading" = "載入中...";
-"placeholderText" = " 請輸入搜尋關鍵字";
+"placeholderText" = "請輸入搜尋關鍵字";
 "searching" = "搜尋";
 "history" = "歷史記錄";
 "peopleAreSearching" = "搜尋熱門";

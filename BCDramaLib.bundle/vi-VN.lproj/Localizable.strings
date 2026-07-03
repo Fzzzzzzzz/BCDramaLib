@@ -80,7 +80,7 @@
 "cannotResetWhenClear" = "Không thể khôi phục lịch sử tìm kiếm sau khi đã xóa";
 "deletedSuccess" = "Đã xóa thành công";
 "loading" = "đang tải...";
-"placeholderText" = " Vui lòng nhập từ khóa tìm kiếm";
+"placeholderText" = "Vui lòng nhập từ khóa tìm kiếm";
 "searching" = "tìm kiếm";
 "history" = "Lịch sử";
 "peopleAreSearching" = "mọi người đang tìm kiếm";

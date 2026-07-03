@@ -82,7 +82,7 @@
 "cannotResetWhenClear" = "搜索历史清空后无法恢复";
 "deletedSuccess" = "删除成功";
 "loading" = "加载中...";
-"placeholderText" = " 请输入搜索关键字";
+"placeholderText" = "请输入搜索关键字";
 "searching" = "搜索";
 "history" = "历史记录";
 "peopleAreSearching" = "搜索热门";
