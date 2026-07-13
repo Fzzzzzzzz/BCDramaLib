@@ -16,7 +16,6 @@
 - iOS 11.0+
 - Core 仅真机 arm64（**不支持模拟器**）
 - Xcode 14+
-- 源码工程：`bc_drama_sdk_ios_2`（打包与 Adapter 维护）
 
 ## 安装
 
@@ -27,12 +26,12 @@ platform :ios, '11.0'
 use_frameworks! :linkage => :static
 
 target 'YourApp' do
-  pod 'BCDramaLib/Core', :git => 'https://github.com/Fzzzzzzzz/BCDramaLib.git', :tag => 'v1.3.0'
-  pod 'BCDramaLib/AdGDT'
-  pod 'BCDramaLib/AdCSJ'
-  pod 'BCDramaLib/AdKS'
-  pod 'BCDramaLib/AdMSaas'
-  pod 'BCDramaLib/AdCustom'   # 使用自定义广告时
+  pod 'BCDramaLib/Core', :git => 'https://github.com/Fzzzzzzzz/BCDramaLib.git', :tag => 'v1.3.4'
+  pod 'BCDramaLib/AdGDT'    #可选
+  pod 'BCDramaLib/AdCSJ'    #可选
+  pod 'BCDramaLib/AdKS'     #可选
+  pod 'BCDramaLib/AdMSaas'  #可选
+  pod 'BCDramaLib/AdCustom' #可选，使用自定义广告时
   # 或一条: pod 'BCDramaLib/AdsAll', ...
 end
 
@@ -53,13 +52,12 @@ pod install --repo-update
 
 ```swift
 import BCDramaLib
-// Adapter 与 Core 同模块编译时无需额外 import；若拆分为独立 Pod target，import 后类型名不变
 
 let adapters: [BCAdAdapter] = [
-    BCGDTAdAdapter(),
-    BCCSJAdAdapter(),
-    BCKSAdAdapter(),
-    BCMSaasAdAdapter(),
+    BCGDTAdAdapter(),    // 可选
+    BCCSJAdAdapter(),    // 可选
+    BCKSAdAdapter(),     // 可选
+    BCMSaasAdAdapter(),  // 可选
     BCCustomAdAdapter()  // 可选
 ]
 
@@ -81,7 +79,10 @@ BCVideoManager.initSDK(
 | Tag     | 说明 |
 |---------|------|
 | v1.2.x  | 单一二进制，旧版 initSDK |
-| v1.3.0  | Core 二进制 + Adapter 子模块 + initSDK 注入 |
+| v1.3.1  | 重构广告框架，使用依赖注入的方式配置广告源 |
+| v1.3.2  | 优化自定义广告接入；修复用户信息无法更新的问题 |
+| v1.3.3  | 优化接口调用 |
+| v1.3.4  | 修复优量汇广告导致视频没有声音的问题 |
 
 ## 常见问题
 
