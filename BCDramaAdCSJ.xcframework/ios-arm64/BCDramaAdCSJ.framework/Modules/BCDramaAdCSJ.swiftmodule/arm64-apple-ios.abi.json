@@ -666,14 +666,14 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdCSJ\/BCCSJBannerService.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdCSJ\/BCCSJBannerService.swift",
       "kind": "StringLiteral",
       "offset": 368,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdCSJ\/BCCSJRewardVideoViewController.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdCSJ\/BCCSJRewardVideoViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 347,
       "length": 5,

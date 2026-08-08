@@ -359,10 +359,10 @@ extension BCVideoManager {
     ///   - onUnlock: 解锁的回调
     ///   - onReward: 奖励的回调
     @objc public static func setVideoPlayCallBack(onStart: BCVideoPlayOnStart?,
-                                            onProgress: BCVideoPlayOnProgress?,
-                                            onEnd: BCVideoPlayOnEnd?,
-                                            onUnlock: BCVideoPlayOnUnlock?,
-                                            onReward: BCVideoPlayOnReward?) {
+                                                  onProgress: BCVideoPlayOnProgress?,
+                                                  onEnd: BCVideoPlayOnEnd?,
+                                                  onUnlock: BCVideoPlayOnUnlock?,
+                                                  onReward: BCVideoPlayOnReward?) {
         shared.videoPlayCallBack.onStart = onStart
         shared.videoPlayCallBack.onProgress = onProgress
         shared.videoPlayCallBack.onEnd = onEnd
@@ -370,11 +370,28 @@ extension BCVideoManager {
         shared.videoPlayCallBack.onReward = onReward
     }
     
+    /// 设置视频播放事件回调
+    /// - Parameters:
+    ///   - onStart: 开始的回调
+    ///   - onProgress: 进度的回调: 参数1：剧集索引，参数2: pageType，参数3：获取当前播放时间 参数4：获取视频总时长 参数5：可播放时长
+    ///   - onEnd: 结束的回调
+    ///   - onUnlock: 解锁的回调
+    ///   - onReward: 奖励的回调
+    @objc public static func setVideoPlayEventCallBack(_ callback: BCVideoPlayEvent?) {
+        shared.videoPlayCallBack.onPlayEvent = callback
+    }
+    
     /// 设置开发环境
     /// 若是手动调用，需要在初始化方法前调用
     /// - Parameter type: 环境类型：0：生产环境， 1：开发环境
     @objc public static func setEnv(type: BCEnvType) {
         NetworkManager.shared.setUpBaseUrl(type)
+    }
+    
+    /// 设置 SDK 日志开关（Debug 默认开启，Release 默认关闭）
+    /// - Parameter enabled: true 输出日志，false 关闭日志
+    @objc public static func setLogEnabled(_ enabled: Bool) {
+        BCLog.isEnabled = enabled
     }
     
     /// 当短剧SDK里面选择商品点击商品时，调用对应的回调
@@ -404,7 +421,7 @@ extension BCVideoManager {
         BCPaymentManager.shared.checkPaymentOrder(orderNo, retryCount: retryCount) { checkModel in
             complet(checkModel.payState)
         } failure: { error in
-            print("[sdk] query order state faulure, the error is : \(error)")
+            BCLog.print("[sdk] query order state faulure, the error is : \(error)")
         }
     }
 
@@ -533,7 +550,7 @@ extension BCVideoManager {
         } success: { ecmp in
             shared.videoPlayCallBack.onStartAdReward = onStartReward
         } failure: { error in
-            print("[sdk] reward video ad was failure, the error is \(error)")
+            BCLog.print("[sdk] reward video ad was failure, the error is \(error)")
         }
     }
     
@@ -652,10 +669,10 @@ extension BCVideoManager {
         tabBarController.onDismiss = { [weak vc] in
             guard let vc = vc else { return }
             if let navController = vc.navigationController {
-                print("[sdk] home pop")
+                BCLog.print("[sdk] home pop")
                 navController.popViewController(animated: true)
             }else {
-                print("[sdk] home dismiss")
+                BCLog.print("[sdk] home dismiss")
                 vc.dismiss(animated: true)
             }
         }
@@ -714,10 +731,10 @@ extension BCVideoManager {
         homeVc.onDismiss = { [weak vc] in
             guard let vc = vc else { return }
             if let navController = vc.navigationController {
-                print("[sdk] home pop")
+                BCLog.print("[sdk] home pop")
                 navController.popViewController(animated: true)
             }else {
-                print("[sdk] home dismiss")
+                BCLog.print("[sdk] home dismiss")
                 vc.dismiss(animated: true)
             }
         }
@@ -887,6 +904,18 @@ extension BCVideoManager {
     @objc public static func shareActionListener(onShareVideoCallBack: BCShareVideoCallBack?) {
         shared.videoPlayCallBack.onShareVideoCallBack = onShareVideoCallBack
     }
+    
+    /// 注册播放页 / 推荐页每集 cell 的自定义控件
+    /// - Parameter callback: 回调参数为 vc、container、videoId、episodeNo、pageType、eventBridge；宿主往 container 添加控件，并通过 eventBridge 接收解锁 / 翻页 / 播放状态事件
+    @objc public static func setPlayerCellCustomView(_ callback: BCPlayerCellCustomViewCallBack?) {
+        shared.videoPlayCallBack.onPlayerCellCustomView = callback
+    }
+    
+    /// 监听退出播放页（pop / dismiss），页面级事件，与 cell bridge 无关
+    /// - Parameter callback: vc、videoId、episodeNo、pageType、当前集自定义容器（可能为 nil）
+    @objc public static func setPlayerPageExitListener(_ callback: BCPlayerPageExitCallBack?) {
+        shared.videoPlayCallBack.onPlayerPageExit = callback
+    }
 
     /// 获取充值记录列表
     /// - Parameters:
@@ -937,7 +966,7 @@ extension BCVideoManager {
     ///   - onCustomGoodListViewCallBack: 商品列表面板相关数据回调
     @objc public static func customGoodListView(type: BCGoodListType, onCustomGoodListViewCallBack: BCCustomGoodListViewCallBack?) {
         if type == .defaults {
-            print("[sdk] 如果您不需要完全自定义或者半自定义，不需要调用该函数，默认模式的意思是商品列表面板和支付都使用SDK自带的")
+            BCLog.print("[sdk] 如果您不需要完全自定义或者半自定义，不需要调用该函数，默认模式的意思是商品列表面板和支付都使用SDK自带的")
             return
         }
         BCLoginManager.shared.goodListType = type
@@ -958,7 +987,7 @@ extension BCVideoManager {
     /// - Parameter goodList: 商品列表模型列表数组
     @objc public static func showGoodListView(goodList: [BCGoodListModel], videoId: Int, episodeNo: Int) {
         if BCLoginManager.shared.goodListType != .half {
-            print("[sdk] 仅有半自定义模式才需要调用该函数，半自定义的意思是，商品列表面板使用SDK自带的，但数据外层可能需要进行改造，最后将改造后的数据返回给SDK进行展示和支付使用")
+            BCLog.print("[sdk] 仅有半自定义模式才需要调用该函数，半自定义的意思是，商品列表面板使用SDK自带的，但数据外层可能需要进行改造，最后将改造后的数据返回给SDK进行展示和支付使用")
             return
         }
         
@@ -972,7 +1001,7 @@ extension BCVideoManager {
     @objc public static func payToUnlockVideo(goodModel: BCGoodListModel, vc: UIViewController?) {
         DispatchQueue.main.async {
             if BCLoginManager.shared.goodListType != .custom {
-                print("[sdk] 半自定义或者使用SDK默认面板，则默认是使用剧星支付，如果是完全自定义商品面板，可以选择是否需要使用剧星收款，备注：如果不使用剧星收款，请不要使用该方法")
+                BCLog.print("[sdk] 半自定义或者使用SDK默认面板，则默认是使用剧星支付，如果是完全自定义商品面板，可以选择是否需要使用剧星收款，备注：如果不使用剧星收款，请不要使用该方法")
                 return
             }
             BCLoginManager.shared.sdkPay(goodModel: goodModel, vc: vc)

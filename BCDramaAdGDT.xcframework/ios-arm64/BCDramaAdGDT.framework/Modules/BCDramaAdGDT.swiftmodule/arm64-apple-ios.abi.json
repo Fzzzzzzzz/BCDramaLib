@@ -695,28 +695,28 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTBannerService.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdGDT\/BCGDTBannerService.swift",
       "kind": "StringLiteral",
       "offset": 325,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTRewardVideoViewController.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdGDT\/BCGDTRewardVideoViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 326,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTPlatformManager.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdGDT\/BCGDTPlatformManager.swift",
       "kind": "IntegerLiteral",
       "offset": 1602,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdGDT\/BCGDTPlatformManager.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdGDT\/BCGDTPlatformManager.swift",
       "kind": "IntegerLiteral",
       "offset": 1631,
       "length": 3,

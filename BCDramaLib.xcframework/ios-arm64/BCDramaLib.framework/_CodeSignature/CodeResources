@@ -6,7 +6,7 @@
 	<dict>
 		<key>CryptoSwift.bundle/Info.plist</key>
 		<data>
-		TqfmtaQp7yHdH8ttJQKIb3tHJnQ=
+		x7TCkuMC8x5hLD7ZpOh6wb2Bdeo=
 		</data>
 		<key>CryptoSwift.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/BCDramaLib-Swift.h</key>
 		<data>
-		Quob8lYzQHphOgfEfU9nMcUjLv8=
+		dWfQVTnIF51/+jPLRewfHZ+GAuY=
 		</data>
 		<key>Headers/BCDramaLib.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Headers/BCVideoManager.swift</key>
 		<data>
-		XFY/UnIxD9nO8TLfVKPuX0VjRg8=
+		mwokGAHvkF1DPl9wguXOzosddhU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dWGWUdUy8HCPsq+mQIZVaajk4QE=
+		2G41z1xnBVx7bxloBwaoJgAPCh4=
 		</data>
 		<key>MJRefresh.bundle/arrow@2x.png</key>
 		<data>
@@ -92,23 +92,23 @@
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		wNPXgpgecltLV6ogSEtgtyR0mdM=
+		kIqAsS9ctvrk8zCqwLWctrcSRjE=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		WScsomvAkxtmq+3DP07Qw7ILf6Y=
+		q+2CQeyHMxNorXGkES9goqzyuoY=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		oM3lqiB0C99X4t2UXrf4Ez2W3cc=
+		BhZXzDg/2I/m9gUC75PQHAi1WPE=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		WScsomvAkxtmq+3DP07Qw7ILf6Y=
+		q+2CQeyHMxNorXGkES9goqzyuoY=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		7mRvuXqmFOKTTrGKp5j3uHygo1Y=
+		zPvdpNdBm6vi3BaSIsSmsn1YwtI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -120,7 +120,7 @@
 		</data>
 		<key>SDWebImage.bundle/Info.plist</key>
 		<data>
-		bWYrr3gJeKalkn+yWzKlaBESsrY=
+		eH3eSatLN37SY+J0InmP9GSd9WE=
 		</data>
 		<key>SDWebImage.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -133,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dv8OOBoUkhwfBRYMJ3aFrHeDYu/Ujo30FuimL+bA4HU=
+			ig1f1m85UbWJkuTi5efTLVPI8ZE/LSNxPAnNVvJYX0I=
 			</data>
 		</dict>
 		<key>CryptoSwift.bundle/PrivacyInfo.xcprivacy</key>
@@ -147,7 +147,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dQYzlBoV90ldWFS3tMrHYZCXxu2PSm55qVmCKvhm2es=
+			veIdOz5tTjMmvvhUX89HWOwkEZPkpQxxUoSvvO7ShZo=
 			</data>
 		</dict>
 		<key>Headers/BCDramaLib.h</key>
@@ -161,7 +161,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kJLz1GYKDLMlOmhLN1Osk5nIpuzs/t0SHVPk5OjqnDI=
+			pvZpi8FdUBuViYfm0tk67Si1wUr4nQDvBt+ZYamo2vk=
 			</data>
 		</dict>
 		<key>MJRefresh.bundle/arrow@2x.png</key>
@@ -236,35 +236,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oEzZjDUG/ultYpEthzigFnmROt343mAG81DR+YVe9mY=
+			ucI15FrYcCb8r0Zfq418n0tMdOinBBlp5aAY1+5CxkI=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5DEJ03EHhnyUMVsYs4AZmLpk7rEV7cj+P+XtlWET+Dk=
+			ocaLBPcKXzc2NUCG8PYkn0vWyYPVQT0d1aeU6PH8lq4=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ounlNayVyKuHpb9x1+cz2ovHzBmVjq/WprIk3Grk838=
+			soz4PiJvUk5OsVAYxm5C1HDQvZyTrEOLyhxwi7btXIU=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5DEJ03EHhnyUMVsYs4AZmLpk7rEV7cj+P+XtlWET+Dk=
+			ocaLBPcKXzc2NUCG8PYkn0vWyYPVQT0d1aeU6PH8lq4=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VL4xTXWaACGSQV669RPSwFb9sbhuRA2LloPEsqQv+vA=
+			bH3BbrNLFQ0qrpLpWsetoCWX+o8BWbFftfF8qcmH1Bk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -285,7 +285,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uddKclC+Hg+vJIi3ZFj7vlcZGXeu4LYVD7te1CalFHw=
+			JS2qwTDL8+7pLp7jZR4sAhQY7OKm8xGzMpbYqxoMYQE=
 			</data>
 		</dict>
 		<key>SDWebImage.bundle/PrivacyInfo.xcprivacy</key>

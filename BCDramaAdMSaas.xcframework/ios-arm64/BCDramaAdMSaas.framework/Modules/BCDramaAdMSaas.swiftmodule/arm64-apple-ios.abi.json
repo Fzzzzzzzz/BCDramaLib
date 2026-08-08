@@ -720,14 +720,14 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdMSaas\/BCMSaasRewardVideoViewController.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdMSaas\/BCMSaasRewardVideoViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 329,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios_2\/BCDramaAdMSaas\/BCMSaasPlatformManager.swift",
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaAdMSaas\/BCMSaasPlatformManager.swift",
       "kind": "Array",
       "offset": 1522,
       "length": 2,

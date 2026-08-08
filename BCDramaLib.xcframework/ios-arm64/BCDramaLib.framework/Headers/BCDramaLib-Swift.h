@@ -639,6 +639,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCLocalizabl
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
+SWIFT_CLASS("_TtC10BCDramaLib5BCLog")
+@interface BCLog : NSObject
+/// 是否输出日志。Debug 默认开启，Release 默认关闭。
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isEnabled;)
++ (BOOL)isEnabled SWIFT_WARN_UNUSED_RESULT;
++ (void)setIsEnabled:(BOOL)value;
+/// 日志前缀
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull prefix;)
++ (NSString * _Nonnull)prefix SWIFT_WARN_UNUSED_RESULT;
++ (void)setPrefix:(NSString * _Nonnull)value;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
 SWIFT_CLASS("_TtC10BCDramaLib14BCLoginManager")
 @interface BCLoginManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCLoginManager * _Nonnull shared;)
@@ -824,6 +838,39 @@ SWIFT_CLASS_NAMED("BCPayOrderModel")
 typedef SWIFT_ENUM(NSInteger, BCPaymentStatus, open) {
   BCPaymentStatusOff = 0,
   BCPaymentStatusOn = 1,
+};
+
+/// 播放页 cell 事件桥：仅承载「单集」相关事件（解锁 / 进入 / 离开 / 播放状态）
+SWIFT_CLASS("_TtC10BCDramaLib23BCPlayerCellEventBridge")
+@interface BCPlayerCellEventBridge : NSObject
+/// 剧集解锁成功：参数1 videoId，参数2 episodeNo，参数3 unlockType（1=广告/激励，2=支付）
+@property (nonatomic, copy) void (^ _Nullable onUnlock)(NSInteger, NSInteger, NSInteger);
+/// 滑动翻页 / 切集后落到本集：参数1 videoId，参数2 episodeNo，参数3 本集自定义容器
+@property (nonatomic, copy) void (^ _Nullable onPageChange)(NSInteger, NSInteger, UIView * _Nonnull);
+/// 滑动翻页离开本集：参数1 videoId，参数2 episodeNo，参数3 离开集的自定义容器
+@property (nonatomic, copy) void (^ _Nullable onPageLeave)(NSInteger, NSInteger, UIView * _Nonnull);
+/// 本集播放状态变化：参数1 videoId，参数2 episodeNo，参数3 status（BCVodPlayerStatus.rawValue），参数4 本集总时长（秒），参数5 本集自定义容器
+/// status 常用值：3=firstFrame, 4=loading, 5=loaded, 6=playing, 7=paused, 8=end, 9=error
+@property (nonatomic, copy) void (^ _Nullable onPlayStatus)(NSInteger, NSInteger, NSInteger, float, UIView * _Nonnull);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+/// 播放页 / 推荐页 cell 自定义控件所在页面类型
+/// <ul>
+///   <li>
+///     recommend: 推荐页
+///   </li>
+///   <li>
+///     player: 剧集播放页
+///   </li>
+///   <li>
+///     oldRecommend: 旧版推荐页
+///   </li>
+/// </ul>
+typedef SWIFT_ENUM(NSInteger, BCPlayerCellPageType, open) {
+  BCPlayerCellPageTypeRecommend = 0,
+  BCPlayerCellPageTypePlayer = 1,
+  BCPlayerCellPageTypeOldRecommend = 2,
 };
 
 typedef SWIFT_ENUM(NSInteger, BCPlayerRenderMode, open) {
@@ -1279,11 +1326,27 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 /// \param onReward 奖励的回调
 ///
 + (void)setVideoPlayCallBackOnStart:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))onStart onProgress:(void (^ _Nullable)(NSString * _Nonnull, NSInteger, NSInteger, NSInteger, NSInteger))onProgress onEnd:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))onEnd onUnlock:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))onUnlock onReward:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))onReward;
+/// 设置视频播放事件回调
+/// \param onStart 开始的回调
+///
+/// \param onProgress 进度的回调: 参数1：剧集索引，参数2: pageType，参数3：获取当前播放时间 参数4：获取视频总时长 参数5：可播放时长
+///
+/// \param onEnd 结束的回调
+///
+/// \param onUnlock 解锁的回调
+///
+/// \param onReward 奖励的回调
+///
++ (void)setVideoPlayEventCallBack:(void (^ _Nullable)(NSInteger, NSInteger, NSInteger, float, float))callback;
 /// 设置开发环境
 /// 若是手动调用，需要在初始化方法前调用
 /// \param type 环境类型：0：生产环境， 1：开发环境
 ///
 + (void)setEnvWithType:(enum BCEnvType)type;
+/// 设置 SDK 日志开关（Debug 默认开启，Release 默认关闭）
+/// \param enabled true 输出日志，false 关闭日志
+///
++ (void)setLogEnabled:(BOOL)enabled;
 /// 当短剧SDK里面选择商品点击商品时，调用对应的回调
 /// \param onPayment 商品参数JSON
 ///
@@ -1592,6 +1655,14 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 /// \param onShareVideoCallBack 分享操作回调
 ///
 + (void)shareActionListenerOnShareVideoCallBack:(void (^ _Nullable)(UIViewController * _Nonnull, NSDictionary<NSString *, id> * _Nonnull))onShareVideoCallBack;
+/// 注册播放页 / 推荐页每集 cell 的自定义控件
+/// \param callback 回调参数为 vc、container、videoId、episodeNo、pageType、eventBridge；宿主往 container 添加控件，并通过 eventBridge 接收解锁 / 翻页 / 播放状态事件
+///
++ (void)setPlayerCellCustomView:(void (^ _Nullable)(UIViewController * _Nonnull, UIView * _Nonnull, NSInteger, NSInteger, enum BCPlayerCellPageType, BCPlayerCellEventBridge * _Nonnull))callback;
+/// 监听退出播放页（pop / dismiss），页面级事件，与 cell bridge 无关
+/// \param callback vc、videoId、episodeNo、pageType、当前集自定义容器（可能为 nil）
+///
++ (void)setPlayerPageExitListener:(void (^ _Nullable)(UIViewController * _Nonnull, NSInteger, NSInteger, enum BCPlayerCellPageType, UIView * _Nullable))callback;
 /// 获取充值记录列表
 /// \param page 页数
 ///
@@ -1687,6 +1758,7 @@ SWIFT_CLASS("_TtC10BCDramaLib19BCVideoPlayCallBack")
 @interface BCVideoPlayCallBack : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BCVideoPlayCallBack * _Nonnull shared;)
 + (BCVideoPlayCallBack * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) void (^ _Nullable onPlayEvent)(NSInteger, NSInteger, NSInteger, float, float);
 @property (nonatomic, copy) void (^ _Nullable onStart)(NSDictionary<NSString *, id> * _Nonnull);
 @property (nonatomic, copy) void (^ _Nullable onProgress)(NSString * _Nonnull, NSInteger, NSInteger, NSInteger, NSInteger);
 @property (nonatomic, copy) void (^ _Nullable onEnd)(NSDictionary<NSString *, id> * _Nonnull);
