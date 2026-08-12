@@ -95746,148 +95746,141 @@
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1013,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1084,
+      "offset": 1081,
       "length": 10,
       "value": "\"video_id\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1121,
+      "offset": 1118,
       "length": 13,
       "value": "\"video_title\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1158,
+      "offset": 1155,
       "length": 10,
       "value": "\"logo_img\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1195,
+      "offset": 1192,
       "length": 13,
       "value": "\"video_total\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1261,
+      "offset": 1258,
       "length": 17,
       "value": "\"last_episode_no\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1306,
+      "offset": 1303,
       "length": 14,
       "value": "\"is_favorites\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1351,
+      "offset": 1348,
       "length": 17,
       "value": "\"favorites_count\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1395,
+      "offset": 1392,
       "length": 14,
       "value": "\"video_is_end\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1431,
+      "offset": 1428,
       "length": 8,
       "value": "\"is_iap\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1461,
+      "offset": 1458,
       "length": 8,
       "value": "\"is_iaa\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1506,
+      "offset": 1503,
       "length": 24,
       "value": "\"wx_registration_number\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1564,
+      "offset": 1561,
       "length": 22,
       "value": "\"max_watch_episode_no\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1611,
+      "offset": 1608,
       "length": 11,
       "value": "\"tag_names\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1650,
+      "offset": 1647,
       "length": 14,
       "value": "\"publish_time\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1689,
+      "offset": 1686,
       "length": 10,
       "value": "\"duration\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2337,
+      "offset": 2334,
       "length": 9,
       "value": "\"task_id\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2371,
+      "offset": 2368,
       "length": 11,
       "value": "\"is_unlock\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2681,
+      "offset": 2678,
       "length": 21,
       "value": "\"unlock_episode_list\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 3033,
+      "offset": 3030,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 3063,
+      "offset": 3060,
       "length": 12,
       "value": "\"event_time\""
     },

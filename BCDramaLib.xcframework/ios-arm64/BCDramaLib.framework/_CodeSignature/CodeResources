@@ -92,7 +92,7 @@
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		/UCrrDu1EnzGtY+uZSCksEKC+/A=
+		AMoeQFDjIo22o9TA0LMgpYTUumk=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -108,7 +108,7 @@
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		viRE7xiNjp6tIjMdxvb+6CQuIzw=
+		iUEW0ADbepni6MPtnuNj5h/e9hU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -236,7 +236,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Ul56e0qbi8GVxzoNCTCyJaPksAsNjqghN08V7ysn7E=
+			d78dcDk3iVkSCYV27zSLInOuAMvY137WcI0wGUWOT90=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -264,7 +264,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RtHb2VsIai2Pln5MRZK7U+VzqKZek8TS62A2+xJHuUc=
+			wJaYyWwHHWASjxGDfvY5OijanVB4JweWedIK7X0/GhI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
