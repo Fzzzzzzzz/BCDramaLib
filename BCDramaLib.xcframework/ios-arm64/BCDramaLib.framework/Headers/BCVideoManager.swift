@@ -911,6 +911,12 @@ extension BCVideoManager {
         shared.videoPlayCallBack.onPlayerCellCustomView = callback
     }
     
+    /// 当前播放页剧集信息
+    /// - Parameter callback: 剧集信息
+    @objc public static func setPlayerPageVideoInfoCallback(_ callback: BCPlayerPageVideoInfoCallBack?) {
+        shared.videoPlayCallBack.onPlayerPageVideoInfo = callback
+    }
+    
     /// 监听退出播放页（pop / dismiss），页面级事件，与 cell bridge 无关
     /// - Parameter callback: vc、videoId、episodeNo、pageType、当前集自定义容器（可能为 nil）
     @objc public static func setPlayerPageExitListener(_ callback: BCPlayerPageExitCallBack?) {

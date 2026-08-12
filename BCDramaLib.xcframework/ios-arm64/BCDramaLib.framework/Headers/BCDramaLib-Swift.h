@@ -1659,6 +1659,10 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 /// \param callback 回调参数为 vc、container、videoId、episodeNo、pageType、eventBridge；宿主往 container 添加控件，并通过 eventBridge 接收解锁 / 翻页 / 播放状态事件
 ///
 + (void)setPlayerCellCustomView:(void (^ _Nullable)(UIViewController * _Nonnull, UIView * _Nonnull, NSInteger, NSInteger, enum BCPlayerCellPageType, BCPlayerCellEventBridge * _Nonnull))callback;
+/// 当前播放页剧集信息
+/// \param callback 剧集信息
+///
++ (void)setPlayerPageVideoInfoCallback:(void (^ _Nullable)(NSDictionary * _Nullable))callback;
 /// 监听退出播放页（pop / dismiss），页面级事件，与 cell bridge 无关
 /// \param callback vc、videoId、episodeNo、pageType、当前集自定义容器（可能为 nil）
 ///

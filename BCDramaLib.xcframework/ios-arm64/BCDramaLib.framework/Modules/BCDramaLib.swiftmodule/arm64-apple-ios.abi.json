@@ -6583,6 +6583,65 @@
           },
           {
             "kind": "Function",
+            "name": "setPlayerPageVideoInfoCallback",
+            "printedName": "setPlayerPageVideoInfoCallback(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Foundation.NSDictionary?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.NSDictionary?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.NSDictionary?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSDictionary",
+                            "printedName": "Foundation.NSDictionary",
+                            "usr": "c:objc(cs)NSDictionary"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)setPlayerPageVideoInfoCallback:",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC30setPlayerPageVideoInfoCallbackyyySo12NSDictionaryCSgcSgFZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setPlayerPageExitListener",
             "printedName": "setPlayerPageExitListener(_:)",
             "children": [
@@ -94512,21 +94571,21 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 42542,
+      "offset": 42804,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 43216,
+      "offset": 43478,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 43444,
+      "offset": 43706,
       "length": 5,
       "value": "false"
     },
@@ -95687,127 +95746,148 @@
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1013,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 979,
+      "offset": 1084,
       "length": 10,
       "value": "\"video_id\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1016,
+      "offset": 1121,
       "length": 13,
       "value": "\"video_title\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1053,
+      "offset": 1158,
       "length": 10,
       "value": "\"logo_img\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1090,
+      "offset": 1195,
       "length": 13,
       "value": "\"video_total\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1156,
+      "offset": 1261,
       "length": 17,
       "value": "\"last_episode_no\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1201,
+      "offset": 1306,
       "length": 14,
       "value": "\"is_favorites\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1246,
+      "offset": 1351,
       "length": 17,
       "value": "\"favorites_count\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1290,
+      "offset": 1395,
       "length": 14,
       "value": "\"video_is_end\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1326,
+      "offset": 1431,
       "length": 8,
       "value": "\"is_iap\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1356,
+      "offset": 1461,
       "length": 8,
       "value": "\"is_iaa\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1401,
+      "offset": 1506,
       "length": 24,
       "value": "\"wx_registration_number\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1459,
+      "offset": 1564,
       "length": 22,
       "value": "\"max_watch_episode_no\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 1506,
+      "offset": 1611,
       "length": 11,
       "value": "\"tag_names\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2155,
+      "offset": 1650,
+      "length": 14,
+      "value": "\"publish_time\""
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1689,
+      "length": 10,
+      "value": "\"duration\""
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
+      "kind": "StringLiteral",
+      "offset": 2337,
       "length": 9,
       "value": "\"task_id\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2189,
+      "offset": 2371,
       "length": 11,
       "value": "\"is_unlock\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2499,
+      "offset": 2681,
       "length": 21,
       "value": "\"unlock_episode_list\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2851,
+      "offset": 3033,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Models\/BCDramaDetailModel.swift",
       "kind": "StringLiteral",
-      "offset": 2881,
+      "offset": 3063,
       "length": 12,
       "value": "\"event_time\""
     },
@@ -99440,7 +99520,7 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/home\/controller\/BCHomeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9384,
+      "offset": 9403,
       "length": 4,
       "value": "true"
     },
@@ -108632,22 +108712,22 @@
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/View\/BCVodPlayerControlLayer.swift",
       "kind": "StringLiteral",
       "offset": 8944,
-      "length": 19,
-      "value": "\"free_unlock_by_ad\""
+      "length": 20,
+      "value": "\"free_unlock_by_pay\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/View\/BCVodPlayerControlLayer.swift",
       "kind": "StringLiteral",
-      "offset": 8965,
-      "length": 7,
+      "offset": 8966,
+      "length": 6,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/View\/BCVodPlayerControlLayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 8968,
-      "length": 2,
-      "value": "10"
+      "offset": 8969,
+      "length": 1,
+      "value": "5"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/View\/BCVodPlayerControlLayer.swift",
@@ -109149,7 +109229,7 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/View\/BCVodPlayerControlLayer.swift",
       "kind": "BooleanLiteral",
-      "offset": 21968,
+      "offset": 21969,
       "length": 4,
       "value": "true"
     },
@@ -115344,21 +115424,21 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/ViewModel\/BCPlayerViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 8072,
+      "offset": 8074,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/ViewModel\/BCPlayerViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 11229,
+      "offset": 11231,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/ViewModel\/BCPlayerViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 11251,
+      "offset": 11253,
       "length": 1,
       "value": "0"
     },

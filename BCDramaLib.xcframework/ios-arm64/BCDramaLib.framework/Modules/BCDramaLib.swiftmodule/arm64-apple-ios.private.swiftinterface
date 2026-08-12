@@ -173,6 +173,7 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func hiddenTheShareAction(isHidden: Swift.Bool)
   @objc public static func shareActionListener(onShareVideoCallBack: BCDramaLib.BCShareVideoCallBack?)
   @objc public static func setPlayerCellCustomView(_ callback: BCDramaLib.BCPlayerCellCustomViewCallBack?)
+  @objc public static func setPlayerPageVideoInfoCallback(_ callback: BCDramaLib.BCPlayerPageVideoInfoCallBack?)
   @objc public static func setPlayerPageExitListener(_ callback: BCDramaLib.BCPlayerPageExitCallBack?)
   @objc public static func getOrderLists(page: Swift.Int, pageSize: Swift.Int, comolete: @escaping (BCDramaLib.BCPayOrderModel?, Swift.String?) -> Swift.Void)
   @objc public static func hideHomeNavBack(isHidden: Swift.Bool)
@@ -1685,6 +1686,7 @@ public typealias BCCustomGoodListViewCallBack = (UIKit.UIViewController, [BCDram
   @objc deinit
 }
 public typealias BCPlayerCellCustomViewCallBack = (UIKit.UIViewController, UIKit.UIView, Swift.Int, Swift.Int, BCDramaLib.BCPlayerCellPageType, BCDramaLib.BCPlayerCellEventBridge) -> Swift.Void
+public typealias BCPlayerPageVideoInfoCallBack = (Foundation.NSDictionary?) -> Swift.Void
 public typealias BCPlayerPageExitCallBack = (UIKit.UIViewController, Swift.Int, Swift.Int, BCDramaLib.BCPlayerCellPageType, UIKit.UIView?) -> Swift.Void
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BCVideoPlayCallBack : ObjectiveC.NSObject {
   @objc public static let shared: BCDramaLib.BCVideoPlayCallBack

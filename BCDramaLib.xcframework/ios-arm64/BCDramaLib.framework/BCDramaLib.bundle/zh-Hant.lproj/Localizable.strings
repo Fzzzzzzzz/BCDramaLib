@@ -20,7 +20,7 @@
 "close" = "收起";
 "expand" = "展開";
 "switched_to_speed" = "已切換至%@X倍速播放";
-"free_unlock_by_ad" = "付費解鎖";
+"free_unlock_by_pay" = "付費解鎖";
 "unlock_after_payment" = "試看%@秒後付費解鎖";
 "support_the_author" = "高清短劇 觀看自由";
 "accept_the_agreement" = "充值代表接受《充值協議》和《會員協議》虛擬商品購買後不可退換，青少年請在家長陪同下充值";
