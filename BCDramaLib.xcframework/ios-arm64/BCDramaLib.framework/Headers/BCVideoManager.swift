@@ -558,7 +558,7 @@ extension BCVideoManager {
     /// - Parameters:
     ///   - vc: 来源控制器
     ///   - videoId: 剧ID
-    ///   - lastEpisodeNo: 播放的剧集索引
+    ///   - lastEpisodeNo: 播放的剧集索引，传0自动播放最后观看记录
     ///   - offsetY: 播放页顶部工具栏的Y轴偏移量
     @objc public static func jumpToVideoPlayController(from vc: UIViewController,
                                                        videoId: Int,

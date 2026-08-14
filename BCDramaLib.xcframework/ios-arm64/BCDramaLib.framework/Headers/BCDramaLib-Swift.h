@@ -1456,7 +1456,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// \param videoId 剧ID
 ///
-/// \param lastEpisodeNo 播放的剧集索引
+/// \param lastEpisodeNo 播放的剧集索引，传0自动播放最后观看记录
 ///
 /// \param offsetY 播放页顶部工具栏的Y轴偏移量
 ///
