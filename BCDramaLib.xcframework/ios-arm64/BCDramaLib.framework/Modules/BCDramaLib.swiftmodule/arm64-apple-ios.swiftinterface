@@ -200,6 +200,7 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func hideMeVipBtn(_ isHidden: Swift.Bool)
   @objc public static func setCustomUserAvater(_ avater: Swift.String?)
   @objc public static func setCustomUserNickname(_ nickname: Swift.String?)
+  @objc public static func setProfileMenuOpts(_ menuOpts: Swift.Int)
 }
 public func RGBColor(_ r: CoreFoundation.CGFloat, g: CoreFoundation.CGFloat, b: CoreFoundation.CGFloat, a: CoreFoundation.CGFloat) -> UIKit.UIColor
 @_inheritsConvenienceInitializers @objc public class BCUtilsManager : ObjectiveC.NSObject {

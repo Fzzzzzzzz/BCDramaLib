@@ -103,7 +103,7 @@ if git diff --cached --quiet; then
   git status -sb
 else
   git diff --cached --stat
-  git commit -m "feat: 新增当前剧信息回调"
+  git commit -m "feat: 增加隐藏菜单按钮的功能"
 fi
 
 git tag -f "${TAG}"

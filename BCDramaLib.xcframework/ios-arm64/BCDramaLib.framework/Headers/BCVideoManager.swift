@@ -1085,6 +1085,12 @@ extension BCVideoManager {
     @objc public static func setCustomUserNickname(_ nickname: String?) {
         BCLoginManager.shared.customUserNickname = nickname
     }
+    
+    /// 配置我的页面菜单按钮
+    /// - Parameter menuOpts: 订单: 1 << 0, 偏好: 1 << 1, 0: 全隐藏
+    @objc public static func setProfileMenuOpts(_ menuOpts: Int) {
+        BCLoginManager.shared.profileMenuOpts = BCProfileMenuSet(rawValue: menuOpts)
+    }
 }
 
 

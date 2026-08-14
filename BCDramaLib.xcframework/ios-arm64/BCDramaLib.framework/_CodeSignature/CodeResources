@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/BCDramaLib-Swift.h</key>
 		<data>
-		zSDhYwnu6E36d19uD/nMptCkmOs=
+		sA3o/yaHjsKmosckNVXOedMkeIg=
 		</data>
 		<key>Headers/BCDramaLib.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/BCVideoManager.swift</key>
 		<data>
-		tvO6m+OrTkYKY0cripvLiQ7GLBA=
+		8/oijZk99qk4jKsv5apnqxOV2fI=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -92,23 +92,23 @@
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		vysIsOEBdwo7saTo9nDdLOQyGYQ=
+		sa1W9432ghaEzK3pHnf0OhpkyhI=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		Y93/TAqcm3ZOZpaMyICR+puy0Ao=
+		kGHAGcbN2PxjfLm0Y4oOvV7NJFw=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		w2tKr44BKahiNcYkpD0qEX8b4LI=
+		Zpatw8gr/vPuhJ6FBtHgMDgWY/0=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Y93/TAqcm3ZOZpaMyICR+puy0Ao=
+		kGHAGcbN2PxjfLm0Y4oOvV7NJFw=
 		</data>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		iUEW0ADbepni6MPtnuNj5h/e9hU=
+		yn8l3+h0db49lOp0FDhjJELzlOk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -147,7 +147,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oZM+//+I++P8QfsRdMuJVndmBMYseYUGTxPvaBS3xIQ=
+			3N5Do+WnE8j0ouDFGCOu2UqbIKcKgr3nsqxcFBoGzto=
 			</data>
 		</dict>
 		<key>Headers/BCDramaLib.h</key>
@@ -161,7 +161,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JBS6hBVZyFglxH9UkvIxNTC1mKej3w0NP2/1h0d6L6M=
+			ebZWi8lognxkvhSWMekCdzIaktZbdUroEu6NJCe3VEw=
 			</data>
 		</dict>
 		<key>MJRefresh.bundle/arrow@2x.png</key>
@@ -236,35 +236,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7gcHgKo3RrUNf+96mck68PBePyoJZNb5uljQ4X12g9A=
+			GUli6+pmBYKs6HQqG58Rp/5KRkRatxF5ehAf/2ptcZk=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o/LqlE2ek4dgf52SEIJj6iGrf5YNbY9yTjP3W5eWtwA=
+			siWi6jtCIo6HS237bUYkavDKA5W2EVMP+UXx7SRPwIY=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RXxCdeFW/Xo+kj0PUZiLTWQmMym1pUiValCvjaYji6Q=
+			Q3R37SwFG/hGCgiilivAE42Qy24mZFtaVXuuc5OpFPM=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o/LqlE2ek4dgf52SEIJj6iGrf5YNbY9yTjP3W5eWtwA=
+			siWi6jtCIo6HS237bUYkavDKA5W2EVMP+UXx7SRPwIY=
 			</data>
 		</dict>
 		<key>Modules/BCDramaLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wJaYyWwHHWASjxGDfvY5OijanVB4JweWedIK7X0/GhI=
+			V1cVC93J3QGdF6tDsww/TI7xdEk3h+3OgX0m2QXIKa4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

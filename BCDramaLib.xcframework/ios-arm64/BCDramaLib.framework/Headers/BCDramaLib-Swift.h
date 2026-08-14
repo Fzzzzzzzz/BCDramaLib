@@ -1756,6 +1756,10 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 + (void)hideMeVipBtn:(BOOL)isHidden;
 + (void)setCustomUserAvater:(NSString * _Nullable)avater;
 + (void)setCustomUserNickname:(NSString * _Nullable)nickname;
+/// 配置我的页面菜单按钮
+/// \param menuOpts 订单: 1 << 0, 偏好: 1 << 1, 0: 全隐藏
+///
++ (void)setProfileMenuOpts:(NSInteger)menuOpts;
 @end
 
 SWIFT_CLASS("_TtC10BCDramaLib19BCVideoPlayCallBack")

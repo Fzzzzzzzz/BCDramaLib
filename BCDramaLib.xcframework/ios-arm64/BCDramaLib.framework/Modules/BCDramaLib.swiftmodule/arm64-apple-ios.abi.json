@@ -7802,6 +7802,37 @@
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setProfileMenuOpts",
+            "printedName": "setProfileMenuOpts(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)setProfileMenuOpts:",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC18setProfileMenuOptsyySiFZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -103950,778 +103981,855 @@
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 733,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 822,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 913,
-      "length": 2,
-      "value": "30"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1077,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "StringLiteral",
-      "offset": 1104,
-      "length": 3,
-      "value": "\"-\""
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1143,
-      "length": 3,
-      "value": "162"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1151,
-      "length": 3,
-      "value": "165"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1159,
-      "length": 3,
-      "value": "181"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 1167,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1219,
-      "length": 2,
-      "value": "18"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1398,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "StringLiteral",
-      "offset": 1425,
-      "length": 7,
-      "value": "\"ID: -\""
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1469,
-      "length": 3,
-      "value": "162"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1477,
-      "length": 3,
-      "value": "165"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1485,
-      "length": 3,
-      "value": "181"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 1493,
-      "length": 3,
-      "value": "0.7"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1545,
-      "length": 2,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1746,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "StringLiteral",
-      "offset": 1794,
-      "length": 17,
-      "value": "\"bc_profile_copy\""
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 1833,
-      "length": 4,
-      "value": "18.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2410,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "StringLiteral",
-      "offset": 2509,
-      "length": 21,
-      "value": "\"bc_profile_vip_icon\""
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2701,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "StringLiteral",
-      "offset": 2755,
-      "length": 15,
-      "value": "\"vip_privilege\""
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2835,
+      "offset": 418,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2930,
-      "length": 2,
-      "value": "14"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3116,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "StringLiteral",
-      "offset": 3170,
-      "length": 9,
-      "value": "\"ad_free\""
+      "offset": 423,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3220,
-      "length": 3,
-      "value": "227"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3224,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3238,
-      "length": 3,
-      "value": "171"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3242,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3255,
-      "length": 2,
-      "value": "75"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3258,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3272,
+      "offset": 481,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3305,
+      "offset": 486,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3354,
-      "length": 2,
-      "value": "12"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3533,
+      "offset": 1210,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3573,
+      "offset": 1565,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1654,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1745,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3637,
+      "offset": 1909,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "StringLiteral",
-      "offset": 3694,
-      "length": 21,
-      "value": "\"activate_membership\""
+      "offset": 1936,
+      "length": 3,
+      "value": "\"-\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3843,
+      "offset": 1975,
+      "length": 3,
+      "value": "162"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1983,
+      "length": 3,
+      "value": "165"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1991,
+      "length": 3,
+      "value": "181"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1999,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2051,
       "length": 2,
-      "value": "13"
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2230,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "StringLiteral",
+      "offset": 2257,
+      "length": 7,
+      "value": "\"ID: -\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3928,
+      "offset": 2301,
       "length": 3,
-      "value": "238"
+      "value": "162"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2309,
+      "length": 3,
+      "value": "165"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2317,
+      "length": 3,
+      "value": "181"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 3932,
-      "length": 5,
-      "value": "255.0"
+      "offset": 2325,
+      "length": 3,
+      "value": "0.7"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3946,
-      "length": 3,
-      "value": "208"
+      "offset": 2377,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2578,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "StringLiteral",
+      "offset": 2626,
+      "length": 17,
+      "value": "\"bc_profile_copy\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 3950,
+      "offset": 2665,
+      "length": 4,
+      "value": "18.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3242,
       "length": 5,
-      "value": "255.0"
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "StringLiteral",
+      "offset": 3341,
+      "length": 21,
+      "value": "\"bc_profile_vip_icon\""
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3533,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "StringLiteral",
+      "offset": 3587,
+      "length": 15,
+      "value": "\"vip_privilege\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3963,
-      "length": 3,
-      "value": "122"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3967,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3981,
+      "offset": 3667,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3998,
+      "offset": 3762,
+      "length": 2,
+      "value": "14"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3948,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "StringLiteral",
+      "offset": 4002,
+      "length": 9,
+      "value": "\"ad_free\""
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4052,
       "length": 3,
       "value": "227"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 4002,
+      "offset": 4056,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4016,
+      "offset": 4070,
       "length": 3,
       "value": "171"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 4020,
+      "offset": 4074,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4033,
+      "offset": 4087,
       "length": 2,
       "value": "75"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 4036,
+      "offset": 4090,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4050,
+      "offset": 4104,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4075,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4088,
-      "length": 2,
-      "value": "30"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4317,
+      "offset": 4137,
       "length": 1,
-      "value": "8"
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4186,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4365,
+      "length": 2,
+      "value": "15"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4354,
+      "offset": 4405,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4416,
+      "offset": 4469,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4489,
-      "length": 3,
-      "value": "166"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 4493,
-      "length": 5,
-      "value": "255.0"
+      "kind": "StringLiteral",
+      "offset": 4526,
+      "length": 21,
+      "value": "\"activate_membership\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4507,
+      "offset": 4675,
       "length": 2,
-      "value": "68"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 4510,
-      "length": 5,
-      "value": "255.0"
+      "value": "13"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4523,
+      "offset": 4760,
       "length": 3,
-      "value": "116"
+      "value": "238"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 4527,
+      "offset": 4764,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4541,
+      "offset": 4778,
+      "length": 3,
+      "value": "208"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 4782,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4795,
+      "length": 3,
+      "value": "122"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 4799,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4813,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4558,
+      "offset": 4830,
       "length": 3,
-      "value": "166"
+      "value": "227"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 4562,
+      "offset": 4834,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4576,
+      "offset": 4848,
+      "length": 3,
+      "value": "171"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 4852,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4865,
       "length": 2,
-      "value": "68"
+      "value": "75"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 4579,
+      "offset": 4868,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4592,
-      "length": 3,
-      "value": "116"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 4596,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4610,
+      "offset": 4882,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4627,
+      "offset": 4907,
       "length": 3,
-      "value": "121"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 4631,
-      "length": 5,
-      "value": "255.0"
+      "value": "100"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4645,
-      "length": 2,
-      "value": "59"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 4648,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4661,
-      "length": 3,
-      "value": "167"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "FloatLiteral",
-      "offset": 4665,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4679,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4734,
-      "length": 2,
-      "value": "24"
-    },
-    {
-      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4746,
+      "offset": 4920,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4875,
+      "offset": 5149,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5186,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5248,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5321,
+      "length": 3,
+      "value": "166"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5325,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5339,
+      "length": 2,
+      "value": "68"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5342,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5355,
+      "length": 3,
+      "value": "116"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5359,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5373,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5390,
+      "length": 3,
+      "value": "166"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5394,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5408,
+      "length": 2,
+      "value": "68"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5411,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5424,
+      "length": 3,
+      "value": "116"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5428,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5442,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5459,
+      "length": 3,
+      "value": "121"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5463,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5477,
+      "length": 2,
+      "value": "59"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5480,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5493,
+      "length": 3,
+      "value": "167"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 5497,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5511,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5566,
+      "length": 2,
+      "value": "24"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5578,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5707,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4939,
+      "offset": 5771,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 5431,
+      "offset": 6281,
       "length": 2,
       "value": "11"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 5438,
+      "offset": 6288,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 5445,
+      "offset": 6295,
       "length": 2,
       "value": "31"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 5452,
+      "offset": 6302,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5514,
+      "offset": 6368,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6595,
+      "length": 2,
+      "value": "40"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6652,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6708,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6717,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6729,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6739,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "StringLiteral",
-      "offset": 5696,
+      "offset": 6923,
       "length": 14,
       "value": "\"bc_ic_orders\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 5732,
+      "offset": 6959,
       "length": 4,
       "value": "25.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 5790,
+      "offset": 7017,
       "length": 3,
       "value": "162"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 5798,
+      "offset": 7025,
       "length": 3,
       "value": "165"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 5806,
+      "offset": 7033,
       "length": 3,
       "value": "181"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 5814,
+      "offset": 7041,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 5881,
+      "offset": 7108,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "StringLiteral",
-      "offset": 5950,
+      "offset": 7177,
       "length": 7,
       "value": "\"order\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6042,
+      "offset": 7269,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6102,
+      "offset": 7329,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "StringLiteral",
-      "offset": 6300,
+      "offset": 7527,
       "length": 19,
       "value": "\"bc_ic_preferences\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 6341,
+      "offset": 7568,
       "length": 4,
       "value": "25.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6404,
+      "offset": 7631,
       "length": 3,
       "value": "162"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6412,
+      "offset": 7639,
       "length": 3,
       "value": "165"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6420,
+      "offset": 7647,
       "length": 3,
       "value": "181"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 6428,
+      "offset": 7655,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6500,
+      "offset": 7727,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "StringLiteral",
-      "offset": 6574,
+      "offset": 7801,
       "length": 12,
       "value": "\"preference\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 6681,
+      "offset": 7908,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/view\/BCProfileHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6746,
+      "offset": 7973,
       "length": 5,
       "value": "false"
     },
@@ -105344,245 +105452,245 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 623,
+      "offset": 673,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 655,
+      "offset": 705,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 876,
+      "offset": 926,
       "length": 2,
       "value": "11"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 883,
+      "offset": 933,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 890,
+      "offset": 940,
       "length": 2,
       "value": "31"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 897,
+      "offset": 947,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 953,
+      "offset": 1003,
       "length": 2,
       "value": "11"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 960,
+      "offset": 1010,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 967,
+      "offset": 1017,
       "length": 2,
       "value": "31"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 974,
+      "offset": 1024,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1033,
+      "offset": 1083,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1573,
+      "offset": 1623,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1784,
+      "offset": 1834,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1853,
+      "offset": 1903,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1986,
+      "offset": 2036,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1989,
+      "offset": 2039,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2075,
+      "offset": 2125,
       "length": 2,
       "value": "11"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2082,
+      "offset": 2132,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2089,
+      "offset": 2139,
       "length": 2,
       "value": "31"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 2096,
+      "offset": 2146,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2278,
+      "offset": 2328,
       "length": 10,
       "value": "\"editting\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2348,
+      "offset": 2398,
       "length": 3,
       "value": "162"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2356,
+      "offset": 2406,
       "length": 3,
       "value": "165"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2364,
+      "offset": 2414,
       "length": 3,
       "value": "181"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 2372,
+      "offset": 2422,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2457,
+      "offset": 2507,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2542,
+      "offset": 2592,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 3101,
+      "offset": 3151,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3204,
+      "offset": 3254,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3391,
+      "offset": 3441,
       "length": 3,
       "value": "-16"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3766,
+      "offset": 3816,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3793,
+      "offset": 3843,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4081,
+      "offset": 4131,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4129,
+      "offset": 4179,
       "length": 20,
       "value": "\"bc_profile_setting\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/profile\/controller\/BCProfileViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 4171,
+      "offset": 4221,
       "length": 4,
       "value": "24.0"
     },
@@ -116215,63 +116323,63 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "StringLiteral",
-      "offset": 1900,
+      "offset": 1953,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "StringLiteral",
-      "offset": 1927,
+      "offset": 1980,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "StringLiteral",
-      "offset": 1983,
+      "offset": 2036,
       "length": 34,
       "value": "\"https:\/\/open-api.zjchjc.cn\/bcsdk\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "StringLiteral",
-      "offset": 2047,
+      "offset": 2100,
       "length": 28,
       "value": "\"https:\/\/open-api.zjchjc.cn\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2137,
+      "offset": 2190,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2184,
+      "offset": 2237,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "Array",
-      "offset": 2380,
+      "offset": 2433,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "StringLiteral",
-      "offset": 2434,
+      "offset": 2487,
       "length": 27,
       "value": "\"com.bc.loginmanager.queue\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/LoginManager\/BCLoginManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 9413,
+      "offset": 9466,
       "length": 5,
       "value": "false"
     },
