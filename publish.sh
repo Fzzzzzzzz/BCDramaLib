@@ -103,7 +103,7 @@ if git diff --cached --quiet; then
   git status -sb
 else
   git diff --cached --stat
-  git commit -m "feat: 优化jumpToVideoPlayController，允许lastEpisodeNo=0时播放最后观看集数"
+  git commit -m "feat: 优化激励视频加载解锁"
 fi
 
 git tag -f "${TAG}"
