@@ -111163,99 +111163,120 @@
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
+      "kind": "Dictionary",
+      "offset": 4091,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
+      "kind": "Dictionary",
+      "offset": 4200,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4001,
+      "offset": 4337,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4139,
+      "offset": 4444,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4582,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "Array",
-      "offset": 4262,
+      "offset": 4705,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4546,
+      "offset": 4989,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "Array",
-      "offset": 4704,
+      "offset": 5147,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "Array",
-      "offset": 4824,
+      "offset": 5267,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4934,
+      "offset": 5377,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4969,
+      "offset": 5412,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5006,
+      "offset": 5449,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5078,
+      "offset": 5521,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "Array",
-      "offset": 5197,
+      "offset": 5640,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5273,
+      "offset": 5716,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5389,
+      "offset": 5832,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCPlayer\/Controller\/BCVodPlayerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5489,
+      "offset": 5932,
       "length": 1,
       "value": "0"
     },

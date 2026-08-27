@@ -103,7 +103,7 @@ if git diff --cached --quiet; then
   git status -sb
 else
   git diff --cached --stat
-  git commit -m "feat: 优化激励视频加载解锁"
+  git commit -m "feat: 优化翻页回调"
 fi
 
 git tag -f "${TAG}"
