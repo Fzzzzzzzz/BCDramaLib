@@ -660,7 +660,7 @@ extension BCVideoManager {
     
     /// 进入新版SDK的根控制器（默认选中首页）
     /// - Parameter vc: 导航栈
-    /// - Parameter selectedIndex: 默认显示第几个导航器（默认仅支持0：首页， 1： 为你推荐页， 2： 我的剧单页）
+    /// - Parameter selectedIndex: 默认显示第几个 Tab（按当前 Tab 顺序从左到右，0 起）
     @objc public static func goToRootViewController(from vc: UIViewController,
                                                     selectedIndex: Int = 0) -> BCTabBarController {
         let tabBarController = BCTabBarController()
@@ -683,6 +683,51 @@ extension BCVideoManager {
             vc.present(tabBarController, animated: true)
         }
         return tabBarController
+    }
+    
+    /// 进入新版 SDK 根控制器并选中指定 Tab 类型
+    /// - Parameters:
+    ///   - vc: 导航栈
+    ///   - selectedTab: 要选中的 Tab 类型（不受 Tab 顺序影响）
+    @objc public static func goToRootViewController(from vc: UIViewController,
+                                                    selectedTab: BCTabBarItemType) -> BCTabBarController {
+        let tabBarController = goToRootViewController(from: vc, selectedIndex: 0)
+        tabBarController.selectTab(selectedTab)
+        return tabBarController
+    }
+    
+    /// 设置 SDK 底部 Tab 默认顺序（在 goToRootViewController 之前调用）
+    /// - Parameter order: Tab 类型数组，需包含 home(0)、recommend(1)、profile(2) 各一次
+    /// 示例：[@(1), @(0), @(2)] 表示「推荐 - 首页 - 我的」
+    @objc public static func setDefaultTabBarOrder(_ order: [NSNumber]) {
+        let types = order.compactMap { BCTabBarItemType(rawValue: $0.intValue) }
+        guard BCTabBarController.isValidTabOrder(types) else {
+            BCLog.print("[sdk] setDefaultTabBarOrder failed: invalid order \(order)")
+            return
+        }
+        BCTabBarController.defaultTabOrder = types
+    }
+    
+    /// 动态调整当前 SDK Tab 顺序；若 TabBar 尚未创建，则更新默认顺序
+    /// - Parameter order: Tab 类型数组，需包含 home(0)、recommend(1)、profile(2) 各一次
+    @discardableResult
+    @objc public static func setTabBarOrder(_ order: [NSNumber]) -> Bool {
+        let types = order.compactMap { BCTabBarItemType(rawValue: $0.intValue) }
+        guard BCTabBarController.isValidTabOrder(types) else {
+            BCLog.print("[sdk] setTabBarOrder failed: invalid order \(order)")
+            return false
+        }
+        return BCTabBarManager.shared.setTabOrder(types)
+    }
+    
+    /// 获取当前 SDK Tab 顺序
+    @objc public static func currentTabBarOrder() -> [NSNumber] {
+        return BCTabBarManager.shared.currentTabOrder().map { NSNumber(value: $0.rawValue) }
+    }
+    
+    /// 切换到指定 Tab 类型（不受 Tab 顺序调整影响）
+    @objc public static func switchToTabBarItem(_ type: BCTabBarItemType) {
+        BCTabBarManager.shared.switchToTab(type: type)
     }
 
     /// 获取新版推荐页

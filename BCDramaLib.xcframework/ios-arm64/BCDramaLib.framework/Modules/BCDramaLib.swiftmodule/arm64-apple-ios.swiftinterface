@@ -147,6 +147,12 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func setPayActionStatus(payment: BCDramaLib.BCPaymentStatus)
   @objc public static func getSDKVersion() -> Swift.String
   @objc public static func goToRootViewController(from vc: UIKit.UIViewController, selectedIndex: Swift.Int = 0) -> BCDramaLib.BCTabBarController
+  @objc public static func goToRootViewController(from vc: UIKit.UIViewController, selectedTab: BCDramaLib.BCTabBarItemType) -> BCDramaLib.BCTabBarController
+  @objc public static func setDefaultTabBarOrder(_ order: [Foundation.NSNumber])
+  @discardableResult
+  @objc public static func setTabBarOrder(_ order: [Foundation.NSNumber]) -> Swift.Bool
+  @objc public static func currentTabBarOrder() -> [Foundation.NSNumber]
+  @objc public static func switchToTabBarItem(_ type: BCDramaLib.BCTabBarItemType)
   @objc public static func getRecommendViewController(from vc: UIKit.UIViewController, toolOffsetY: CoreFoundation.CGFloat = 0) -> UIKit.UIViewController
   @objc public static func getDramasViewController(from vc: UIKit.UIViewController, isHiddenNav: Swift.Bool = true, toolOffsetY: CoreFoundation.CGFloat = 0, isHddenEmptyAction: Swift.Bool = false, contentInsert: UIKit.UIEdgeInsets = .zero) -> UIKit.UIViewController
   @objc public static func getHomeViewController(from vc: UIKit.UIViewController) -> UIKit.UIViewController
@@ -218,7 +224,21 @@ public protocol BCEncryptable {
   func encrypt(_ dict: Swift.Dictionary<Swift.String, Any>) throws -> Swift.String
   func decrypt(_ base64: Swift.String) throws -> Foundation.Data
 }
+@objc public enum BCTabBarItemType : Swift.Int {
+  case home = 0
+  case recommend = 1
+  case profile = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class BCTabBarController : UIKit.UITabBarController {
+  @_Concurrency.MainActor @preconcurrency public static var defaultTabOrder: [BCDramaLib.BCTabBarItemType]
+  @_Concurrency.MainActor @preconcurrency public var selectedTabType: BCDramaLib.BCTabBarItemType? {
+    get
+  }
   @objc deinit
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
@@ -232,6 +252,9 @@ public protocol BCEncryptable {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
     @objc get
   }
+  @discardableResult
+  @_Concurrency.MainActor @preconcurrency public func setTabOrder(_ order: [BCDramaLib.BCTabBarItemType]) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func selectTab(_ type: BCDramaLib.BCTabBarItemType, animated: Swift.Bool = false)
   @available(iOS 18.0, *)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(tabs: [UIKit.UITab])
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -482,6 +505,10 @@ extension BCDramaLib.BCVodPlayerManager {
   public func hideInternalTabBar(animated: Swift.Bool = false)
   public func forceRestoreInternalTabBar(animated: Swift.Bool = false)
   public func switchToTab(index: Swift.Int)
+  public func switchToTab(type: BCDramaLib.BCTabBarItemType)
+  @discardableResult
+  public func setTabOrder(_ order: [BCDramaLib.BCTabBarItemType]) -> Swift.Bool
+  public func currentTabOrder() -> [BCDramaLib.BCTabBarItemType]
   @objc deinit
 }
 public enum BCPagingListContainerType {
@@ -2183,6 +2210,9 @@ extension BCDramaLib.BCDramaListType : Swift.RawRepresentable {}
 extension BCDramaLib.BCPlayerRenderMode : Swift.Equatable {}
 extension BCDramaLib.BCPlayerRenderMode : Swift.Hashable {}
 extension BCDramaLib.BCPlayerRenderMode : Swift.RawRepresentable {}
+extension BCDramaLib.BCTabBarItemType : Swift.Equatable {}
+extension BCDramaLib.BCTabBarItemType : Swift.Hashable {}
+extension BCDramaLib.BCTabBarItemType : Swift.RawRepresentable {}
 extension BCDramaLib.BCVodPlayerState : Swift.Equatable {}
 extension BCDramaLib.BCVodPlayerState : Swift.Hashable {}
 extension BCDramaLib.BCVodPlayerState : Swift.RawRepresentable {}

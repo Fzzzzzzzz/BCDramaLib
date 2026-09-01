@@ -4841,6 +4841,190 @@
           },
           {
             "kind": "Function",
+            "name": "goToRootViewController",
+            "printedName": "goToRootViewController(from:selectedTab:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BCTabBarController",
+                "printedName": "BCDramaLib.BCTabBarController",
+                "usr": "c:@M@BCDramaLib@objc(cs)BCTabBarController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCTabBarItemType",
+                "printedName": "BCDramaLib.BCTabBarItemType",
+                "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)goToRootViewControllerFrom:selectedTab:",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC22goToRootViewController4from11selectedTabAA08BCTabBarI0CSo06UIViewI0C_AA0mN8ItemTypeOtFZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "objc_name": "goToRootViewControllerFrom:selectedTab:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDefaultTabBarOrder",
+            "printedName": "setDefaultTabBarOrder(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.NSNumber]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)setDefaultTabBarOrder:",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC21setDefaultTabBarOrderyySaySo8NSNumberCGFZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setTabBarOrder",
+            "printedName": "setTabBarOrder(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.NSNumber]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)setTabBarOrder:",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC14setTabBarOrderySbSaySo8NSNumberCGFZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "DiscardableResult",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "currentTabBarOrder",
+            "printedName": "currentTabBarOrder()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.NSNumber]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)currentTabBarOrder",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC18currentTabBarOrderSaySo8NSNumberCGyFZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "switchToTabBarItem",
+            "printedName": "switchToTabBarItem(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCTabBarItemType",
+                "printedName": "BCDramaLib.BCTabBarItemType",
+                "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)switchToTabBarItem:",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC18switchToTabBarItemyyAA05BCTabhI4TypeOFZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getRecommendViewController",
             "printedName": "getRecommendViewController(from:toolOffsetY:)",
             "children": [
@@ -8514,9 +8698,462 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "BCTabBarItemType",
+        "printedName": "BCTabBarItemType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "home",
+            "printedName": "home",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BCDramaLib.BCTabBarItemType.Type) -> BCDramaLib.BCTabBarItemType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "BCDramaLib.BCTabBarItemType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCTabBarItemType",
+                        "printedName": "BCDramaLib.BCTabBarItemType",
+                        "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@BCDramaLib@E@BCTabBarItemType@BCTabBarItemTypeHome",
+            "mangledName": "$s10BCDramaLib16BCTabBarItemTypeO4homeyA2CmF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "recommend",
+            "printedName": "recommend",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BCDramaLib.BCTabBarItemType.Type) -> BCDramaLib.BCTabBarItemType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "BCDramaLib.BCTabBarItemType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCTabBarItemType",
+                        "printedName": "BCDramaLib.BCTabBarItemType",
+                        "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@BCDramaLib@E@BCTabBarItemType@BCTabBarItemTypeRecommend",
+            "mangledName": "$s10BCDramaLib16BCTabBarItemTypeO9recommendyA2CmF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "profile",
+            "printedName": "profile",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BCDramaLib.BCTabBarItemType.Type) -> BCDramaLib.BCTabBarItemType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "BCDramaLib.BCTabBarItemType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCTabBarItemType",
+                        "printedName": "BCDramaLib.BCTabBarItemType",
+                        "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@BCDramaLib@E@BCTabBarItemType@BCTabBarItemTypeProfile",
+            "mangledName": "$s10BCDramaLib16BCTabBarItemTypeO7profileyA2CmF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "BCDramaLib.BCTabBarItemType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10BCDramaLib16BCTabBarItemTypeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s10BCDramaLib16BCTabBarItemTypeO8rawValueACSgSi_tcfc",
+            "moduleName": "BCDramaLib",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10BCDramaLib16BCTabBarItemTypeO8rawValueSivp",
+            "mangledName": "$s10BCDramaLib16BCTabBarItemTypeO8rawValueSivp",
+            "moduleName": "BCDramaLib",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10BCDramaLib16BCTabBarItemTypeO8rawValueSivg",
+                "mangledName": "$s10BCDramaLib16BCTabBarItemTypeO8rawValueSivg",
+                "moduleName": "BCDramaLib",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@BCDramaLib@E@BCTabBarItemType",
+        "mangledName": "$s10BCDramaLib16BCTabBarItemTypeO",
+        "moduleName": "BCDramaLib",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "BCTabBarController",
         "printedName": "BCTabBarController",
         "children": [
+          {
+            "kind": "Var",
+            "name": "defaultTabOrder",
+            "printedName": "defaultTabOrder",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BCDramaLib.BCTabBarItemType]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvpZ",
+            "mangledName": "$s10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvpZ",
+            "moduleName": "BCDramaLib",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[BCDramaLib.BCTabBarItemType]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCTabBarItemType",
+                        "printedName": "BCDramaLib.BCTabBarItemType",
+                        "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvgZ",
+                "mangledName": "$s10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvgZ",
+                "moduleName": "BCDramaLib",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[BCDramaLib.BCTabBarItemType]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCTabBarItemType",
+                        "printedName": "BCDramaLib.BCTabBarItemType",
+                        "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvsZ",
+                "mangledName": "$s10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvsZ",
+                "moduleName": "BCDramaLib",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvMZ",
+                "mangledName": "$s10BCDramaLib18BCTabBarControllerC15defaultTabOrderSayAA0cD8ItemTypeOGvMZ",
+                "moduleName": "BCDramaLib",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "selectedTabType",
+            "printedName": "selectedTabType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "BCDramaLib.BCTabBarItemType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10BCDramaLib18BCTabBarControllerC15selectedTabTypeAA0cd4ItemH0OSgvp",
+            "mangledName": "$s10BCDramaLib18BCTabBarControllerC15selectedTabTypeAA0cd4ItemH0OSgvp",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BCDramaLib.BCTabBarItemType?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BCTabBarItemType",
+                        "printedName": "BCDramaLib.BCTabBarItemType",
+                        "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10BCDramaLib18BCTabBarControllerC15selectedTabTypeAA0cd4ItemH0OSgvg",
+                "mangledName": "$s10BCDramaLib18BCTabBarControllerC15selectedTabTypeAA0cd4ItemH0OSgvg",
+                "moduleName": "BCDramaLib",
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Function",
             "name": "viewDidLoad",
@@ -8768,6 +9405,81 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "setTabOrder",
+            "printedName": "setTabOrder(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BCDramaLib.BCTabBarItemType]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10BCDramaLib18BCTabBarControllerC11setTabOrderySbSayAA0cD8ItemTypeOGF",
+            "mangledName": "$s10BCDramaLib18BCTabBarControllerC11setTabOrderySbSayAA0cD8ItemTypeOGF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "DiscardableResult",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectTab",
+            "printedName": "selectTab(_:animated:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCTabBarItemType",
+                "printedName": "BCDramaLib.BCTabBarItemType",
+                "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10BCDramaLib18BCTabBarControllerC9selectTab_8animatedyAA0cD8ItemTypeO_SbtF",
+            "mangledName": "$s10BCDramaLib18BCTabBarControllerC9selectTab_8animatedyAA0cD8ItemTypeO_SbtF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Constructor",
@@ -20947,6 +21659,100 @@
             "declKind": "Func",
             "usr": "s:10BCDramaLib15BCTabBarManagerC11switchToTab5indexySi_tF",
             "mangledName": "$s10BCDramaLib15BCTabBarManagerC11switchToTab5indexySi_tF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "switchToTab",
+            "printedName": "switchToTab(type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BCTabBarItemType",
+                "printedName": "BCDramaLib.BCTabBarItemType",
+                "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10BCDramaLib15BCTabBarManagerC11switchToTab4typeyAA0cD8ItemTypeO_tF",
+            "mangledName": "$s10BCDramaLib15BCTabBarManagerC11switchToTab4typeyAA0cD8ItemTypeO_tF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setTabOrder",
+            "printedName": "setTabOrder(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BCDramaLib.BCTabBarItemType]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10BCDramaLib15BCTabBarManagerC11setTabOrderySbSayAA0cD8ItemTypeOGF",
+            "mangledName": "$s10BCDramaLib15BCTabBarManagerC11setTabOrderySbSayAA0cD8ItemTypeOGF",
+            "moduleName": "BCDramaLib",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "currentTabOrder",
+            "printedName": "currentTabOrder()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BCDramaLib.BCTabBarItemType]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BCTabBarItemType",
+                    "printedName": "BCDramaLib.BCTabBarItemType",
+                    "usr": "c:@M@BCDramaLib@E@BCTabBarItemType"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10BCDramaLib15BCTabBarManagerC15currentTabOrderSayAA0cD8ItemTypeOGyF",
+            "mangledName": "$s10BCDramaLib15BCTabBarManagerC15currentTabOrderSayAA0cD8ItemTypeOGyF",
             "moduleName": "BCDramaLib",
             "declAttributes": [
               "AccessControl",
@@ -94560,63 +95366,63 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 28287,
+      "offset": 28249,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 29687,
+      "offset": 31892,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 30577,
+      "offset": 32782,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 30659,
+      "offset": 32864,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 30742,
+      "offset": 32947,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 37341,
+      "offset": 39546,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 42841,
+      "offset": 45046,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 43515,
+      "offset": 45720,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 43743,
+      "offset": 45948,
       "length": 5,
       "value": "false"
     },
@@ -95645,49 +96451,63 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "IntegerLiteral",
-      "offset": 254,
+      "offset": 200,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "IntegerLiteral",
-      "offset": 267,
+      "offset": 244,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 280,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
-      "kind": "IntegerLiteral",
-      "offset": 295,
-      "length": 1,
-      "value": "0"
+      "kind": "Dictionary",
+      "offset": 797,
+      "length": 3,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "IntegerLiteral",
-      "offset": 210,
+      "offset": 881,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1519,
+      "offset": 2344,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3584,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3796,
+      "offset": 6453,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3838,
+      "offset": 6495,
       "length": 3,
       "value": "-12"
     },

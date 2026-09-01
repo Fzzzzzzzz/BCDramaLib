@@ -103,7 +103,7 @@ if git diff --cached --quiet; then
   git status -sb
 else
   git diff --cached --stat
-  git commit -m "feat: 优化翻页回调"
+  git commit -m "feat: 支持 SDK 底部 Tab 动态调整顺序"
 fi
 
 git tag -f "${TAG}"

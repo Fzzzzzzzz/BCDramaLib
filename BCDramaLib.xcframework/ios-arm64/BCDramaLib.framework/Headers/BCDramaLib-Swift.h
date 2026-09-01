@@ -1169,6 +1169,16 @@ SWIFT_CLASS("_TtC10BCDramaLib18BCTabBarController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+/// SDK 底部 Tab 类型
+typedef SWIFT_ENUM(NSInteger, BCTabBarItemType, open) {
+/// 首页
+  BCTabBarItemTypeHome = 0,
+/// 为你推荐
+  BCTabBarItemTypeRecommend = 1,
+/// 我的
+  BCTabBarItemTypeProfile = 2,
+};
+
 /// 内容page页
 typedef SWIFT_ENUM(NSInteger, BCTabPageType, open) {
   BCTabPageTypeCollection = 0,
@@ -1228,6 +1238,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
+@class NSNumber;
 @interface BCVideoManager (SWIFT_EXTENSION(BCDramaLib))
 /// 初始化SDK
 /// \param appId BCVideoSDK的AppId
@@ -1507,9 +1518,28 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 /// 进入新版SDK的根控制器（默认选中首页）
 /// \param vc 导航栈
 ///
-/// \param selectedIndex 默认显示第几个导航器（默认仅支持0：首页， 1： 为你推荐页， 2： 我的剧单页）
+/// \param selectedIndex 默认显示第几个 Tab（按当前 Tab 顺序从左到右，0 起）
 ///
 + (BCTabBarController * _Nonnull)goToRootViewControllerFrom:(UIViewController * _Nonnull)vc selectedIndex:(NSInteger)selectedIndex SWIFT_WARN_UNUSED_RESULT;
+/// 进入新版 SDK 根控制器并选中指定 Tab 类型
+/// \param vc 导航栈
+///
+/// \param selectedTab 要选中的 Tab 类型（不受 Tab 顺序影响）
+///
++ (BCTabBarController * _Nonnull)goToRootViewControllerFrom:(UIViewController * _Nonnull)vc selectedTab:(enum BCTabBarItemType)selectedTab SWIFT_WARN_UNUSED_RESULT;
+/// 设置 SDK 底部 Tab 默认顺序（在 goToRootViewController 之前调用）
+/// \param order Tab 类型数组，需包含 home(0)、recommend(1)、profile(2) 各一次
+/// 示例：[@(1), @(0), @(2)] 表示「推荐 - 首页 - 我的」
+///
++ (void)setDefaultTabBarOrder:(NSArray<NSNumber *> * _Nonnull)order;
+/// 动态调整当前 SDK Tab 顺序；若 TabBar 尚未创建，则更新默认顺序
+/// \param order Tab 类型数组，需包含 home(0)、recommend(1)、profile(2) 各一次
+///
++ (BOOL)setTabBarOrder:(NSArray<NSNumber *> * _Nonnull)order;
+/// 获取当前 SDK Tab 顺序
++ (NSArray<NSNumber *> * _Nonnull)currentTabBarOrder SWIFT_WARN_UNUSED_RESULT;
+/// 切换到指定 Tab 类型（不受 Tab 顺序调整影响）
++ (void)switchToTabBarItem:(enum BCTabBarItemType)type;
 /// 获取新版推荐页
 /// \param vc 外层控制的导航栈
 ///
