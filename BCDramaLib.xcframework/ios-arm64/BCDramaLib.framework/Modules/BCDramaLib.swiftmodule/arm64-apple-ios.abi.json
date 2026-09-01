@@ -96500,14 +96500,14 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6453,
+      "offset": 6600,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/bases\/BCTabBarController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6495,
+      "offset": 6642,
       "length": 3,
       "value": "-12"
     },
@@ -110948,7 +110948,7 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCDramas\/recommend\/BCRecommendViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4325,
+      "offset": 4569,
       "length": 5,
       "value": "false"
     },
