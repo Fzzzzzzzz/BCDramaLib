@@ -543,9 +543,9 @@ extension BCVideoManager {
                                               videoId: Int,
                                               eposodeNo: Int,
                                               placementId: String = "",
-                                              extra: [String: Any] = [:],
+                                              extra: String = "",
                                               onStartReward: BCStartAdReward?) {
-        BCAdMSaasManager.shared.unLockMotivationVideo(vc, videoId, eposodeNo, placementId, extra, false) { playModel in
+        BCAdMSaasManager.shared.unLockMotivationVideo(vc: vc, videoId: videoId, episodeNo: eposodeNo, placementId: placementId, extrainfo: extra, isShowRewardAlertView: false) { playModel in
             // 直接播放
         } success: { ecmp in
             shared.videoPlayCallBack.onStartAdReward = onStartReward

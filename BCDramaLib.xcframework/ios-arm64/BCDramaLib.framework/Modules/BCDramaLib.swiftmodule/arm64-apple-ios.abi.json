@@ -4291,23 +4291,10 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
+                "name": "String",
+                "printedName": "Swift.String",
                 "hasDefaultArg": true,
-                "usr": "s:SD"
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -4351,7 +4338,7 @@
             ],
             "declKind": "Func",
             "usr": "c:@CM@BCDramaLib@objc(cs)BCVideoManager(cm)startRewardVideoFrom:videoId:eposodeNo:placementId:extra:onStartReward:",
-            "mangledName": "$s10BCDramaLib14BCVideoManagerC16startRewardVideo4from7videoId9eposodeNo09placementJ05extra07onStartF0ySo16UIViewControllerC_S2iSSSDySSypGyAA16BCAdPlatformTypeO_AA0sU0OtcSgtFZ",
+            "mangledName": "$s10BCDramaLib14BCVideoManagerC16startRewardVideo4from7videoId9eposodeNo09placementJ05extra07onStartF0ySo16UIViewControllerC_S2iS2SyAA16BCAdPlatformTypeO_AA0sU0OtcSgtFZ",
             "moduleName": "BCDramaLib",
             "static": true,
             "objc_name": "startRewardVideoFrom:videoId:eposodeNo:placementId:extra:onStartReward:",
@@ -81752,27 +81739,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:SD"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Var",
             "usr": "c:@M@BCDramaLib@objc(cs)BCRewardAdContext(py)extraInfo",
-            "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSDySSypGvp",
+            "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSSvp",
             "moduleName": "BCDramaLib",
             "declAttributes": [
               "HasInitialValue",
@@ -81789,27 +81763,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@BCDramaLib@objc(cs)BCRewardAdContext(im)extraInfo",
-                "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSDySSypGvg",
+                "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSSvg",
                 "moduleName": "BCDramaLib",
                 "implicit": true,
                 "declAttributes": [
@@ -81829,27 +81790,14 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@BCDramaLib@objc(cs)BCRewardAdContext(im)setExtraInfo:",
-                "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSDySSypGvs",
+                "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSSvs",
                 "moduleName": "BCDramaLib",
                 "implicit": true,
                 "declAttributes": [
@@ -81869,8 +81817,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:10BCDramaLib17BCRewardAdContextC9extraInfoSDySSypGvM",
-                "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSDySSypGvM",
+                "usr": "s:10BCDramaLib17BCRewardAdContextC9extraInfoSSvM",
+                "mangledName": "$s10BCDramaLib17BCRewardAdContextC9extraInfoSSvM",
                 "moduleName": "BCDramaLib",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -95351,78 +95299,78 @@
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
-      "kind": "Dictionary",
-      "offset": 22555,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 22548,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 23575,
+      "offset": 23638,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 28249,
+      "offset": 28312,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 31892,
+      "offset": 31955,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 32782,
+      "offset": 32845,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 32864,
+      "offset": 32927,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 32947,
+      "offset": 33010,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 39546,
+      "offset": 39609,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 45046,
+      "offset": 45109,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 45720,
+      "offset": 45783,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/BCVideoManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 45948,
+      "offset": 46011,
       "length": 5,
       "value": "false"
     },
@@ -114063,105 +114011,105 @@
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "StringLiteral",
-      "offset": 1113,
+      "offset": 1105,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
-      "kind": "Dictionary",
-      "offset": 1177,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 1160,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1245,
+      "offset": 1225,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "StringLiteral",
-      "offset": 2747,
+      "offset": 2727,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
-      "kind": "Dictionary",
-      "offset": 2807,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 2780,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2871,
+      "offset": 2843,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "StringLiteral",
-      "offset": 5522,
+      "offset": 5494,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
-      "kind": "Dictionary",
-      "offset": 5592,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 5557,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5666,
+      "offset": 5630,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "StringLiteral",
-      "offset": 9807,
+      "offset": 9842,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
-      "kind": "Dictionary",
-      "offset": 9889,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 9917,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 9975,
+      "offset": 10002,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "StringLiteral",
-      "offset": 13401,
+      "offset": 13428,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
-      "kind": "Dictionary",
-      "offset": 13472,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 13492,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/Mediatom\/BCAdMSaasManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13547,
+      "offset": 13566,
       "length": 4,
       "value": "true"
     },
@@ -115063,10 +115011,10 @@
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/AdAdapter\/BCAdAdapterProtocols.swift",
-      "kind": "Dictionary",
-      "offset": 2349,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 2342,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/a1234\/Desktop\/BC_Drama\/bc_drama_sdk_ios\/BCDramaLib\/BCDramaLib\/AdAdapter\/BCAdAdapterRegistry.swift",

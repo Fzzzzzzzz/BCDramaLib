@@ -136,7 +136,7 @@ extension BCDramaLib.BCVideoManager {
   @objc public static func setVideoDefaultRate(videoId: Swift.Int, rate: Swift.Double)
   @objc public static func onUnLock(onUnLock: BCDramaLib.BCAdUnLock?)
   @objc public static func onAdDidFinish(onFinish: BCDramaLib.BCAdFinish?)
-  @objc public static func startRewardVideo(from vc: UIKit.UIViewController, videoId: Swift.Int, eposodeNo: Swift.Int, placementId: Swift.String = "", extra: [Swift.String : Any] = [:], onStartReward: BCDramaLib.BCStartAdReward?)
+  @objc public static func startRewardVideo(from vc: UIKit.UIViewController, videoId: Swift.Int, eposodeNo: Swift.Int, placementId: Swift.String = "", extra: Swift.String = "", onStartReward: BCDramaLib.BCStartAdReward?)
   @objc public static func jumpToVideoPlayController(from vc: UIKit.UIViewController, videoId: Swift.Int, lastEpisodeNo: Swift.Int, offsetY: CoreFoundation.CGFloat = 0)
   @objc public static func jumpToVideoMoreDetailList(from vc: UIKit.UIViewController, menuId: Swift.Int, menuName: Swift.String)
   @objc public static func getCollectionRecords(page: Swift.Int, pageSize: Swift.Int, comolete: @escaping ([BCDramaLib.BCDramaFavoriteListModel]?, Swift.String?) -> Swift.Void)
@@ -1887,7 +1887,7 @@ extension BCDramaLib.BCCrashManager {
 @_inheritsConvenienceInitializers @objc public class BCRewardAdContext : ObjectiveC.NSObject {
   @objc public var placementId: Swift.String
   @objc public var taskId: Swift.String
-  @objc public var extraInfo: [Swift.String : Any]
+  @objc public var extraInfo: Swift.String
   @objc weak public var rewardPresenter: UIKit.UIViewController?
   @objc public var onEffective: (() -> Swift.Void)?
   @objc public var onClosed: ((BCDramaLib.BCRewardAdCloseResult) -> Swift.Void)?

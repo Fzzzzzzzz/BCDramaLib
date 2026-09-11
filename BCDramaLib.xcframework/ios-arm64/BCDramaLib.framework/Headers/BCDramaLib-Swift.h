@@ -900,7 +900,7 @@ SWIFT_CLASS("_TtC10BCDramaLib17BCRewardAdContext")
 @interface BCRewardAdContext : NSObject
 @property (nonatomic, copy) NSString * _Nonnull placementId;
 @property (nonatomic, copy) NSString * _Nonnull taskId;
-@property (nonatomic, copy) NSDictionary<NSString *, id> * _Nonnull extraInfo;
+@property (nonatomic, copy) NSString * _Nonnull extraInfo;
 @property (nonatomic, weak) UIViewController * _Nullable rewardPresenter;
 @property (nonatomic, copy) void (^ _Nullable onEffective)(void);
 @property (nonatomic, copy) void (^ _Nullable onClosed)(BCRewardAdCloseResult * _Nonnull);
@@ -1461,7 +1461,7 @@ SWIFT_CLASS("_TtC10BCDramaLib14BCVideoManager")
 ///
 /// \param onAdFiled 激励视频加载失败的回调
 ///
-+ (void)startRewardVideoFrom:(UIViewController * _Nonnull)vc videoId:(NSInteger)videoId eposodeNo:(NSInteger)eposodeNo placementId:(NSString * _Nonnull)placementId extra:(NSDictionary<NSString *, id> * _Nonnull)extra onStartReward:(void (^ _Nullable)(enum BCAdPlatformType, enum BCAdType))onStartReward;
++ (void)startRewardVideoFrom:(UIViewController * _Nonnull)vc videoId:(NSInteger)videoId eposodeNo:(NSInteger)eposodeNo placementId:(NSString * _Nonnull)placementId extra:(NSString * _Nonnull)extra onStartReward:(void (^ _Nullable)(enum BCAdPlatformType, enum BCAdType))onStartReward;
 /// 进入播放页
 /// \param vc 来源控制器
 ///
