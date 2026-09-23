@@ -1,0 +1,3 @@
+framework module BCDramaAdCustom {
+  header "BCDramaAdCustom-Swift.h"
+}
